@@ -1,6 +1,6 @@
 # Skill-hub
 
-跨多个 AI 编码 Agent（Claude Code、Antigravity、Codex 等）通用的技能（Skill）集合，共 **84** 个技能。
+跨多个 AI 编码 Agent（Claude Code、Antigravity、Codex 等）通用的技能（Skill）集合，共 **62** 个技能。
 
 ## 仓库定位
 
@@ -11,14 +11,14 @@
 ## 目录结构
 
 ```
-skills/                        # 72 个共享技能，分 9 个能力域
+skills/                        # 50 个共享技能，分 9 个能力域
 ├── 01-agent-engineering/      Agent 工程（构建、调试、自治循环、harness 等）
 ├── 02-coding-languages/       编程语言（Swift + 通用）
 ├── 03-frameworks/             框架栈（Next.js、React Native）
 ├── 04-testing-quality/        测试、TDD、代码审查
 ├── 06-data-search/            数据抓取、检索、深度研究
 ├── 07-media-content/          多媒体（PPT、视频、PDF、图像）
-├── 09-ops-productivity/       办公自动化（飞书、通用办公等）
+├── 09-ops-productivity/       办公自动化（Slack 等）
 ├── 10-business-industry/      行业业务（医疗、法律等）
 └── 12-ai-api/                 AI API、LLM 管线、Token 预算
 
@@ -36,7 +36,7 @@ scripts/                       # 同步与 Junction 建立脚本
 |---|---|
 | [按名字查](./_meta/by-name.md) | 已经知道技能名（如 `agent-browser`） |
 | [按能力域查](./_meta/by-domain.md) | 想找 "Agent 工程" / "测试" / "行业业务" 一类 |
-| [按技术栈查](./_meta/by-platform.md) | 想找 "飞书相关" / "Python 相关" / "浏览器自动化" 一类 |
+| [按技术栈查](./_meta/by-platform.md) | 想找 "Python 相关" / "浏览器自动化" 一类 |
 | [机器可读](./_meta/skills-lock.json) | 脚本、自动化、外部工具集成 |
 
 ## 技能格式

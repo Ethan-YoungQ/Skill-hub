@@ -1,11 +1,11 @@
 {
   "version": "2.0",
-  "generated_at": "2026-04-29T20:15:00+08:00",
-  "note": "Rebuilt after removing 160 plugin-origin skills (ECC, Marketing, Superpower, HUD)",
+  "generated_at": "2026-04-29T20:20:00+08:00",
+  "note": "Removed lark-* skills (22), plugin-origin skills (160). Retained: 50 shared + 12 projects = 62 total",
   "counts": {
-    "shared": 72,
+    "shared": 50,
     "projects": 12,
-    "total": 84
+    "total": 62
   },
   "shared": [
     {
@@ -121,138 +121,6 @@
       "domain": "09-ops-productivity",
       "path": "skills/09-ops-productivity/general/slack/",
       "descriptionZh": "通过浏览器自动化在 Slack 中检查未读、导航、发消息、搜对话、抓取信息。"
-    },
-    {
-      "name": "lark-mail",
-      "domain": "09-ops-productivity",
-      "path": "skills/09-ops-productivity/lark/lark-mail/",
-      "descriptionZh": "飞书邮箱：草稿、编辑、发送、回复、转发、搜索、附件、文件夹、规则。"
-    },
-    {
-      "name": "lark-minutes",
-      "domain": "09-ops-productivity",
-      "path": "skills/09-ops-productivity/lark/lark-minutes/",
-      "descriptionZh": "飞书妙记：查询与获取妙记信息、下载音视频、获取 AI 总结/待办/章节。"
-    },
-    {
-      "name": "lark-openapi-explorer",
-      "domain": "09-ops-productivity",
-      "path": "skills/09-ops-productivity/lark/lark-openapi-explorer/",
-      "descriptionZh": "飞书原生 OpenAPI 探索：当 lark-* skill 未覆盖时查询原生接口。"
-    },
-    {
-      "name": "lark-skill-maker",
-      "domain": "09-ops-productivity",
-      "path": "skills/09-ops-productivity/lark/lark-skill-maker/",
-      "descriptionZh": "创建 lark-cli 自定义 Skill：包装原子 API 或编排多步 API 流程。"
-    },
-    {
-      "name": "lark-calendar",
-      "domain": "09-ops-productivity",
-      "path": "skills/09-ops-productivity/lark/lark-calendar/",
-      "descriptionZh": "飞书日历：日程与会议管理、忙闲查询、会议室预定等。"
-    },
-    {
-      "name": "lark-workflow-standup-report",
-      "domain": "09-ops-productivity",
-      "path": "skills/09-ops-productivity/lark/lark-workflow-standup-report/",
-      "descriptionZh": "日程待办摘要：编排 calendar 与 task，生成指定日期的日程与未完成任务摘要。"
-    },
-    {
-      "name": "lark-wiki",
-      "domain": "09-ops-productivity",
-      "path": "skills/09-ops-productivity/lark/lark-wiki/",
-      "descriptionZh": "飞书知识库：管理知识空间与节点层级、组织文档与快捷方式。"
-    },
-    {
-      "name": "lark-doc",
-      "domain": "09-ops-productivity",
-      "path": "skills/09-ops-productivity/lark/lark-doc/",
-      "descriptionZh": "飞书云文档：创建与编辑文档，从 Markdown 生成，文档搜索与资源定位。"
-    },
-    {
-      "name": "lark-contact",
-      "domain": "09-ops-productivity",
-      "path": "skills/09-ops-productivity/lark/lark-contact/",
-      "descriptionZh": "飞书通讯录：查询组织架构、人员信息、按关键词搜索员工。"
-    },
-    {
-      "name": "lark-vc",
-      "domain": "09-ops-productivity",
-      "path": "skills/09-ops-productivity/lark/lark-vc/",
-      "descriptionZh": "飞书视频会议：查询会议记录与纪要（总结、待办、章节、逐字稿）。"
-    },
-    {
-      "name": "lark-drive",
-      "domain": "09-ops-productivity",
-      "path": "skills/09-ops-productivity/lark/lark-drive/",
-      "descriptionZh": "飞书云空间：文件与文件夹管理、评论、权限、本地文件导入为在线云文档。"
-    },
-    {
-      "name": "lark-workflow-meeting-summary",
-      "domain": "09-ops-productivity",
-      "path": "skills/09-ops-productivity/lark/lark-workflow-meeting-summary/",
-      "descriptionZh": "会议纪要整理工作流：汇总指定时间范围内的会议纪要并生成结构化报告。"
-    },
-    {
-      "name": "lark-event",
-      "domain": "09-ops-productivity",
-      "path": "skills/09-ops-productivity/lark/lark-event/",
-      "descriptionZh": "飞书事件订阅：通过 WebSocket 长连接实时监听事件并输出 NDJSON。"
-    },
-    {
-      "name": "lark-shared",
-      "domain": "09-ops-productivity",
-      "path": "skills/09-ops-productivity/lark/lark-shared/",
-      "descriptionZh": "lark-cli 共享基础：配置、登录、身份切换、scope 与权限错误处理。"
-    },
-    {
-      "name": "lark-base",
-      "domain": "09-ops-productivity",
-      "path": "skills/09-ops-productivity/lark/lark-base/",
-      "descriptionZh": "lark-cli 操作飞书多维表格（Base）：建表、字段、记录、视图、工作流、分析。"
-    },
-    {
-      "name": "lark-slides",
-      "domain": "09-ops-productivity",
-      "path": "skills/09-ops-productivity/lark/lark-slides/",
-      "descriptionZh": "飞书幻灯片：用 XML 读取与管理 PPT 页面，创建演示优先用 +create。"
-    },
-    {
-      "name": "lark-im",
-      "domain": "09-ops-productivity",
-      "path": "skills/09-ops-productivity/lark/lark-im/",
-      "descriptionZh": "飞书即时通讯：收发消息、搜聊天记录、管理群聊、上传下载图片文件。"
-    },
-    {
-      "name": "lark-sheets",
-      "domain": "09-ops-productivity",
-      "path": "skills/09-ops-productivity/lark/lark-sheets/",
-      "descriptionZh": "飞书电子表格：创建、读写、追加、查找、导出，与 docs 搜索分工。"
-    },
-    {
-      "name": "lark-task",
-      "domain": "09-ops-productivity",
-      "path": "skills/09-ops-productivity/lark/lark-task/",
-      "descriptionZh": "飞书任务：创建待办、管理任务状态与子任务、组织任务清单、分配协作。"
-    },
-    {
-      "name": "lark-whiteboard",
-      "domain": "09-ops-productivity",
-      "path": "skills/09-ops-productivity/lark/lark-whiteboard/",
-      "descriptionZh": "飞书画板：导出预览、节点结构，用 PlantUML/Mermaid 或 OpenAPI 编辑画板。"
-    },
-    {
-      "name": "lark-approval",
-      "domain": "09-ops-productivity",
-      "path": "skills/09-ops-productivity/lark/lark-approval/",
-      "descriptionZh": "飞书审批 API：审批实例与审批任务的全量管理。"
-    },
-    {
-      "name": "lark-whiteboard-cli",
-      "domain": "09-ops-productivity",
-      "path": "skills/09-ops-productivity/lark/lark-whiteboard-cli/",
-      "descriptionZh": "用 whiteboard-cli 在飞书画板绘制架构图、流程图、思维导图等的布局指南。"
     },
     {
       "name": "remote-browser",

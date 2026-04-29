@@ -1,6 +1,6 @@
 # 按技能名 A-Z 索引
 
-共 84 个技能（72 个共享 + 12 个项目私有）。项目私有技能以 *(项目)* 标注。
+共 62 个技能（50 个共享 + 12 个项目私有）。项目私有技能以 *(项目)* 标注。
 
 | # | 技能名 | 路径 | 中文简介 |
 |---|---|---|---|
@@ -40,51 +40,29 @@
 | 34 | **hookify-rules** | [skills/01-agent-engineering/hookify-rules/](../skills/01-agent-engineering/hookify-rules/) | 创建 hookify 规则的语法与模式指南。 |
 | 35 | **hui-rui-lan** *(项目)* | [projects/alk-plus-tracker/hui-rui-lan/](../projects/alk-plus-tracker/hui-rui-lan/) | 重建或扩展 ALK+ Tracker UI 时保留原始品牌蓝视觉体系、区块顺序、玻璃卡片布局。 |
 | 36 | **jianying-editor** | [skills/07-media-content/jianying-editor/](../skills/07-media-content/jianying-editor/) | 剪映 AI 自动剪辑高级封装 API（JyWrapper）：录屏、素材、字幕、Web 动效。 |
-| 37 | **lark-approval** | [skills/09-ops-productivity/lark/lark-approval/](../skills/09-ops-productivity/lark/lark-approval/) | 飞书审批 API：审批实例与审批任务的全量管理。 |
-| 38 | **lark-base** | [skills/09-ops-productivity/lark/lark-base/](../skills/09-ops-productivity/lark/lark-base/) | lark-cli 操作飞书多维表格（Base）：建表、字段、记录、视图、工作流、分析。 |
-| 39 | **lark-calendar** | [skills/09-ops-productivity/lark/lark-calendar/](../skills/09-ops-productivity/lark/lark-calendar/) | 飞书日历：日程与会议管理、忙闲查询、会议室预定等。 |
-| 40 | **lark-contact** | [skills/09-ops-productivity/lark/lark-contact/](../skills/09-ops-productivity/lark/lark-contact/) | 飞书通讯录：查询组织架构、人员信息、按关键词搜索员工。 |
-| 41 | **lark-doc** | [skills/09-ops-productivity/lark/lark-doc/](../skills/09-ops-productivity/lark/lark-doc/) | 飞书云文档：创建与编辑文档，从 Markdown 生成，文档搜索与资源定位。 |
-| 42 | **lark-drive** | [skills/09-ops-productivity/lark/lark-drive/](../skills/09-ops-productivity/lark/lark-drive/) | 飞书云空间：文件与文件夹管理、评论、权限、本地文件导入为在线云文档。 |
-| 43 | **lark-event** | [skills/09-ops-productivity/lark/lark-event/](../skills/09-ops-productivity/lark/lark-event/) | 飞书事件订阅：通过 WebSocket 长连接实时监听事件并输出 NDJSON。 |
-| 44 | **lark-im** | [skills/09-ops-productivity/lark/lark-im/](../skills/09-ops-productivity/lark/lark-im/) | 飞书即时通讯：收发消息、搜聊天记录、管理群聊、上传下载图片文件。 |
-| 45 | **lark-mail** | [skills/09-ops-productivity/lark/lark-mail/](../skills/09-ops-productivity/lark/lark-mail/) | 飞书邮箱：草稿、编辑、发送、回复、转发、搜索、附件、文件夹、规则。 |
-| 46 | **lark-minutes** | [skills/09-ops-productivity/lark/lark-minutes/](../skills/09-ops-productivity/lark/lark-minutes/) | 飞书妙记：查询与获取妙记信息、下载音视频、获取 AI 总结/待办/章节。 |
-| 47 | **lark-openapi-explorer** | [skills/09-ops-productivity/lark/lark-openapi-explorer/](../skills/09-ops-productivity/lark/lark-openapi-explorer/) | 飞书原生 OpenAPI 探索：当 lark-* skill 未覆盖时查询原生接口。 |
-| 48 | **lark-shared** | [skills/09-ops-productivity/lark/lark-shared/](../skills/09-ops-productivity/lark/lark-shared/) | lark-cli 共享基础：配置、登录、身份切换、scope 与权限错误处理。 |
-| 49 | **lark-sheets** | [skills/09-ops-productivity/lark/lark-sheets/](../skills/09-ops-productivity/lark/lark-sheets/) | 飞书电子表格：创建、读写、追加、查找、导出，与 docs 搜索分工。 |
-| 50 | **lark-skill-maker** | [skills/09-ops-productivity/lark/lark-skill-maker/](../skills/09-ops-productivity/lark/lark-skill-maker/) | 创建 lark-cli 自定义 Skill：包装原子 API 或编排多步 API 流程。 |
-| 51 | **lark-slides** | [skills/09-ops-productivity/lark/lark-slides/](../skills/09-ops-productivity/lark/lark-slides/) | 飞书幻灯片：用 XML 读取与管理 PPT 页面，创建演示优先用 +create。 |
-| 52 | **lark-task** | [skills/09-ops-productivity/lark/lark-task/](../skills/09-ops-productivity/lark/lark-task/) | 飞书任务：创建待办、管理任务状态与子任务、组织任务清单、分配协作。 |
-| 53 | **lark-vc** | [skills/09-ops-productivity/lark/lark-vc/](../skills/09-ops-productivity/lark/lark-vc/) | 飞书视频会议：查询会议记录与纪要（总结、待办、章节、逐字稿）。 |
-| 54 | **lark-whiteboard** | [skills/09-ops-productivity/lark/lark-whiteboard/](../skills/09-ops-productivity/lark/lark-whiteboard/) | 飞书画板：导出预览、节点结构，用 PlantUML/Mermaid 或 OpenAPI 编辑画板。 |
-| 55 | **lark-whiteboard-cli** | [skills/09-ops-productivity/lark/lark-whiteboard-cli/](../skills/09-ops-productivity/lark/lark-whiteboard-cli/) | 用 whiteboard-cli 在飞书画板绘制架构图、流程图、思维导图等的布局指南。 |
-| 56 | **lark-wiki** | [skills/09-ops-productivity/lark/lark-wiki/](../skills/09-ops-productivity/lark/lark-wiki/) | 飞书知识库：管理知识空间与节点层级、组织文档与快捷方式。 |
-| 57 | **lark-workflow-meeting-summary** | [skills/09-ops-productivity/lark/lark-workflow-meeting-summary/](../skills/09-ops-productivity/lark/lark-workflow-meeting-summary/) | 会议纪要整理工作流：汇总指定时间范围内的会议纪要并生成结构化报告。 |
-| 58 | **lark-workflow-standup-report** | [skills/09-ops-productivity/lark/lark-workflow-standup-report/](../skills/09-ops-productivity/lark/lark-workflow-standup-report/) | 日程待办摘要：编排 calendar 与 task，生成指定日期的日程与未完成任务摘要。 |
-| 59 | **liquid-glass-design** | [skills/02-coding-languages/swift/liquid-glass-design/](../skills/02-coding-languages/swift/liquid-glass-design/) | iOS 26 Liquid Glass 设计系统：SwiftUI/UIKit/WidgetKit 的玻璃材质与交互。 |
-| 60 | **medical-research** | [skills/06-data-search/medical-research/](../skills/06-data-search/medical-research/) | 从 PubMed 获取论文并生成通俗易懂的研究摘要，覆盖医学/临床/科研主题。 |
-| 61 | **open-source** | [skills/01-agent-engineering/open-source/](../skills/01-agent-engineering/open-source/) | browser-use 开源 Python 库的文档参考（Agent/Browser/Tools 配置）。 |
-| 62 | **openclaw-persona-forge** | [skills/01-agent-engineering/openclaw-persona-forge/](../skills/01-agent-engineering/openclaw-persona-forge/) | 为 OpenClaw AI Agent 锻造龙虾灵魂方案：身份、角色底线、头像提示词。 |
-| 63 | **plankton-code-quality** | [skills/01-agent-engineering/plankton-code-quality/](../skills/01-agent-engineering/plankton-code-quality/) | 基于 Plankton 的写入期代码质量把关——保存时自动格式化、lint、Claude 修复。 |
-| 64 | **pptx** | [skills/07-media-content/pptx/](../skills/07-media-content/pptx/) | 演示文稿 .pptx 的创建、编辑、布局、评论与演讲者备注。 |
-| 65 | **proactive-agent** | [skills/01-agent-engineering/proactive-agent/](../skills/01-agent-engineering/proactive-agent/) | 把 Agent 从被动执行者转为主动伙伴，跨会话记忆、主动建议下一步。 |
-| 66 | **prompt-optimizer** | [skills/01-agent-engineering/prompt-optimizer/](../skills/01-agent-engineering/prompt-optimizer/) | 分析原始 prompt，匹配 ECC 组件并输出可粘贴的优化版，仅作顾问不执行。 |
-| 67 | **pubmed-search** | [skills/06-data-search/pubmed-search/](../skills/06-data-search/pubmed-search/) | 通过 Valyu 语义搜索以自然语言检索 PubMed 生物医学文献，支持全文。 |
-| 68 | **qq-email-ground-truth** *(项目)* | [projects/codex-invoice/qq-email-ground-truth/](../projects/codex-invoice/qq-email-ground-truth/) | 构建/重建/审计/比对 QQ 邮箱发票真值集，验证跑批输出。 |
-| 69 | **remote-browser** | [skills/01-agent-engineering/remote-browser/](../skills/01-agent-engineering/remote-browser/) | 在沙箱远端机器上控制本地浏览器，用于无 GUI 沙箱场景。 |
-| 70 | **remotion-video-creation** | [skills/07-media-content/remotion-video-creation/](../skills/07-media-content/remotion-video-creation/) | Remotion 在 React 中做视频创作的 29 条领域规则（3D、动画、字幕、过渡）。 |
-| 71 | **repo-scan** | [skills/01-agent-engineering/repo-scan/](../skills/01-agent-engineering/repo-scan/) | 跨栈源码资产审计，分类文件、识别嵌入第三方库，输出四级判定 HTML 报告。 |
-| 72 | **santa-method** | [skills/01-agent-engineering/santa-method/](../skills/01-agent-engineering/santa-method/) | 多 Agent 对抗验证收敛循环，两个独立审查都通过后才出交付。 |
-| 73 | **skill-creator** | [skills/01-agent-engineering/skill-creator/](../skills/01-agent-engineering/skill-creator/) | 创建、修改和优化 skill，并可跑 eval 衡量触发准确率与性能。 |
-| 74 | **slack** | [skills/09-ops-productivity/general/slack/](../skills/09-ops-productivity/general/slack/) | 通过浏览器自动化在 Slack 中检查未读、导航、发消息、搜对话、抓取信息。 |
-| 75 | **swift-concurrency-6-2** | [skills/02-coding-languages/swift/swift-concurrency-6-2/](../skills/02-coding-languages/swift/swift-concurrency-6-2/) | Swift 6.2 Approachable Concurrency：默认单线程、@concurrent 显式后台。 |
-| 76 | **swiftui-patterns** | [skills/02-coding-languages/swift/swiftui-patterns/](../skills/02-coding-languages/swift/swiftui-patterns/) | SwiftUI 架构、@Observable 状态、视图组合、导航、性能优化、现代 UI 实践。 |
-| 77 | **team-builder** | [skills/01-agent-engineering/team-builder/](../skills/01-agent-engineering/team-builder/) | 交互式 Agent 选择器，用于组合并派发并行团队。 |
-| 78 | **token-budget-advisor** | [skills/12-ai-api/token-budget-advisor/](../skills/12-ai-api/token-budget-advisor/) | 在回答前给用户选择响应深度与 Token 预算的顾问式工作流。 |
-| 79 | **vercel-react-best-practices** | [skills/03-frameworks/nextjs/vercel-react-best-practices/](../skills/03-frameworks/nextjs/vercel-react-best-practices/) | Vercel 工程出品的 React/Next.js 性能优化指引，含组件、数据获取、打包。 |
-| 80 | **vercel-react-native-skills** | [skills/03-frameworks/react-native/vercel-react-native-skills/](../skills/03-frameworks/react-native/vercel-react-native-skills/) | React Native + Expo 构建高性能移动应用的最佳实践。 |
-| 81 | **vercel-sandbox** | [skills/01-agent-engineering/vercel-sandbox/](../skills/01-agent-engineering/vercel-sandbox/) | 在 Vercel Sandbox 微型 VM 中运行 agent-browser + Chrome 做浏览器自动化。 |
-| 82 | **video-producer** *(项目)* | [projects/content-assets/video-producer/](../projects/content-assets/video-producer/) | 端到端 Remotion 视频制作：叙事、场景动画、视觉风格、渲染全链路编排。 |
-| 83 | **visa-doc-translate** | [skills/07-media-content/visa-doc-translate/](../skills/07-media-content/visa-doc-translate/) | 签证申请文件图片翻译并生成中英双语 PDF。 |
-| 84 | **xlsx** | [skills/07-media-content/xlsx/](../skills/07-media-content/xlsx/) | 电子表格 .xlsx/.csv 等创建、编辑、公式、格式、数据分析与可视化。 |
+| 37 | **liquid-glass-design** | [skills/02-coding-languages/swift/liquid-glass-design/](../skills/02-coding-languages/swift/liquid-glass-design/) | iOS 26 Liquid Glass 设计系统：SwiftUI/UIKit/WidgetKit 的玻璃材质与交互。 |
+| 38 | **medical-research** | [skills/06-data-search/medical-research/](../skills/06-data-search/medical-research/) | 从 PubMed 获取论文并生成通俗易懂的研究摘要，覆盖医学/临床/科研主题。 |
+| 39 | **open-source** | [skills/01-agent-engineering/open-source/](../skills/01-agent-engineering/open-source/) | browser-use 开源 Python 库的文档参考（Agent/Browser/Tools 配置）。 |
+| 40 | **openclaw-persona-forge** | [skills/01-agent-engineering/openclaw-persona-forge/](../skills/01-agent-engineering/openclaw-persona-forge/) | 为 OpenClaw AI Agent 锻造龙虾灵魂方案：身份、角色底线、头像提示词。 |
+| 41 | **plankton-code-quality** | [skills/01-agent-engineering/plankton-code-quality/](../skills/01-agent-engineering/plankton-code-quality/) | 基于 Plankton 的写入期代码质量把关——保存时自动格式化、lint、Claude 修复。 |
+| 42 | **pptx** | [skills/07-media-content/pptx/](../skills/07-media-content/pptx/) | 演示文稿 .pptx 的创建、编辑、布局、评论与演讲者备注。 |
+| 43 | **proactive-agent** | [skills/01-agent-engineering/proactive-agent/](../skills/01-agent-engineering/proactive-agent/) | 把 Agent 从被动执行者转为主动伙伴，跨会话记忆、主动建议下一步。 |
+| 44 | **prompt-optimizer** | [skills/01-agent-engineering/prompt-optimizer/](../skills/01-agent-engineering/prompt-optimizer/) | 分析原始 prompt，匹配 ECC 组件并输出可粘贴的优化版，仅作顾问不执行。 |
+| 45 | **pubmed-search** | [skills/06-data-search/pubmed-search/](../skills/06-data-search/pubmed-search/) | 通过 Valyu 语义搜索以自然语言检索 PubMed 生物医学文献，支持全文。 |
+| 46 | **qq-email-ground-truth** *(项目)* | [projects/codex-invoice/qq-email-ground-truth/](../projects/codex-invoice/qq-email-ground-truth/) | 构建/重建/审计/比对 QQ 邮箱发票真值集，验证跑批输出。 |
+| 47 | **remote-browser** | [skills/01-agent-engineering/remote-browser/](../skills/01-agent-engineering/remote-browser/) | 在沙箱远端机器上控制本地浏览器，用于无 GUI 沙箱场景。 |
+| 48 | **remotion-video-creation** | [skills/07-media-content/remotion-video-creation/](../skills/07-media-content/remotion-video-creation/) | Remotion 在 React 中做视频创作的 29 条领域规则（3D、动画、字幕、过渡）。 |
+| 49 | **repo-scan** | [skills/01-agent-engineering/repo-scan/](../skills/01-agent-engineering/repo-scan/) | 跨栈源码资产审计，分类文件、识别嵌入第三方库，输出四级判定 HTML 报告。 |
+| 50 | **santa-method** | [skills/01-agent-engineering/santa-method/](../skills/01-agent-engineering/santa-method/) | 多 Agent 对抗验证收敛循环，两个独立审查都通过后才出交付。 |
+| 51 | **skill-creator** | [skills/01-agent-engineering/skill-creator/](../skills/01-agent-engineering/skill-creator/) | 创建、修改和优化 skill，并可跑 eval 衡量触发准确率与性能。 |
+| 52 | **slack** | [skills/09-ops-productivity/general/slack/](../skills/09-ops-productivity/general/slack/) | 通过浏览器自动化在 Slack 中检查未读、导航、发消息、搜对话、抓取信息。 |
+| 53 | **swift-concurrency-6-2** | [skills/02-coding-languages/swift/swift-concurrency-6-2/](../skills/02-coding-languages/swift/swift-concurrency-6-2/) | Swift 6.2 Approachable Concurrency：默认单线程、@concurrent 显式后台。 |
+| 54 | **swiftui-patterns** | [skills/02-coding-languages/swift/swiftui-patterns/](../skills/02-coding-languages/swift/swiftui-patterns/) | SwiftUI 架构、@Observable 状态、视图组合、导航、性能优化、现代 UI 实践。 |
+| 55 | **team-builder** | [skills/01-agent-engineering/team-builder/](../skills/01-agent-engineering/team-builder/) | 交互式 Agent 选择器，用于组合并派发并行团队。 |
+| 56 | **token-budget-advisor** | [skills/12-ai-api/token-budget-advisor/](../skills/12-ai-api/token-budget-advisor/) | 在回答前给用户选择响应深度与 Token 预算的顾问式工作流。 |
+| 57 | **vercel-react-best-practices** | [skills/03-frameworks/nextjs/vercel-react-best-practices/](../skills/03-frameworks/nextjs/vercel-react-best-practices/) | Vercel 工程出品的 React/Next.js 性能优化指引，含组件、数据获取、打包。 |
+| 58 | **vercel-react-native-skills** | [skills/03-frameworks/react-native/vercel-react-native-skills/](../skills/03-frameworks/react-native/vercel-react-native-skills/) | React Native + Expo 构建高性能移动应用的最佳实践。 |
+| 59 | **vercel-sandbox** | [skills/01-agent-engineering/vercel-sandbox/](../skills/01-agent-engineering/vercel-sandbox/) | 在 Vercel Sandbox 微型 VM 中运行 agent-browser + Chrome 做浏览器自动化。 |
+| 60 | **video-producer** *(项目)* | [projects/content-assets/video-producer/](../projects/content-assets/video-producer/) | 端到端 Remotion 视频制作：叙事、场景动画、视觉风格、渲染全链路编排。 |
+| 61 | **visa-doc-translate** | [skills/07-media-content/visa-doc-translate/](../skills/07-media-content/visa-doc-translate/) | 签证申请文件图片翻译并生成中英双语 PDF。 |
+| 62 | **xlsx** | [skills/07-media-content/xlsx/](../skills/07-media-content/xlsx/) | 电子表格 .xlsx/.csv 等创建、编辑、公式、格式、数据分析与可视化。 |

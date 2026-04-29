@@ -1,18 +1,18 @@
 # 按能力域索引
 
-共 84 个技能，按 9 个能力域 + projects（项目私有）分组。
+共 62 个技能，按 9 个能力域 + projects（项目私有）分组。
 
 ## 目录
 
-- [01 Agent 工程](#01-agent-工程)（24）
+- [01 Agent 工程](#01-Agent-工程)（24）
 - [02 编程语言](#02-编程语言)（4）
 - [03 框架与技术栈](#03-框架与技术栈)（2）
 - [04 测试与质量](#04-测试与质量)（2）
 - [06 数据与检索](#06-数据与检索)（3）
 - [07 媒体与内容制作](#07-媒体与内容制作)（8）
-- [09 办公自动化与协作](#09-办公自动化与协作)（23）
+- [09 办公自动化与协作](#09-办公自动化与协作)（1）
 - [10 行业与业务](#10-行业与业务)（5）
-- [12 AI API 与 LLM 平台](#12-ai-api-与-llm-平台)（1）
+- [12 AI API 与 LLM 平台](#12-AI-API-与-LLM-平台)（1）
 - [Projects 项目私有](#projects-项目私有)（12）
 
 ## 01 Agent 工程（24）
@@ -48,7 +48,7 @@ Agent 构建、调试、自治循环、harness、council、agent-ops、提示工
 
 ## 02 编程语言（4）
 
-纯语言类：通用编码标准、patterns、testing、security。按语言分子目录。
+纯语言类：通用编码标准、patterns、testing。按语言分子目录。
 
 ### Swift / Apple（4）
 
@@ -77,7 +77,7 @@ Agent 构建、调试、自治循环、harness、council、agent-ops、提示工
 
 ## 04 测试与质量（2）
 
-测试、TDD、代码审查、质量门禁、playwright。
+测试、TDD、代码审查、质量门禁。
 
 | 技能名 | 路径 | 中文简介 |
 |---|---|---|
@@ -109,36 +109,9 @@ PPT、视频、PDF、Excel、Word、图像、UI/UX 设计。
 | **visa-doc-translate** | [skills/07-media-content/visa-doc-translate/](../skills/07-media-content/visa-doc-translate/) | 签证申请文件图片翻译并生成中英双语 PDF。 |
 | **xlsx** | [skills/07-media-content/xlsx/](../skills/07-media-content/xlsx/) | 电子表格 .xlsx/.csv 等创建、编辑、公式、格式、数据分析与可视化。 |
 
-## 09 办公自动化与协作（23）
+## 09 办公自动化与协作（1）
 
-飞书、通用办公等工作面板。
-
-### 飞书 Lark（22）
-
-| 技能名 | 路径 | 中文简介 |
-|---|---|---|
-| **lark-approval** | [skills/09-ops-productivity/lark/lark-approval/](../skills/09-ops-productivity/lark/lark-approval/) | 飞书审批 API：审批实例与审批任务的全量管理。 |
-| **lark-base** | [skills/09-ops-productivity/lark/lark-base/](../skills/09-ops-productivity/lark/lark-base/) | lark-cli 操作飞书多维表格（Base）：建表、字段、记录、视图、工作流、分析。 |
-| **lark-calendar** | [skills/09-ops-productivity/lark/lark-calendar/](../skills/09-ops-productivity/lark/lark-calendar/) | 飞书日历：日程与会议管理、忙闲查询、会议室预定等。 |
-| **lark-contact** | [skills/09-ops-productivity/lark/lark-contact/](../skills/09-ops-productivity/lark/lark-contact/) | 飞书通讯录：查询组织架构、人员信息、按关键词搜索员工。 |
-| **lark-doc** | [skills/09-ops-productivity/lark/lark-doc/](../skills/09-ops-productivity/lark/lark-doc/) | 飞书云文档：创建与编辑文档，从 Markdown 生成，文档搜索与资源定位。 |
-| **lark-drive** | [skills/09-ops-productivity/lark/lark-drive/](../skills/09-ops-productivity/lark/lark-drive/) | 飞书云空间：文件与文件夹管理、评论、权限、本地文件导入为在线云文档。 |
-| **lark-event** | [skills/09-ops-productivity/lark/lark-event/](../skills/09-ops-productivity/lark/lark-event/) | 飞书事件订阅：通过 WebSocket 长连接实时监听事件并输出 NDJSON。 |
-| **lark-im** | [skills/09-ops-productivity/lark/lark-im/](../skills/09-ops-productivity/lark/lark-im/) | 飞书即时通讯：收发消息、搜聊天记录、管理群聊、上传下载图片文件。 |
-| **lark-mail** | [skills/09-ops-productivity/lark/lark-mail/](../skills/09-ops-productivity/lark/lark-mail/) | 飞书邮箱：草稿、编辑、发送、回复、转发、搜索、附件、文件夹、规则。 |
-| **lark-minutes** | [skills/09-ops-productivity/lark/lark-minutes/](../skills/09-ops-productivity/lark/lark-minutes/) | 飞书妙记：查询与获取妙记信息、下载音视频、获取 AI 总结/待办/章节。 |
-| **lark-openapi-explorer** | [skills/09-ops-productivity/lark/lark-openapi-explorer/](../skills/09-ops-productivity/lark/lark-openapi-explorer/) | 飞书原生 OpenAPI 探索：当 lark-* skill 未覆盖时查询原生接口。 |
-| **lark-shared** | [skills/09-ops-productivity/lark/lark-shared/](../skills/09-ops-productivity/lark/lark-shared/) | lark-cli 共享基础：配置、登录、身份切换、scope 与权限错误处理。 |
-| **lark-sheets** | [skills/09-ops-productivity/lark/lark-sheets/](../skills/09-ops-productivity/lark/lark-sheets/) | 飞书电子表格：创建、读写、追加、查找、导出，与 docs 搜索分工。 |
-| **lark-skill-maker** | [skills/09-ops-productivity/lark/lark-skill-maker/](../skills/09-ops-productivity/lark/lark-skill-maker/) | 创建 lark-cli 自定义 Skill：包装原子 API 或编排多步 API 流程。 |
-| **lark-slides** | [skills/09-ops-productivity/lark/lark-slides/](../skills/09-ops-productivity/lark/lark-slides/) | 飞书幻灯片：用 XML 读取与管理 PPT 页面，创建演示优先用 +create。 |
-| **lark-task** | [skills/09-ops-productivity/lark/lark-task/](../skills/09-ops-productivity/lark/lark-task/) | 飞书任务：创建待办、管理任务状态与子任务、组织任务清单、分配协作。 |
-| **lark-vc** | [skills/09-ops-productivity/lark/lark-vc/](../skills/09-ops-productivity/lark/lark-vc/) | 飞书视频会议：查询会议记录与纪要（总结、待办、章节、逐字稿）。 |
-| **lark-whiteboard** | [skills/09-ops-productivity/lark/lark-whiteboard/](../skills/09-ops-productivity/lark/lark-whiteboard/) | 飞书画板：导出预览、节点结构，用 PlantUML/Mermaid 或 OpenAPI 编辑画板。 |
-| **lark-whiteboard-cli** | [skills/09-ops-productivity/lark/lark-whiteboard-cli/](../skills/09-ops-productivity/lark/lark-whiteboard-cli/) | 用 whiteboard-cli 在飞书画板绘制架构图、流程图、思维导图等的布局指南。 |
-| **lark-wiki** | [skills/09-ops-productivity/lark/lark-wiki/](../skills/09-ops-productivity/lark/lark-wiki/) | 飞书知识库：管理知识空间与节点层级、组织文档与快捷方式。 |
-| **lark-workflow-meeting-summary** | [skills/09-ops-productivity/lark/lark-workflow-meeting-summary/](../skills/09-ops-productivity/lark/lark-workflow-meeting-summary/) | 会议纪要整理工作流：汇总指定时间范围内的会议纪要并生成结构化报告。 |
-| **lark-workflow-standup-report** | [skills/09-ops-productivity/lark/lark-workflow-standup-report/](../skills/09-ops-productivity/lark/lark-workflow-standup-report/) | 日程待办摘要：编排 calendar 与 task，生成指定日期的日程与未完成任务摘要。 |
+Slack、通用办公等工作面板。
 
 ### 通用（1）
 
@@ -148,7 +121,7 @@ PPT、视频、PDF、Excel、Word、图像、UI/UX 设计。
 
 ## 10 行业与业务（5）
 
-医疗、法律等垂直场景。
+医疗、法律等垂直行业场景。
 
 | 技能名 | 路径 | 中文简介 |
 |---|---|---|
