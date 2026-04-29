@@ -1,6 +1,6 @@
 # Skill-hub
 
-跨多个 AI 编码 Agent（Claude Code、Antigravity、Codex 等）通用的技能（Skill）集合，共 **244** 个技能。
+跨多个 AI 编码 Agent（Claude Code、Antigravity、Codex 等）通用的技能（Skill）集合，共 **84** 个技能（72 共享 + 12 项目私有）。
 
 ## 仓库定位
 
@@ -11,21 +11,24 @@
 ## 目录结构
 
 ```
-skills/                        # 232 个共享技能，分 12 个能力域
+skills/                        # 72 个共享技能，分 9 个能力域
 ├── 01-agent-engineering/      Agent 工程（构建、调试、自治循环、harness 等）
-├── 02-coding-languages/       编程语言（10 个语言子目录 + general）
-├── 03-frameworks/             框架栈（Django、Laravel、Spring Boot、Next.js、Flutter 等）
+├── 02-coding-languages/       编程语言（Swift 等）
+├── 03-frameworks/             框架栈（Next.js、React Native 等）
 ├── 04-testing-quality/        测试、TDD、代码审查
-├── 05-devops-infra/           DevOps、Docker、部署、云
 ├── 06-data-search/            数据抓取、检索、深度研究
 ├── 07-media-content/          多媒体（PPT、视频、PDF、图像）
-├── 08-writing-marketing/      写作、品牌、SEO、投资材料
-├── 09-ops-productivity/       办公自动化（飞书、Google Workspace、Slack、Terminal 等）
-├── 10-business-industry/      行业业务（医疗、金融、物流、供应链、法律、能源）
-├── 11-web3/                   Web3、区块链、DeFi、EVM
+├── 09-ops-productivity/        办公自动化（飞书、通用办公等）
+├── 10-business-industry/      行业业务（医疗、法律等）
 └── 12-ai-api/                 AI API、LLM 管线、Token 预算
 
 projects/                      # 12 个项目私有技能
+├── ai-seed-project/           AI 种子项目
+├── ai-seed-project-phase-one-feishu/
+├── alk-plus-tracker/
+├── codex-invoice/
+└── content-assets/
+
 _meta/                         # 中文索引入口
 docs/                          # 约定文档
 scripts/                       # 同步与 Junction 建立脚本
@@ -37,7 +40,7 @@ scripts/                       # 同步与 Junction 建立脚本
 
 | 入口 | 适合场景 |
 |---|---|
-| [按名字查](./_meta/by-name.md) | 已经知道技能名（如 `claude-api`） |
+| [按名字查](./_meta/by-name.md) | 已经知道技能名（如 `agent-browser`） |
 | [按能力域查](./_meta/by-domain.md) | 想找 "Agent 工程" / "测试" / "行业业务" 一类 |
 | [按技术栈查](./_meta/by-platform.md) | 想找 "飞书相关" / "Python 相关" / "浏览器自动化" 一类 |
 | [机器可读](./_meta/skills-lock.json) | 脚本、自动化、外部工具集成 |
