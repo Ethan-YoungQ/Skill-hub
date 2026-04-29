@@ -1,6 +1,6 @@
 {
   "version": "2.0",
-  "generated_at": "2026-04-29T11:50:00+08:00",
+  "generated_at": "2026-04-29T20:15:00+08:00",
   "note": "Rebuilt after removing 160 plugin-origin skills (ECC, Marketing, Superpower, HUD)",
   "counts": {
     "shared": 72,
@@ -12,450 +12,433 @@
       "name": "swift-concurrency-6-2",
       "domain": "02-coding-languages",
       "path": "skills/02-coding-languages/swift/swift-concurrency-6-2/",
-      "description": "Swift 6.2 Approachable Concurrency — single-threaded by default, @concurrent for explicit background offloading, isolated conformances for main actor types."
+      "descriptionZh": "Swift 6.2 Approachable Concurrency：默认单线程、@concurrent 显式后台。"
     },
     {
       "name": "liquid-glass-design",
       "domain": "02-coding-languages",
       "path": "skills/02-coding-languages/swift/liquid-glass-design/",
-      "description": "iOS 26 Liquid Glass design system — dynamic glass material with blur, reflection, and interactive morphing for SwiftUI, UIKit, and WidgetKit."
+      "descriptionZh": "iOS 26 Liquid Glass 设计系统：SwiftUI/UIKit/WidgetKit 的玻璃材质与交互。"
     },
     {
       "name": "swiftui-patterns",
       "domain": "02-coding-languages",
       "path": "skills/02-coding-languages/swift/swiftui-patterns/",
-      "description": "SwiftUI architecture patterns, state management with @Observable, view composition, navigation, performance optimization, and modern iOS/macOS UI best practices."
+      "descriptionZh": "SwiftUI 架构、@Observable 状态、视图组合、导航、性能优化、现代 UI 实践。"
     },
     {
       "name": "foundation-models-on-device",
       "domain": "02-coding-languages",
       "path": "skills/02-coding-languages/swift/foundation-models-on-device/",
-      "description": "Apple FoundationModels framework for on-device LLM — text generation, guided generation with @Generable, tool calling, and snapshot streaming in iOS 26+."
+      "descriptionZh": "Apple FoundationModels 端侧 LLM：文本生成、@Generable、工具调用、快照流。"
     },
     {
       "name": "remotion-video-creation",
       "domain": "07-media-content",
       "path": "skills/07-media-content/remotion-video-creation/",
-      "description": "Best practices for Remotion - Video creation in React. 29 domain-specific rules covering 3D, animations, audio, captions, charts, transitions, and more."
+      "descriptionZh": "Remotion 在 React 中做视频创作的 29 条领域规则（3D、动画、字幕、过渡）。"
     },
     {
       "name": "xlsx",
       "domain": "07-media-content",
       "path": "skills/07-media-content/xlsx/",
-      "description": "\"全面的电子表格和Excel创建、编辑和分析,支持公式、格式化、数据分析和可视化。当用户需要处理电子表格(.xlsx、.xlsm、.csv、.tsv等)时使用,包括:(1)创建带公式和格式的新电子表格,(2)读取或分析数据,(3)在保留公式的同时修改现有电子表格,(4)电子表格中的数据分析和可视化,或(5)重新计算公式。\""
+      "descriptionZh": "电子表格 .xlsx/.csv 等创建、编辑、公式、格式、数据分析与可视化。"
     },
     {
       "name": "\"pdf\"",
       "domain": "07-media-content",
       "path": "skills/07-media-content/pdf/",
-      "description": "\"Use when tasks involve reading, creating, or reviewing PDF files where rendering and layout matter; prefer visual checks by rendering pages (Poppler) and use Python tools such as `reportlab`, `pdfplumber`, and `pypdf` for generation and extraction.\""
+      "descriptionZh": "\"Use when tasks involve reading, creating, or reviewing PDF files where rendering and layout matter; prefer visual checks by rendering pages (Poppler) and use Python tools such as `reportlab`, `pdfplumber`, and `pypdf` for generation and extraction.\""
     },
     {
       "name": "jianying-editor",
       "domain": "07-media-content",
       "path": "skills/07-media-content/jianying-editor/",
-      "description": "剪映 (JianYing) AI自动化剪辑的高级封装 API (JyWrapper)。提供开箱即用的 Python 接口，支持录屏、素材导入、字幕生成、Web 动效合成及项目导出。"
+      "descriptionZh": "剪映 AI 自动剪辑高级封装 API（JyWrapper）：录屏、素材、字幕、Web 动效。"
     },
     {
       "name": "pptx",
       "domain": "07-media-content",
       "path": "skills/07-media-content/pptx/",
-      "description": "\"演示文稿创建、编辑和分析。当用户需要处理演示文稿(.pptx文件)时使用,包括:(1)创建新演示文稿,(2)修改或编辑内容,(3)处理布局,(4)添加评论或演讲者备注,或任何其他演示文稿任务。\""
+      "descriptionZh": "演示文稿 .pptx 的创建、编辑、布局、评论与演讲者备注。"
     },
     {
       "name": "visa-doc-translate",
       "domain": "07-media-content",
       "path": "skills/07-media-content/visa-doc-translate/",
-      "description": "Translate visa application documents (images) to English and create a bilingual PDF with original and translation"
+      "descriptionZh": "签证申请文件图片翻译并生成中英双语 PDF。"
     },
     {
       "name": "anything-to-notebooklm",
       "domain": "07-media-content",
       "path": "skills/07-media-content/anything-to-notebooklm/",
-      "description": "多源内容智能处理器：支持微信公众号、网页、YouTube、PDF、Markdown等，自动上传到NotebookLM并生成播客/PPT/思维导图等多种格式"
+      "descriptionZh": "多源内容处理器：公众号、网页、YouTube、PDF、MD 上传 NotebookLM 并转播客/PPT。"
     },
     {
       "name": "docx",
       "domain": "07-media-content",
       "path": "skills/07-media-content/docx/",
-      "description": "\"全面的文档创建、编辑和分析,支持修订跟踪、评论、格式保留和文本提取。当用户需要处理专业文档(.docx文件)时使用,包括:(1)创建新文档,(2)修改或编辑内容,(3)处理修订跟踪,(4)添加评论,或任何其他文档任务。\""
+      "descriptionZh": "全面处理 .docx：创建、编辑、修订跟踪、评论、格式保留与文本提取。"
     },
     {
       "name": "token-budget-advisor",
       "domain": "12-ai-api",
       "path": "skills/12-ai-api/token-budget-advisor/",
-      "description": ">-",
-      "origin": "community"
+      "descriptionZh": "在回答前给用户选择响应深度与 Token 预算的顾问式工作流。"
     },
     {
       "name": "data-scraper-agent",
       "domain": "06-data-search",
       "path": "skills/06-data-search/data-scraper-agent/",
-      "description": "Build a fully automated AI-powered data collection agent for any public source — job boards, prices, news, GitHub, sports, anything. Scrapes on a schedule, enriches data with a free LLM (Gemini Flash), stores results in Notion/Sheets/Supabase, and learns from user feedback. Runs 100% free on GitHub Actions. Use when the user wants to monitor, collect, or track any public data automatically.",
-      "origin": "community"
+      "descriptionZh": "构建全自动 AI 数据采集 Agent：按计划抓取公开源并用 LLM 富化入库。"
     },
     {
       "name": "medical-research",
       "domain": "06-data-search",
       "path": "skills/06-data-search/medical-research/",
-      "description": "Retrieves scientific papers from PubMed and creates plain-language research summaries. Use when users ask about medical research, scientific studies, clinical trials, disease treatments, or want to understand recent scientific literature on any biomedical topic."
+      "descriptionZh": "从 PubMed 获取论文并生成通俗易懂的研究摘要，覆盖医学/临床/科研主题。"
     },
     {
       "name": "pubmed-search",
       "domain": "06-data-search",
       "path": "skills/06-data-search/pubmed-search/",
-      "description": "Search PubMed biomedical literature with natural language queries powered by Valyu semantic search. Full-text access, integrate into your AI projects."
+      "descriptionZh": "通过 Valyu 语义搜索以自然语言检索 PubMed 生物医学文献，支持全文。"
     },
     {
       "name": "vercel-react-native-skills",
       "domain": "03-frameworks",
       "path": "skills/03-frameworks/react-native/vercel-react-native-skills/",
-      "description": "React Native and Expo best practices for building performant mobile apps. Use"
+      "descriptionZh": "React Native + Expo 构建高性能移动应用的最佳实践。"
     },
     {
       "name": "vercel-react-best-practices",
       "domain": "03-frameworks",
       "path": "skills/03-frameworks/nextjs/vercel-react-best-practices/",
-      "description": "React and Next.js performance optimization guidelines from Vercel Engineering. This skill should be used when writing, reviewing, or refactoring React/Next.js code to ensure optimal performance patterns. Triggers on tasks involving React components, Next.js pages, data fetching, bundle optimization, or performance improvements."
+      "descriptionZh": "Vercel 工程出品的 React/Next.js 性能优化指引，含组件、数据获取、打包。"
     },
     {
       "name": "slack",
       "domain": "09-ops-productivity",
       "path": "skills/09-ops-productivity/general/slack/",
-      "description": "Interact with Slack workspaces using browser automation. Use when the user needs to check unread channels, navigate Slack, send messages, extract data, find information, search conversations, or automate any Slack task. Triggers include \"check my Slack\", \"what channels have unreads\", \"send a message to\", \"search Slack for\", \"extract from Slack\", \"find who said\", or any task requiring programmatic Slack interaction."
+      "descriptionZh": "通过浏览器自动化在 Slack 中检查未读、导航、发消息、搜对话、抓取信息。"
     },
     {
       "name": "lark-mail",
       "domain": "09-ops-productivity",
       "path": "skills/09-ops-productivity/lark/lark-mail/",
-      "description": "\"飞书邮箱 — draft, compose, send, reply, forward, read, and search emails; manage drafts, folders, labels, contacts, attachments, and mail rules. Use when user mentions 起草邮件, 写一封邮件, 拟邮件, 草稿, 发通知邮件, 发送邮件, 发邮件, 回复邮件, 转发邮件, 查看邮件, 看邮件, 读邮件, 搜索邮件, 查邮件, 收件箱, 邮件会话, 编辑草稿, 管理草稿, 下载附件, 邮件文件夹, 邮件标签, 邮件联系人, 监听新邮件, 收信规则, 邮件规则, draft, compose, send email, reply, forward, inbox, mail thread, mail rules.\""
+      "descriptionZh": "飞书邮箱：草稿、编辑、发送、回复、转发、搜索、附件、文件夹、规则。"
     },
     {
       "name": "lark-minutes",
       "domain": "09-ops-productivity",
       "path": "skills/09-ops-productivity/lark/lark-minutes/",
-      "description": "\"飞书妙记：妙记相关基本功能。1.查询妙记列表（按关键词/所有者/参与者/时间范围）；2.获取妙记基础信息（标题、封面、时长 等）；3.下载妙记音视频文件；4.获取妙记相关 AI 产物（总结、待办、章节）。飞书妙记 URL 格式: http(s)://<host>/minutes/<minute-token>\""
+      "descriptionZh": "飞书妙记：查询与获取妙记信息、下载音视频、获取 AI 总结/待办/章节。"
     },
     {
       "name": "lark-openapi-explorer",
       "domain": "09-ops-productivity",
       "path": "skills/09-ops-productivity/lark/lark-openapi-explorer/",
-      "description": "\"飞书/Lark 原生 OpenAPI 探索：从官方文档库中挖掘未经 CLI 封装的原生 OpenAPI 接口。当用户的需求无法被现有 lark-* skill 或 lark-cli 已注册命令满足，需要查找并调用原生飞书 OpenAPI 时使用。\""
+      "descriptionZh": "飞书原生 OpenAPI 探索：当 lark-* skill 未覆盖时查询原生接口。"
     },
     {
       "name": "lark-skill-maker",
       "domain": "09-ops-productivity",
       "path": "skills/09-ops-productivity/lark/lark-skill-maker/",
-      "description": "\"创建 lark-cli 的自定义 Skill。当用户需要把飞书 API 操作封装成可复用的 Skill（包装原子 API 或编排多步流程）时使用。\""
+      "descriptionZh": "创建 lark-cli 自定义 Skill：包装原子 API 或编排多步 API 流程。"
     },
     {
       "name": "lark-calendar",
       "domain": "09-ops-productivity",
       "path": "skills/09-ops-productivity/lark/lark-calendar/",
-      "description": "\"飞书日历（calendar）：提供日历与日程（会议）的全面管理能力。核心场景包括：查看/搜索日程、创建/更新日程、管理参会人、查询忙闲状态及推荐空闲时段、查询/搜索与预定会议室。注意：涉及【预约日程/会议】或【查询/预定会议室】时，必须先读取 references/lark-calendar-schedule-meeting.md 工作流！高频操作请优先使用 Shortcuts：+agenda（快速概览今日/近期行程）、+create（创建日程并按需邀请参会人及预定会议室）、+freebusy（查询用户主日历的忙闲信息和rsvp的状态）、+rsvp（回复日程邀请）\""
+      "descriptionZh": "飞书日历：日程与会议管理、忙闲查询、会议室预定等。"
     },
     {
       "name": "lark-workflow-standup-report",
       "domain": "09-ops-productivity",
       "path": "skills/09-ops-productivity/lark/lark-workflow-standup-report/",
-      "description": "\"日程待办摘要：编排 calendar +agenda 和 task +get-my-tasks，生成指定日期的日程与未完成任务摘要。适用于了解今天/明天/本周的安排。\""
+      "descriptionZh": "日程待办摘要：编排 calendar 与 task，生成指定日期的日程与未完成任务摘要。"
     },
     {
       "name": "lark-wiki",
       "domain": "09-ops-productivity",
       "path": "skills/09-ops-productivity/lark/lark-wiki/",
-      "description": "\"飞书知识库：管理知识空间和文档节点。创建和查询知识空间、管理节点层级结构、在知识库中组织文档和快捷方式。当用户需要在知识库中查找或创建文档、浏览知识空间结构、移动或复制节点时使用。\""
+      "descriptionZh": "飞书知识库：管理知识空间与节点层级、组织文档与快捷方式。"
     },
     {
       "name": "lark-doc",
       "domain": "09-ops-productivity",
       "path": "skills/09-ops-productivity/lark/lark-doc/",
-      "description": "\"飞书云文档：创建和编辑飞书文档。从 Markdown 创建文档、获取文档内容、更新文档（追加/覆盖/替换/插入/删除）、上传和下载文档中的图片和文件、搜索云空间文档。当用户需要创建或编辑飞书文档、读取文档内容、在文档中插入图片、搜索云空间文档时使用；如果用户是想按名称或关键词先定位电子表格、报表等云空间对象，也优先使用本 skill 的 docs +search 做资源发现。\""
+      "descriptionZh": "飞书云文档：创建与编辑文档，从 Markdown 生成，文档搜索与资源定位。"
     },
     {
       "name": "lark-contact",
       "domain": "09-ops-productivity",
       "path": "skills/09-ops-productivity/lark/lark-contact/",
-      "description": "\"飞书通讯录：查询组织架构、人员信息和搜索员工。获取当前用户或指定用户的详细信息、通过关键词搜索员工（姓名/邮箱/手机号）。当用户需要查看个人信息、查找同事 open_id 或联系方式、按姓名搜索员工、查询部门结构时使用。\""
+      "descriptionZh": "飞书通讯录：查询组织架构、人员信息、按关键词搜索员工。"
     },
     {
       "name": "lark-vc",
       "domain": "09-ops-productivity",
       "path": "skills/09-ops-productivity/lark/lark-vc/",
-      "description": "\"飞书视频会议：查询会议记录、获取会议纪要产物（总结、待办、章节、逐字稿）。1. 查询已经结束的会议数量或详情时使用本技能(如昨天 | 上周 | 今天已经开过的会议等场景)，查询未开始的会议日程使用 lark-calendar 技能。2. 支持通过关键词、时间范围、组织者、参与者、会议室等筛选条件搜索会议记录。3. 获取或整理会议纪要时使用本技能。\""
+      "descriptionZh": "飞书视频会议：查询会议记录与纪要（总结、待办、章节、逐字稿）。"
     },
     {
       "name": "lark-drive",
       "domain": "09-ops-productivity",
       "path": "skills/09-ops-productivity/lark/lark-drive/",
-      "description": "\"飞书云空间：管理云空间中的文件和文件夹。上传和下载文件、创建文件夹、复制/移动/删除文件、查看文件元数据、管理文档评论、管理文档权限、订阅用户评论变更事件；也负责把本地 Word/Markdown/Excel/CSV 导入为飞书在线云文档（docx、sheet、bitable）。当用户需要上传或下载文件、整理云空间目录、查看文件详情、管理评论、管理文档权限、订阅用户评论变更事件，或要把本地文件导入成新版文档、电子表格、多维表格/Base 时使用。\""
+      "descriptionZh": "飞书云空间：文件与文件夹管理、评论、权限、本地文件导入为在线云文档。"
     },
     {
       "name": "lark-workflow-meeting-summary",
       "domain": "09-ops-productivity",
       "path": "skills/09-ops-productivity/lark/lark-workflow-meeting-summary/",
-      "description": "\"会议纪要整理工作流：汇总指定时间范围内的会议纪要并生成结构化报告。当用户需要整理会议纪要、生成会议周报、回顾一段时间内的会议内容时使用。\""
+      "descriptionZh": "会议纪要整理工作流：汇总指定时间范围内的会议纪要并生成结构化报告。"
     },
     {
       "name": "lark-event",
       "domain": "09-ops-productivity",
       "path": "skills/09-ops-productivity/lark/lark-event/",
-      "description": "\"飞书事件订阅：通过 WebSocket 长连接实时监听飞书事件（消息、通讯录变更、日历变更等），输出 NDJSON 到 stdout，支持 compact Agent 友好格式、正则路由、文件输出。当用户需要实时监听飞书事件、构建事件驱动管道时使用。\""
+      "descriptionZh": "飞书事件订阅：通过 WebSocket 长连接实时监听事件并输出 NDJSON。"
     },
     {
       "name": "lark-shared",
       "domain": "09-ops-productivity",
       "path": "skills/09-ops-productivity/lark/lark-shared/",
-      "description": "\"飞书/Lark CLI 共享基础：应用配置初始化、认证登录（auth login）、身份切换（--as user/bot）、权限与 scope 管理、Permission denied 错误处理、安全规则。当用户需要第一次配置(`lark-cli config init`)、使用登录授权(`lark-cli auth login`)、遇到权限不足、切换 user/bot 身份、配置 scope、或首次使用 lark-cli 时触发。\""
+      "descriptionZh": "lark-cli 共享基础：配置、登录、身份切换、scope 与权限错误处理。"
     },
     {
       "name": "lark-base",
       "domain": "09-ops-productivity",
       "path": "skills/09-ops-productivity/lark/lark-base/",
-      "description": "\"当需要用 lark-cli 操作飞书多维表格（Base）时调用：适用于建表、字段管理、记录读写、视图配置、历史查询，以及角色/表单/仪表盘管理/工作流；也适用于把旧的 +table / +field / +record 写法改成当前命令写法。涉及字段设计、公式字段、查找引用、跨表计算、行级派生指标、数据分析需求时也必须使用本 skill。\""
+      "descriptionZh": "lark-cli 操作飞书多维表格（Base）：建表、字段、记录、视图、工作流、分析。"
     },
     {
       "name": "lark-slides",
       "domain": "09-ops-productivity",
       "path": "skills/09-ops-productivity/lark/lark-slides/",
-      "description": "\"飞书幻灯片：以 XML 格式读取和管理 PPT 页面。创建演示文稿优先用 `+create`；XML API 主要用于读取 PPT 全文信息、创建和删除幻灯片页面。当用户需要创建 PPT、读取 PPT 内容、管理幻灯片页面时使用。\""
+      "descriptionZh": "飞书幻灯片：用 XML 读取与管理 PPT 页面，创建演示优先用 +create。"
     },
     {
       "name": "lark-im",
       "domain": "09-ops-productivity",
       "path": "skills/09-ops-productivity/lark/lark-im/",
-      "description": "\"飞书即时通讯：收发消息和管理群聊。发送和回复消息、搜索聊天记录、管理群聊成员、上传下载图片和文件、管理表情回复。当用户需要发消息、查看或搜索聊天记录、下载聊天中的文件、查看群成员时使用。\""
+      "descriptionZh": "飞书即时通讯：收发消息、搜聊天记录、管理群聊、上传下载图片文件。"
     },
     {
       "name": "lark-sheets",
       "domain": "09-ops-productivity",
       "path": "skills/09-ops-productivity/lark/lark-sheets/",
-      "description": "\"飞书电子表格：创建和操作电子表格。创建表格并写入表头和数据、读取和写入单元格、追加行数据、在已知电子表格中查找单元格内容、导出表格文件。当用户需要创建电子表格、批量读写数据、在已知表格中查找内容、导出或下载表格时使用。若用户是想按名称或关键词搜索云空间里的表格文件，请改用 lark-doc 的 docs +search 先定位资源。\""
+      "descriptionZh": "飞书电子表格：创建、读写、追加、查找、导出，与 docs 搜索分工。"
     },
     {
       "name": "lark-task",
       "domain": "09-ops-productivity",
       "path": "skills/09-ops-productivity/lark/lark-task/",
-      "description": "\"飞书任务：管理任务和清单。创建待办任务、查看和更新任务状态、拆分子任务、组织任务清单、分配协作成员。当用户需要创建待办事项、查看任务列表、跟踪任务进度、管理项目清单或给他人分配任务时使用。\""
+      "descriptionZh": "飞书任务：创建待办、管理任务状态与子任务、组织任务清单、分配协作。"
     },
     {
       "name": "lark-whiteboard",
       "domain": "09-ops-productivity",
       "path": "skills/09-ops-productivity/lark/lark-whiteboard/",
-      "description": ">"
+      "descriptionZh": "飞书画板：导出预览、节点结构，用 PlantUML/Mermaid 或 OpenAPI 编辑画板。"
     },
     {
       "name": "lark-approval",
       "domain": "09-ops-productivity",
       "path": "skills/09-ops-productivity/lark/lark-approval/",
-      "description": "\"飞书审批 API：审批实例、审批任务管理。\""
+      "descriptionZh": "飞书审批 API：审批实例与审批任务的全量管理。"
     },
     {
       "name": "lark-whiteboard-cli",
       "domain": "09-ops-productivity",
       "path": "skills/09-ops-productivity/lark/lark-whiteboard-cli/",
-      "description": ">"
+      "descriptionZh": "用 whiteboard-cli 在飞书画板绘制架构图、流程图、思维导图等的布局指南。"
     },
     {
       "name": "remote-browser",
       "domain": "01-agent-engineering",
       "path": "skills/01-agent-engineering/remote-browser/",
-      "description": "Controls a local browser from a sandboxed remote machine. Use when the agent is running in a sandbox (no GUI) and needs to navigate websites, interact with web pages, fill forms, take screenshots, or expose local dev servers via tunnels."
+      "descriptionZh": "在沙箱远端机器上控制本地浏览器，用于无 GUI 沙箱场景。"
     },
     {
       "name": "agent-browser",
       "domain": "01-agent-engineering",
       "path": "skills/01-agent-engineering/agent-browser/",
-      "description": "Browser automation CLI for AI agents. Use when the user needs to interact with websites, including navigating pages, filling forms, clicking buttons, taking screenshots, extracting data, testing web apps, or automating any browser task. Triggers include requests to \"open a website\", \"fill out a form\", \"click a button\", \"take a screenshot\", \"scrape data from a page\", \"test this web app\", \"login to a site\", \"automate browser actions\", or any task requiring programmatic web interaction."
+      "descriptionZh": "AI Agent 的浏览器自动化 CLI，用于网页导航、表单填写、截图、数据抓取。"
     },
     {
       "name": "team-builder",
       "domain": "01-agent-engineering",
       "path": "skills/01-agent-engineering/team-builder/",
-      "description": "Interactive agent picker for composing and dispatching parallel teams",
-      "origin": "community"
+      "descriptionZh": "交互式 Agent 选择器，用于组合并派发并行团队。"
     },
     {
       "name": "open-source",
       "domain": "01-agent-engineering",
       "path": "skills/01-agent-engineering/open-source/",
-      "description": ">"
+      "descriptionZh": "browser-use 开源 Python 库的文档参考（Agent/Browser/Tools 配置）。"
     },
     {
       "name": "prompt-optimizer",
       "domain": "01-agent-engineering",
       "path": "skills/01-agent-engineering/prompt-optimizer/",
-      "description": ">-",
-      "origin": "community"
+      "descriptionZh": "分析原始 prompt，匹配 ECC 组件并输出可粘贴的优化版，仅作顾问不执行。"
     },
     {
       "name": "agentcore",
       "domain": "01-agent-engineering",
       "path": "skills/01-agent-engineering/agentcore/",
-      "description": "Run agent-browser on AWS Bedrock AgentCore cloud browsers. Use when the user wants to use AgentCore, run browser automation on AWS, use a cloud browser with AWS credentials, or needs a managed browser session backed by AWS infrastructure. Triggers include \"use agentcore\", \"run on AWS\", \"cloud browser with AWS\", \"bedrock browser\", \"agentcore session\", or any task requiring AWS-hosted browser automation."
+      "descriptionZh": "在 AWS Bedrock AgentCore 云端浏览器上运行 agent-browser。"
     },
     {
       "name": "find-skills",
       "domain": "01-agent-engineering",
       "path": "skills/01-agent-engineering/find-skills/",
-      "description": "Helps users discover and install agent skills when they ask questions like \"how do I do X\", \"find a skill for X\", \"is there a skill that can...\", or express interest in extending capabilities. Crucially, it autonomously discovers and proposes agent skills whenever the user wants to build a tool, automate a task, or overcome a technical challenge, providing ready-made capabilities for users who prefer zero-code or low-code solutions."
+      "descriptionZh": "自动发现与推荐可用 Agent 技能，回答\"有没有能做 X 的技能\"。"
     },
     {
-      "name": null,
+      "name": "find-skill",
       "domain": "01-agent-engineering",
       "path": "skills/01-agent-engineering/find-skill/",
-      "description": ""
+      "descriptionZh": "技能发现入口（文件体为空，疑似占位）。"
     },
     {
       "name": "skill-creator",
       "domain": "01-agent-engineering",
       "path": "skills/01-agent-engineering/skill-creator/",
-      "description": "Create new skills, modify and improve existing skills, and measure skill performance. Use when users want to create a skill from scratch, edit, or optimize an existing skill, run evals to test a skill, benchmark skill performance with variance analysis, or optimize a skill's description for better triggering accuracy."
+      "descriptionZh": "创建、修改和优化 skill，并可跑 eval 衡量触发准确率与性能。"
     },
     {
       "name": "plankton-code-quality",
       "domain": "01-agent-engineering",
       "path": "skills/01-agent-engineering/plankton-code-quality/",
-      "description": "\"Write-time code quality enforcement using Plankton — auto-formatting, linting, and Claude-powered fixes on every file edit via hooks.\"",
-      "origin": "community"
+      "descriptionZh": "基于 Plankton 的写入期代码质量把关——保存时自动格式化、lint、Claude 修复。"
     },
     {
       "name": "claude-devfleet",
       "domain": "01-agent-engineering",
       "path": "skills/01-agent-engineering/claude-devfleet/",
-      "description": "Orchestrate multi-agent coding tasks via Claude DevFleet — plan projects, dispatch parallel agents in isolated worktrees, monitor progress, and read structured reports.",
-      "origin": "community"
+      "descriptionZh": "通过 Claude DevFleet 编排多 Agent 编码任务，并行 worktree 派发与监控。"
     },
     {
       "name": "repo-scan",
       "domain": "01-agent-engineering",
       "path": "skills/01-agent-engineering/repo-scan/",
-      "description": "Cross-stack source code asset audit — classifies every file, detects embedded third-party libraries, and delivers actionable four-level verdicts per module with interactive HTML reports.",
-      "origin": "community"
+      "descriptionZh": "跨栈源码资产审计，分类文件、识别嵌入第三方库，输出四级判定 HTML 报告。"
     },
     {
       "name": "cloud",
       "domain": "01-agent-engineering",
       "path": "skills/01-agent-engineering/cloud/",
-      "description": ">"
+      "descriptionZh": "Browser Use Cloud 托管 API 与 SDK 的文档参考。"
     },
     {
       "name": "proactive-agent",
       "domain": "01-agent-engineering",
       "path": "skills/01-agent-engineering/proactive-agent/",
-      "description": "\"Transform AI agents from passive task-executors into proactive partners that anticipate your needs, remember context between sessions, and continuously improve over time. Use when you want Claude to take initiative and suggest next steps without being asked, recover gracefully when context gets cut off mid-task, learn from corrections and apply them consistently, search all available sources before saying 'I don't know', and become progressively more effective the more you collaborate together.\""
+      "descriptionZh": "把 Agent 从被动执行者转为主动伙伴，跨会话记忆、主动建议下一步。"
     },
     {
       "name": "vercel-sandbox",
       "domain": "01-agent-engineering",
       "path": "skills/01-agent-engineering/vercel-sandbox/",
-      "description": "Run agent-browser + Chrome inside Vercel Sandbox microVMs for browser automation from any Vercel-deployed app. Use when the user needs browser automation in a Vercel app (Next.js, SvelteKit, Nuxt, Remix, Astro, etc.), wants to run headless Chrome without binary size limits, needs persistent browser sessions across commands, or wants ephemeral isolated browser environments. Triggers include \"Vercel Sandbox browser\", \"microVM Chrome\", \"agent-browser in sandbox\", \"browser automation on Vercel\", or any task requiring Chrome in a Vercel Sandbox."
+      "descriptionZh": "在 Vercel Sandbox 微型 VM 中运行 agent-browser + Chrome 做浏览器自动化。"
     },
     {
       "name": "hookify-rules",
       "domain": "01-agent-engineering",
       "path": "skills/01-agent-engineering/hookify-rules/",
-      "description": "This skill should be used when the user asks to create a hookify rule, write a hook rule, configure hookify, add a hookify rule, or needs guidance on hookify rule syntax and patterns."
+      "descriptionZh": "创建 hookify 规则的语法与模式指南。"
     },
     {
       "name": "agent-payment-x402",
       "domain": "01-agent-engineering",
       "path": "skills/01-agent-engineering/agent-payment-x402/",
-      "description": "Add x402 payment execution to AI agents — per-task budgets, spending controls, and non-custodial wallets via MCP tools. Use when agents need to pay for APIs, services, or other agents.",
-      "origin": "community"
+      "descriptionZh": "为 Agent 接入 x402 支付执行能力，含任务预算、支出控制、非托管钱包。"
     },
     {
       "name": "ck",
       "domain": "01-agent-engineering",
       "path": "skills/01-agent-engineering/ck/",
-      "description": "Persistent per-project memory for Claude Code. Auto-loads project context on session start, tracks sessions with git activity, and writes to native memory. Commands run deterministic Node.js scripts — behavior is consistent across model versions.",
-      "origin": "community"
+      "descriptionZh": "项目级持久记忆，自动加载项目上下文、追踪 git 会话、写入原生内存。"
     },
     {
       "name": "browser-use",
       "domain": "01-agent-engineering",
       "path": "skills/01-agent-engineering/browser-use/",
-      "description": "Automates browser interactions for web testing, form filling, screenshots, and data extraction. Use when the user needs to navigate websites, interact with web pages, fill forms, take screenshots, or extract information from web pages."
+      "descriptionZh": "浏览器交互自动化，用于网页测试、表单填写、截图、数据提取。"
     },
     {
       "name": "electron",
       "domain": "01-agent-engineering",
       "path": "skills/01-agent-engineering/electron/",
-      "description": "Automate Electron desktop apps (VS Code, Slack, Discord, Figma, Notion, Spotify, etc.) using agent-browser via Chrome DevTools Protocol. Use when the user needs to interact with an Electron app, automate a desktop app, connect to a running app, control a native app, or test an Electron application. Triggers include \"automate Slack app\", \"control VS Code\", \"interact with Discord app\", \"test this Electron app\", \"connect to desktop app\", or any task requiring automation of a native Electron application."
+      "descriptionZh": "通过 CDP 用 agent-browser 自动化 Electron 桌面应用（VS Code、Slack 等）。"
     },
     {
       "name": "santa-method",
       "domain": "01-agent-engineering",
       "path": "skills/01-agent-engineering/santa-method/",
-      "description": "\"Multi-agent adversarial verification with convergence loop. Two independent review agents must both pass before output ships.\"",
-      "origin": "\"Ronald Skelton - Founder, RapportScore.ai\""
+      "descriptionZh": "多 Agent 对抗验证收敛循环，两个独立审查都通过后才出交付。"
     },
     {
       "name": "openclaw-persona-forge",
       "domain": "01-agent-engineering",
       "path": "skills/01-agent-engineering/openclaw-persona-forge/",
-      "description": "|-",
-      "origin": "community"
+      "descriptionZh": "为 OpenClaw AI Agent 锻造龙虾灵魂方案：身份、角色底线、头像提示词。"
     },
     {
       "name": "dogfood",
       "domain": "01-agent-engineering",
       "path": "skills/01-agent-engineering/dogfood/",
-      "description": "Systematically explore and test a web application to find bugs, UX issues, and other problems. Use when asked to \"dogfood\", \"QA\", \"exploratory test\", \"find issues\", \"bug hunt\", \"test this app/site/platform\", or review the quality of a web application. Produces a structured report with full reproduction evidence -- step-by-step screenshots, repro videos, and detailed repro steps for every issue -- so findings can be handed directly to the responsible teams."
+      "descriptionZh": "系统化测试 Web 应用以发现 Bug、UX 问题，输出带截图和复现步骤的报告。"
     },
     {
       "name": "blueprint",
       "domain": "01-agent-engineering",
       "path": "skills/01-agent-engineering/blueprint/",
-      "description": ">-",
-      "origin": "community"
+      "descriptionZh": "把一句话目标转为多会话多 Agent 的分步构建计划，每步自带冷启动上下文。"
     },
     {
       "name": "\"playwright\"",
       "domain": "04-testing-quality",
       "path": "skills/04-testing-quality/playwright/",
-      "description": "\"Use when the task requires automating a real browser from the terminal (navigation, form filling, snapshots, screenshots, data extraction, UI-flow debugging) via `playwright-cli` or the bundled wrapper script.\""
+      "descriptionZh": "\"Use when the task requires automating a real browser from the terminal (navigation, form filling, snapshots, screenshots, data extraction, UI-flow debugging) via `playwright-cli` or the bundled wrapper script.\""
     },
     {
       "name": "click-path-audit",
       "domain": "04-testing-quality",
       "path": "skills/04-testing-quality/click-path-audit/",
-      "description": "\"Trace every user-facing button/touchpoint through its full state change sequence to find bugs where functions individually work but cancel each other out, produce wrong final state, or leave the UI in an inconsistent state. Use when: systematic debugging found no bugs but users report broken buttons, or after any major refactor touching shared state stores.\"",
-      "origin": "community"
+      "descriptionZh": "追踪每个用户按钮的完整状态变更序列，发现功能各自正确但相互抵消的 bug。"
     },
     {
       "name": "contract-review",
       "domain": "10-business-industry",
       "path": "skills/10-business-industry/contract-review/",
-      "description": "\"合同审核技能,通过添加基于评论的问题标注而不改变原始文本。执行三层审核(基础、业务、法律),编写结构化评论(问题类型、风险原因、修订建议),风险等级通过审核人姓名编码,并生成合同摘要、综合意见和Mermaid业务流程图(含渲染图像)。输出语言必须遵循合同的语言。\""
+      "descriptionZh": "合同审核：三层审查（基础/业务/法律）、结构化注释、摘要与 Mermaid 流程图。"
     },
     {
       "name": "healthcare-emr-patterns",
       "domain": "10-business-industry",
       "path": "skills/10-business-industry/healthcare-emr-patterns/",
-      "description": "EMR/EHR development patterns for healthcare applications. Clinical safety, encounter workflows, prescription generation, clinical decision support integration, and accessibility-first UI for medical data entry.",
-      "origin": "Health1 Super Speciality Hospitals — contributed by Dr. Keyur Patel"
+      "descriptionZh": "医疗 EMR/EHR 开发模式：临床安全、就诊流程、处方生成、CDSS 集成、无障碍 UI。"
     },
     {
       "name": "healthcare-eval-harness",
       "domain": "10-business-industry",
       "path": "skills/10-business-industry/healthcare-eval-harness/",
-      "description": "Patient safety evaluation harness for healthcare application deployments. Automated test suites for CDSS accuracy, PHI exposure, clinical workflow integrity, and integration compliance. Blocks deployments on safety failures.",
-      "origin": "Health1 Super Speciality Hospitals — contributed by Dr. Keyur Patel"
+      "descriptionZh": "医疗发布的病人安全评测 harness：CDSS、PHI、临床流程与集成合规，失败阻断上线。"
     },
     {
       "name": "healthcare-cdss-patterns",
       "domain": "10-business-industry",
       "path": "skills/10-business-industry/healthcare-cdss-patterns/",
-      "description": "Clinical Decision Support System (CDSS) development patterns. Drug interaction checking, dose validation, clinical scoring (NEWS2, qSOFA), alert severity classification, and integration into EMR workflows.",
-      "origin": "Health1 Super Speciality Hospitals — contributed by Dr. Keyur Patel"
+      "descriptionZh": "临床决策支持系统开发：药物互作、剂量校验、临床评分、告警分级与 EMR 集成。"
     },
     {
       "name": "healthcare-phi-compliance",
       "domain": "10-business-industry",
       "path": "skills/10-business-industry/healthcare-phi-compliance/",
-      "description": "Protected Health Information (PHI) and Personally Identifiable Information (PII) compliance patterns for healthcare applications. Covers data classification, access control, audit trails, encryption, and common leak vectors.",
-      "origin": "Health1 Super Speciality Hospitals — contributed by Dr. Keyur Patel"
+      "descriptionZh": "医疗应用 PHI/PII 合规：数据分级、访问控制、审计、加密、常见泄漏路径。"
     }
   ],
   "projects": [
@@ -463,73 +446,73 @@
       "name": "163-email-ground-truth",
       "project": "codex-invoice",
       "path": "projects/codex-invoice/163-email-ground-truth/",
-      "description": "163 邮箱真值集构建、审计与跑批测试。当任务涉及 163 邮箱、网易邮箱、163 真值集、163 跑批时触发。包含 163 IMAP 特殊处理（ID 命令）、已知分类陷阱、已验证案例。"
+      "descriptionZh": "163/网易邮箱真值集构建、审计与跑批，含 IMAP ID 命令等特殊处理。"
     },
     {
       "name": "qq-email-ground-truth",
       "project": "codex-invoice",
       "path": "projects/codex-invoice/qq-email-ground-truth/",
-      "description": "Build, rebuild, audit, and compare QQ mailbox invoice ground truth datasets for this repository using the existing truth-building scripts and evidence artifacts. Use when the task is to generate a QQ mailbox ground truth set, validate QQ batch output against truth, review QQ mailbox invoice evidence, or investigate QQ-specific invoice extraction pitfalls in this project."
+      "descriptionZh": "构建/重建/审计/比对 QQ 邮箱发票真值集，验证跑批输出。"
     },
     {
       "name": "controlled-lockcheck-autofix",
       "project": "codex-invoice",
       "path": "projects/codex-invoice/controlled-lockcheck-autofix/",
-      "description": "Use for unattended QQ controlled frontend lockcheck runs, failure classification, bounded autofix decisions, and packaging-gate evidence in this repository. Trigger when the task is to automate full frontend batch tests, run controlled lockcheck loops, classify QQ truth-audit failures, or decide whether an autofix may continue without touching protected core rules."
+      "descriptionZh": "QQ 受控前端 lockcheck 自动化：失败分类、受限自动修复、打包门的证据留存。"
     },
     {
       "name": "email-batch-test",
       "project": "codex-invoice",
       "path": "projects/codex-invoice/email-batch-test/",
-      "description": "跑批测试标准与双邮箱回归门禁。当任务涉及\"跑批\"、\"batch test\"、\"真值审计\"、\"回归验证\"、\"regression\"时触发。确保每次跑批都遵守 P0/P1/P2 标准，且触碰保护区域的改动必须通过双邮箱验证。"
+      "descriptionZh": "跑批测试标准与双邮箱回归门禁：P0/P1/P2 标准与保护区改动的双邮箱验证。"
     },
     {
       "name": "aliyun-openapi-mcp-ops",
       "project": "ai-seed-project",
       "path": "projects/ai-seed-project/aliyun-openapi-mcp-ops/",
-      "description": "Use when operating Alibaba Cloud through a custom OpenAPI MCP server, especially for SWAS deployment workflows: OAuth setup, selector updates, missing-tool diagnosis, deployment permission closure, and pre-deploy verification."
+      "descriptionZh": "通过自建 OpenAPI MCP 运维阿里云，聚焦 SWAS 部署：OAuth、选择器更新、诊断、预发验证。"
     },
     {
       "name": "feishu-automation",
       "project": "ai-seed-project",
       "path": "projects/ai-seed-project/feishu-automation/",
-      "description": "飞书（Lark）自动化能力。优先使用飞书官方 OpenAPI MCP/CLI 处理消息、群组、Base、文档、任务与日历等 OpenAPI 能力；不把开发者后台配置动作误判为 MCP 能力。"
+      "descriptionZh": "飞书自动化能力，优先用官方 OpenAPI MCP/CLI，不把后台配置动作误判为 MCP 能力。"
     },
     {
       "name": "hui-rui-lan",
       "project": "alk-plus-tracker",
       "path": "projects/alk-plus-tracker/hui-rui-lan/",
-      "description": "重建或扩展 ALK+ Tracker UI 时使用，要求保留原始品牌蓝视觉系统、区块顺序、玻璃卡片布局，而不是重新设计页面。"
+      "descriptionZh": "重建或扩展 ALK+ Tracker UI 时保留原始品牌蓝视觉体系、区块顺序、玻璃卡片布局。"
     },
     {
       "name": "ai-music-generation",
       "project": "content-assets",
       "path": "projects/content-assets/ai-music-generation/",
-      "description": "\"Generate AI music and songs with ElevenLabs, Diffrythm, Tencent Song Generation via inference.sh CLI. Models: ElevenLabs Music (up to 10 min, commercial license), Diffrythm (fast song generation), Tencent Song Generation (full songs with vocals). Capabilities: text-to-music, song generation, instrumental, lyrics to song, soundtrack creation. Use for: background music, social media content, game soundtracks, podcasts, royalty-free music. Triggers: music generation, ai music, generate song, ai composer, text to music, song generator, create music with ai, suno alternative, udio alternative, ai song, ai soundtrack, generate soundtrack, ai jingle, music ai, beat generator, elevenlabs music, eleven labs music\""
+      "descriptionZh": "通过 inference.sh 生成 AI 音乐/歌曲，支持 ElevenLabs、Diffrythm、腾讯歌曲生成。"
     },
     {
       "name": "video-producer",
       "project": "content-assets",
       "path": "projects/content-assets/video-producer/",
-      "description": ">"
+      "descriptionZh": "端到端 Remotion 视频制作：叙事、场景动画、视觉风格、渲染全链路编排。"
     },
     {
       "name": "create-promo-video",
       "project": "content-assets",
       "path": "projects/content-assets/create-promo-video/",
-      "description": "Create promotional TikTok-style short videos for projects. Analyzes your codebase to understand what the project does, then generates a Remotion-based video in either portrait (9x16) or landscape (16x9) format."
+      "descriptionZh": "为项目生成 TikTok 风格短宣传片，分析代码库后用 Remotion 输出竖版/横版。"
     },
     {
       "name": "aliyun-swas-manage",
       "project": "ai-seed-project-phase-one-feishu",
       "path": "projects/ai-seed-project-phase-one-feishu/aliyun-swas-manage/",
-      "description": "Use when managing Alibaba Cloud Simple Application Server (SWAS OpenAPI 2020-06-01) resources end-to-end, including querying instances, starting/stopping/rebooting, executing commands (cloud assistant), managing disks/snapshots/images, firewall rules/templates, key pairs, tags, monitoring, and lightweight database operations."
+      "descriptionZh": "端到端管理阿里云 SWAS：实例、命令、磁盘快照、防火墙、监控与轻量数据库。"
     },
     {
       "name": "feishu-card-ws",
       "project": "ai-seed-project-phase-one-feishu",
       "path": "projects/ai-seed-project-phase-one-feishu/feishu-card-ws/",
-      "description": ">"
+      "descriptionZh": "飞书交互式卡片在 WebSocket 长连接模式下的配置指南与回调处理。"
     }
   ]
 }
