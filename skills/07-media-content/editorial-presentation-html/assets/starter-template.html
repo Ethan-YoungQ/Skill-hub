@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{TITLE}} · Editorial Presentation</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --bg-0: #FAF9F5; --bg-1: #F3EEE3; --bg-2: #EBE5D8; --bg-surface: #FFFFFF;
+  --text-0: #141413; --text-1: #2C2A26; --text-2: #5B544A; --text-3: #625B4F;
+  --accent: #CC785C; --accent-hot: #E8A888; --accent-deep: #A45946; --accent-wash: rgba(204,120,92,.08);
+  --brand-blue: #2E5C8A; --brand-purple: #6B4E8F; --brand-gold: #B8903C;
+  --brand-green: #5C8D5C; --brand-red: #C2594A; --brand-pink: #C77A9A;
+  --industry-vertical: #8C2B3A; /* 替换为对应行业垂直主色 */
+  --border-soft: #E3DCCC; --border: #D0C8B5; --border-strong: #A69D88;
+  --glass-bg: rgba(255,255,255,.55); --glass-bd: rgba(20,20,19,.08);
+  --glow-accent: 0 0 40px rgba(204,120,92,.25); --glow-gold: 0 0 40px rgba(184,144,60,.22);
+  --shadow-card: 0 1px 2px rgba(20,20,19,.04), 0 8px 24px rgba(20,20,19,.04);
+  --shadow-card-hover: 0 2px 4px rgba(20,20,19,.06), 0 16px 40px rgba(204,120,92,.12);
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Noto Sans SC', 'Microsoft YaHei', sans-serif;
+  --font-serif: 'Fraunces', 'Source Han Serif SC', Georgia, serif;
+  --font-mono: 'JetBrains Mono', Consolas, monospace;
+}
+html { scroll-behavior: smooth; scroll-snap-type: y proximity; }
+body {
+  font-family: var(--font-sans);
+  background:
+    radial-gradient(1200px 600px at 85% 15%, rgba(204,120,92,0.08), transparent 55%),
+    radial-gradient(900px 500px at 10% 80%, rgba(140,43,58,0.05), transparent 60%),
+    var(--bg-0);
+  color: var(--text-1); line-height: 1.6; overflow-x: hidden;
+  font-feature-settings: "cv11", "ss01", "tnum";
+  -webkit-font-smoothing: antialiased;
+}
+body::before {
+  content: ''; position: fixed; inset: 0; pointer-events: none; z-index: 0;
+  opacity: .35; mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.08  0 0 0 0 0.07  0 0 0 0 0.05  0 0 0 0.06 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+}
+.nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 14px 36px;
+  display: flex; justify-content: space-between; align-items: center;
+  background: rgba(250,249,245,.85); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border-soft); }
+.nav .logo { font-weight: 700; font-size: 14px; letter-spacing: .3px; display: flex; align-items: center; gap: 10px; color: var(--text-0); }
+.nav .logo-dot { width: 10px; height: 10px; border-radius: 50%; background: var(--accent); box-shadow: var(--glow-accent); animation: pulse 2.5s ease-in-out infinite; }
+@keyframes pulse { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: .7; transform: scale(1.3); } }
+.nav .nav-links { display: flex; gap: 14px; font-size: 11px; color: var(--text-2); flex-wrap: wrap; max-width: 70%; }
+.nav .nav-links a { color: inherit; text-decoration: none; transition: color .2s; padding: 4px 6px; }
+.nav .nav-links a:hover { color: var(--accent-deep); }
+.nav .nav-links a .num { color: var(--accent); font-weight: 700; margin-right: 3px; font-family: var(--font-mono); font-size: 10px; }
+
+section { min-height: 100vh; padding: 100px 48px 60px; position: relative; display: flex; flex-direction: column; justify-content: center; scroll-snap-align: start; z-index: 1; }
+.wrap { max-width: 1320px; margin: 0 auto; width: 100%; position: relative; z-index: 1; }
+.section-tag { display: inline-block; padding: 6px 14px; border: 1px solid var(--border); border-radius: 100px; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--accent-deep); background: var(--accent-wash); margin-bottom: 22px; font-weight: 600; }
+.section-title { font-family: var(--font-serif); font-size: clamp(34px, 4.5vw, 58px); font-weight: 600; line-height: 1.08; letter-spacing: -1.5px; margin-bottom: 18px; color: var(--text-0); }
+.section-subtitle { font-size: 17px; color: var(--text-2); max-width: 860px; line-height: 1.6; margin-bottom: 40px; }
+.section-subtitle strong { color: var(--text-0); font-weight: 600; }
+.gradient-text { background: linear-gradient(135deg, #1E3A5F 0%, #CC785C 55%, #B8903C 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; font-weight: 600; }
+.gradient-vertical { background: linear-gradient(135deg, var(--industry-vertical) 0%, var(--accent-deep) 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; font-weight: 600; }
+
+.jump-row { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 24px; padding-top: 20px; border-top: 1px dashed var(--border-soft); align-items: center; }
+.jump-row-label { font-size: 11px; letter-spacing: 1.5px; color: var(--text-3); text-transform: uppercase; font-weight: 600; margin-right: 4px; }
+.jump-btn { display: inline-flex; align-items: center; gap: 6px; padding: 8px 14px; background: var(--bg-surface); border: 1px solid var(--border); border-radius: 8px; font-size: 12px; color: var(--accent-deep); text-decoration: none; font-weight: 600; transition: all .2s; font-family: var(--font-mono); }
+.jump-btn:hover { background: var(--accent-wash); border-color: var(--accent); transform: translateY(-1px); }
+.jump-btn::before { content: '↗'; font-weight: 700; }
+
+.reveal { opacity: 0; transform: translateY(30px); transition: all .8s cubic-bezier(.22,.8,.3,1); }
+.reveal.in { opacity: 1; transform: translateY(0); }
+.reveal-stagger > * { opacity: 0; transform: translateY(24px); transition: all .65s cubic-bezier(.22,.8,.3,1); }
+.reveal-stagger.in > * { opacity: 1; transform: translateY(0); }
+.reveal-stagger.in > *:nth-child(1) { transition-delay: .05s; }
+.reveal-stagger.in > *:nth-child(2) { transition-delay: .12s; }
+.reveal-stagger.in > *:nth-child(3) { transition-delay: .19s; }
+.reveal-stagger.in > *:nth-child(4) { transition-delay: .26s; }
+.reveal-stagger.in > *:nth-child(5) { transition-delay: .33s; }
+
+/* === SECTION 示例:HERO === */
+.hero { background:
+    radial-gradient(ellipse 80% 60% at 50% 20%, rgba(204,120,92,.10), transparent 60%),
+    radial-gradient(ellipse 60% 40% at 80% 80%, rgba(140,43,58,.06), transparent 60%),
+    var(--bg-0);
+  min-height: 100vh; padding-top: 100px; overflow: hidden; position: relative; }
+.hero-eyebrow { display: inline-flex; align-items: center; gap: 10px; padding: 8px 18px; background: var(--glass-bg); border: 1px solid var(--border-soft); border-radius: 100px; font-size: 12px; letter-spacing: 2px; color: var(--accent-deep); font-weight: 600; margin-bottom: 28px; backdrop-filter: blur(12px); }
+.hero-eyebrow .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 10px rgba(204,120,92,.5); animation: pulse 2s infinite; }
+.hero-title { font-family: var(--font-serif); font-size: clamp(40px, 5.5vw, 80px); font-weight: 600; line-height: 1.0; letter-spacing: -2px; margin-bottom: 22px; color: var(--text-0); }
+.hero-title .line-accent { display: block; background: linear-gradient(135deg, #1E3A5F 0%, #CC785C 55%, #B8903C 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+.hero-sub { font-size: clamp(15px, 1.3vw, 19px); color: var(--text-2); max-width: 820px; line-height: 1.65; margin-bottom: 40px; }
+.hero-sub strong { color: var(--text-0); font-weight: 600; }
+.stat-bar { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 28px; padding: 32px 0; border-top: 1px solid var(--border-soft); border-bottom: 1px solid var(--border-soft); margin-top: 28px; }
+.stat .num { font-family: var(--font-serif); font-size: clamp(36px, 4vw, 64px); font-weight: 600; letter-spacing: -2px; line-height: 1; margin-bottom: 8px; font-variant-numeric: tabular-nums; background: linear-gradient(135deg, #141413 0%, var(--accent-deep) 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+.stat .num .unit { font-size: .55em; color: var(--accent); -webkit-text-fill-color: var(--accent); margin-left: 4px; font-weight: 600; }
+.stat .label { font-size: 12px; color: var(--text-2); letter-spacing: .8px; text-transform: uppercase; font-weight: 600; }
+.stat .caption { font-size: 12px; color: var(--text-2); margin-top: 6px; }
+
+/* === Mobile === */
+@media (max-width: 720px) {
+  .nav { padding: 12px 16px; } .nav .nav-links { display: none; }
+  section { padding: 90px 18px 50px; }
+  .hero-title { font-size: 36px; }
+  .stat-bar { grid-template-columns: 1fr 1fr; gap: 14px; }
+}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="logo">
+    <div class="logo-dot"></div>
+    <span>{{NAV_LOGO}}</span>
+  </div>
+  <div class="nav-links">
+    <a href="#hero"><span class="num">01</span>HERO</a>
+    <a href="#why"><span class="num">02</span>WHY</a>
+    <a href="#evidence"><span class="num">03</span>EVIDENCE</a>
+    <a href="#cta"><span class="num">04</span>CTA</a>
+    <!-- 增加更多 nav links 对应你的 sections -->
+  </div>
+</nav>
+
+<!-- ======= SECTION 1: HERO 示例 ======= -->
+<section class="hero" id="hero">
+  <div class="wrap reveal-stagger">
+    <div class="hero-eyebrow"><span class="dot"></span>{{EYEBROW · 全大写小字 letter-spacing}}</div>
+    <h1 class="hero-title">
+      {{主标题第一行}}<br>
+      <span class="line-accent">{{主标题第二行 · 渐变着色}}</span>
+    </h1>
+    <p class="hero-sub">
+      {{副标题段落 · 17-19px · 行高 1.65 · 包含 <strong>关键加粗</strong>}}
+    </p>
+    <div class="stat-bar">
+      <div class="stat">
+        <div class="num"><span data-count="38">0</span><span class="unit">亿</span></div>
+        <div class="label">指标 1</div>
+        <div class="caption">说明</div>
+      </div>
+      <div class="stat">
+        <div class="num"><span data-count="7">0</span></div>
+        <div class="label">指标 2</div>
+      </div>
+      <div class="stat">
+        <div class="num"><span data-count="22">0</span></div>
+        <div class="label">指标 3</div>
+      </div>
+      <div class="stat">
+        <div class="num"><span data-count="43">0</span></div>
+        <div class="label">指标 4</div>
+      </div>
+    </div>
+    <div class="jump-row">
+      <span class="jump-row-label">跳转 →</span>
+      <a href="#" class="jump-btn" target="_blank">跳证据 1</a>
+      <a href="#" class="jump-btn" target="_blank">跳证据 2</a>
+    </div>
+  </div>
+</section>
+
+<!-- ======= 在此添加更多 sections ======= -->
+<!-- 参考 references/components.md 各组件,从 component-snippets.html 拷贝 -->
+
+<!-- 末尾脚本:reveal + count-up · 不要交互可整段删除 -->
+<script>
+const io = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('in');
+      e.target.querySelectorAll('[data-count]').forEach(el => {
+        if (el.dataset.done) return;
+        el.dataset.done = 1;
+        const target = parseInt(el.dataset.count, 10);
+        const t0 = performance.now();
+        (function tick(now) {
+          const p = Math.min(1, (now - t0) / 1400);
+          const eased = 1 - Math.pow(1 - p, 3);
+          el.textContent = Math.round(target * eased).toLocaleString();
+          if (p < 1) requestAnimationFrame(tick);
+          else el.textContent = target.toLocaleString();
+        })(t0);
+      });
+    }
+  });
+}, { threshold: 0.15 });
+document.querySelectorAll('.reveal, .reveal-stagger').forEach(el => io.observe(el));
+window.addEventListener('load', () => {
+  setTimeout(() => {
+    document.querySelectorAll('.hero .reveal-stagger').forEach(el => {
+      el.classList.add('in');
+      el.querySelectorAll('[data-count]').forEach(n => {
+        if (n.dataset.done) return;
+        n.dataset.done = 1;
+        const target = parseInt(n.dataset.count, 10);
+        const t0 = performance.now();
+        (function tick(now) {
+          const p = Math.min(1, (now - t0) / 1400);
+          const eased = 1 - Math.pow(1 - p, 3);
+          n.textContent = Math.round(target * eased).toLocaleString();
+          if (p < 1) requestAnimationFrame(tick);
+          else n.textContent = target.toLocaleString();
+        })(t0);
+      });
+    });
+  }, 150);
+});
+document.querySelectorAll('.nav .nav-links a').forEach(a => {
+  a.addEventListener('click', (ev) => {
+    const href = a.getAttribute('href');
+    if (href.startsWith('#')) {
+      const target = document.querySelector(href);
+      if (target) {
+        ev.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }
+  });
+});
+</script>
+</body>
+</html>

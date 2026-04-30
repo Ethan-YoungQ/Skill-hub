@@ -1,0 +1,23 @@
+{
+  "skill_name": "github-ops",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "帮我批量关闭所有超过 90 天没有活动的 GitHub issues，并给每个 issue 添加 'stale' 标签。",
+      "expected_output": "GitHub 操作步骤：筛选条件 + 标签操作 + 批量关闭命令",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "Create a GitHub issue for this bug: users can't log in when using Safari on iOS 17. Include reproduction steps and priority label.",
+      "expected_output": "Formatted GitHub issue with title, description, steps to reproduce, and appropriate labels",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "I need to review all open PRs in my repo that haven't been updated in 2 weeks and request reviews from the right people.",
+      "expected_output": "PR triage workflow: filter stale PRs, identify reviewers, send review requests",
+      "files": []
+    }
+  ]
+}

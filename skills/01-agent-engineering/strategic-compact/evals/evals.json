@@ -1,0 +1,23 @@
+{
+  "skill_name": "strategic-compact",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "我们已经工作了 2 小时，完成了需求分析和系统设计阶段，现在要开始写代码。你觉得现在适合 compact 吗？",
+      "expected_output": "明确建议：是否 compact + 理由 + 如果 compact 需要保存的关键信息",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "We're in the middle of debugging a complex authentication issue. Should I run /compact now to free up context?",
+      "expected_output": "Compact recommendation: wait until issue resolved, explain what would be lost mid-debug",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "I'm about to start a new feature implementation after finishing the database schema design. Good time to compact?",
+      "expected_output": "Yes recommendation with phase transition reasoning and pre-compact checklist",
+      "files": []
+    }
+  ]
+}

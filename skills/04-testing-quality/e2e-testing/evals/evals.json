@@ -1,0 +1,23 @@
+{
+  "skill_name": "e2e-testing",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Write Playwright E2E tests for a checkout flow: add item to cart → enter shipping info → pay with Stripe → see confirmation page.",
+      "expected_output": "Complete Playwright test with POM pattern, assertions, and Stripe test card handling",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "My E2E tests are flaky — they pass locally but fail in CI about 30% of the time. Help me diagnose and fix.",
+      "expected_output": "Flakiness diagnosis checklist + specific fixes for timing, auth state, and network conditions",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "帮我给一个多语言 SaaS 登录流程写 E2E 测试，需要覆盖 email/password 登录、Google OAuth 和 2FA。",
+      "expected_output": "完整测试套件：3 种登录方式的 Playwright 测试，含 mock 策略",
+      "files": []
+    }
+  ]
+}

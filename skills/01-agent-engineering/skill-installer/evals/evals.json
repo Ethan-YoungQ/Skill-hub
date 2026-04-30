@@ -1,0 +1,23 @@
+{
+  "skill_name": "skill-installer",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "帮我安装 deep-research skill 到我的 Claude Code，我不知道从哪里找到它。",
+      "expected_output": "安装步骤：skill 来源查找 + 安装命令 + 验证安装成功的方法",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "I want to add the playwright skill to my Claude Code. Walk me through the installation.",
+      "expected_output": "Step-by-step installation: find skill, install command, verify, and test trigger",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "How do I install multiple skills at once from the ECC plugin registry?",
+      "expected_output": "Batch skill installation guide with registry browsing and multi-install commands",
+      "files": []
+    }
+  ]
+}

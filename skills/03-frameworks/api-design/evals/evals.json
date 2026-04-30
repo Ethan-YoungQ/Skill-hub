@@ -1,0 +1,23 @@
+{
+  "skill_name": "api-design",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Design a REST API for a multi-tenant SaaS platform with user management, billing, and resource quotas. Include authentication, versioning, and rate limiting.",
+      "expected_output": "Complete API spec with endpoints, request/response schemas, auth strategy, and versioning approach",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "帮我设计一个电商平台的订单管理 API，需要支持创建订单、支付、退款和物流追踪。",
+      "expected_output": "API 端点设计：路径、方法、请求/响应格式、错误码",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "Review this API design for a notification service and suggest improvements for scalability and developer experience.",
+      "expected_output": "API review with specific improvement suggestions for naming, structure, and error handling",
+      "files": []
+    }
+  ]
+}

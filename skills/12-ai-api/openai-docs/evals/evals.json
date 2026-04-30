@@ -1,0 +1,23 @@
+{
+  "skill_name": "openai-docs",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "How do I use structured outputs with the OpenAI Responses API to extract a JSON schema from unstructured text?",
+      "expected_output": "Code example using latest Responses API with structured output schema definition",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "What's the difference between GPT-4o and GPT-4o-mini for my use case: extracting key facts from legal documents?",
+      "expected_output": "Model comparison focused on the specific use case with cost/quality tradeoff analysis",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "帮我查一下 OpenAI 的 Batch API 怎么用，我想批量处理 10 万条客服对话的情感分析。",
+      "expected_output": "Batch API 使用步骤：文件上传 → 批量任务创建 → 结果拉取，含代码示例",
+      "files": []
+    }
+  ]
+}

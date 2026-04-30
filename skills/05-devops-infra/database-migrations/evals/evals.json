@@ -1,0 +1,23 @@
+{
+  "skill_name": "database-migrations",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Write a safe database migration to add a NOT NULL column `email_verified_at` to a `users` table that has 50 million rows in production.",
+      "expected_output": "Multi-step migration: add nullable → backfill → add constraint, with rollback plan",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "我需要把一个单体数据库的 orders 表拆分成多租户架构，数据不能丢失，服务不能停机。",
+      "expected_output": "零停机迁移方案：双写 → 验证 → 切换的完整步骤",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "Review this migration script for safety: [ALTER TABLE products ADD COLUMN discount DECIMAL(5,2) NOT NULL DEFAULT 0]",
+      "expected_output": "Migration safety analysis with lock concerns, rollback strategy, and recommendations",
+      "files": []
+    }
+  ]
+}

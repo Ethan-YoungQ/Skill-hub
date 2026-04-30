@@ -1,0 +1,35 @@
+{
+  "skill_name": "editorial-presentation-html",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "我下周要给我们公司销售总监做一份产品上市推广策略的 case sharing,内容是去年 Q4 我们新上市的一款心血管慢病药的渠道布局复盘,涉及 5 大核心区域、12 家三甲医院的覆盖数据、以及 3 季度的 sales rep 反馈洞察。希望页面看起来很专业、像 Pfizer/Anthropic 那种 warm editorial 风格,可以在浏览器演示。",
+      "expected_output": "应触发 editorial-presentation-html skill 的 HTML 模式;产出包含 Anthropic warm editorial 设计 tokens(米色底 + 赭石主色 + Fraunces+Inter+Mono 字体)的多 section HTML 页面,使用至少 3 个组件(可能含 stat-bar / proof-bars / phase-pill / cta-grid),配色按行业垂直主色(心血管 = 深绿)调整。",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "帮我做一个 PPT,关于我们 AI 团队过去 6 个月的工程进展,要给 IT VP 看。涉及 22 个 microservice 重构、3 道 quality gate 落地、5 个跨团队 stress test 通过率(96%/95%/77%/68%/22%)。要 .pptx 格式,客户机器没装额外字体,得保证打开能看。",
+      "expected_output": "应触发 editorial-presentation-html skill 的 PPTX 模式;使用 generate_pptx.py 中的 EditorialDeck 类,选 industry='tech' 自动应用深海军蓝行业垂直主色,embed_fonts=False 用 Cambria/Calibri/Consolas 降级,生成包含 hero / proof bars / phase pills / cta 的 .pptx,16:9 1920×1080。",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "把这份血液科 v5 desktop HTML 转成 PPT 版,内容数据完全一致,但格式要 .pptx 给医院领导用。",
+      "expected_output": "应触发 editorial-presentation-html skill 的 PPTX 模式;读源 HTML 解析 11 sections 数据,通过 EditorialDeck.add_*_slide 系列方法逐 section 调用,industry='medical' 保留深红血色行业主色,可选嵌入字体(embed_fonts=True),save 为 .pptx。视觉与源 HTML 一致达 85-90%。",
+      "files": ["C:\\Users\\qiyon\\Desktop\\血液科市场调研_v5_desktop.html"]
+    },
+    {
+      "id": 4,
+      "prompt": "做一份给投资人的 demo deck,我们是一家做 AI agent 编排平台的早期公司,需要展示产品 architecture / 技术栈 / 客户验证 / roadmap。",
+      "expected_output": "应触发 editorial-presentation-html skill;格式无指定 → 默认 HTML 模式(可主动询问要不要也出 PPT);industry='tech';包含 hero (定位+stat) / architecture (phase-pill + delivery box) / proof / roadmap (limitations 内嵌)/ cta sections。",
+      "files": []
+    },
+    {
+      "id": 5,
+      "prompt": "你能帮我把一份长 markdown 报告做成幻灯片演示样式吗,我要分享给团队看。",
+      "expected_output": "应触发 editorial-presentation-html skill;'幻灯片演示样式'模糊 → 倾向 HTML 模式(用 section 切片当 slides),也可询问是否要 .pptx;按 markdown 内容拆分成 6-8 sections,每节标题 + 1-2 个核心组件。",
+      "files": []
+    }
+  ]
+}

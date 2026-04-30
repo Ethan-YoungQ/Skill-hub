@@ -201,3 +201,97 @@ Slack 等通用办公工具。
 | **create-promo-video** | [projects/content-assets/create-promo-video/](../projects/content-assets/create-promo-video/) | 为项目生成 TikTok 风格短宣传片，分析代码库后用 Remotion 输出竖版/横版。 |
 | **video-producer** | [projects/content-assets/video-producer/](../projects/content-assets/video-producer/) | 端到端 Remotion 视频制作：叙事、场景动画、视觉风格、渲染全链路编排。 |
 
+
+<!-- AUTO-GENERATED: BEGIN新增待分类 -->
+## 新增待分类（请手工并入上方对应章节）
+
+以下 51 个 skill 为新从本地同步的增量，请按技术栈分类手工并入对应章节。
+
+### 数据与研究
+| 技能名 | 路径 |
+|---|---|
+| **aact-bulk-trials** | [skills/06-data-search/aact-bulk-trials/](../skills/06-data-search/aact-bulk-trials/) |
+| **bioc-fulltext-fetch** | [skills/06-data-search/bioc-fulltext-fetch/](../skills/06-data-search/bioc-fulltext-fetch/) |
+| **clinical-trials-v2** | [skills/06-data-search/clinical-trials-v2/](../skills/06-data-search/clinical-trials-v2/) |
+| **cn-clinical-guidelines-fetch** | [skills/06-data-search/cn-clinical-guidelines-fetch/](../skills/06-data-search/cn-clinical-guidelines-fetch/) |
+| **europepmc-search** | [skills/06-data-search/europepmc-search/](../skills/06-data-search/europepmc-search/) |
+| **pubmed-eutils** | [skills/06-data-search/pubmed-eutils/](../skills/06-data-search/pubmed-eutils/) |
+| **pubtator-entity-search** | [skills/06-data-search/pubtator-entity-search/](../skills/06-data-search/pubtator-entity-search/) |
+| **deep-research** | [skills/01-agent-engineering/deep-research/](../skills/01-agent-engineering/deep-research/) |
+| **market-research-reports** | [skills/06-data-search/market-research-reports/](../skills/06-data-search/market-research-reports/) |
+| **medical-evidence-grading** | [skills/06-data-search/medical-evidence-grading/](../skills/06-data-search/medical-evidence-grading/) |
+| **nmpa-drug-registry-lookup** | [skills/06-data-search/nmpa-drug-registry-lookup/](../skills/06-data-search/nmpa-drug-registry-lookup/) |
+| **evidence-appendix-sync** | [skills/06-data-search/evidence-appendix-sync/](../skills/06-data-search/evidence-appendix-sync/) |
+
+### 文档与内容处理
+| 技能名 | 路径 |
+|---|---|
+| **article-writing** | [skills/07-media-content/article-writing/](../skills/07-media-content/article-writing/) |
+| **brand-voice** | [skills/07-media-content/brand-voice/](../skills/07-media-content/brand-voice/) |
+| **content-engine** | [skills/07-media-content/content-engine/](../skills/07-media-content/content-engine/) |
+| **crosspost** | [skills/07-media-content/crosspost/](../skills/07-media-content/crosspost/) |
+| **editorial-presentation-html** | [skills/07-media-content/editorial-presentation-html/](../skills/07-media-content/editorial-presentation-html/) |
+| **wechat-article** | [skills/07-media-content/wechat-article/](../skills/07-media-content/wechat-article/) |
+| **imagegen** | [skills/07-media-content/imagegen/](../skills/07-media-content/imagegen/) |
+| **ppt-nano** | [skills/07-media-content/ppt-nano/](../skills/07-media-content/ppt-nano/) |
+
+### AI API / LLM
+| 技能名 | 路径 |
+|---|---|
+| **openai-docs** | [skills/12-ai-api/openai-docs/](../skills/12-ai-api/openai-docs/) |
+
+### 后端与框架
+| 技能名 | 路径 |
+|---|---|
+| **api-design** | [skills/03-frameworks/api-design/](../skills/03-frameworks/api-design/) |
+| **backend-patterns** | [skills/03-frameworks/backend-patterns/](../skills/03-frameworks/backend-patterns/) |
+| **frontend-design** | [skills/03-frameworks/frontend-design/](../skills/03-frameworks/frontend-design/) |
+| **frontend-patterns** | [skills/03-frameworks/frontend-patterns/](../skills/03-frameworks/frontend-patterns/) |
+| **database-migrations** | [skills/05-devops-infra/database-migrations/](../skills/05-devops-infra/database-migrations/) |
+| **deployment-patterns** | [skills/05-devops-infra/deployment-patterns/](../skills/05-devops-infra/deployment-patterns/) |
+
+### 测试与质量
+| 技能名 | 路径 |
+|---|---|
+| **e2e-testing** | [skills/04-testing-quality/e2e-testing/](../skills/04-testing-quality/e2e-testing/) |
+| **security-review** | [skills/04-testing-quality/security-review/](../skills/04-testing-quality/security-review/) |
+| **tdd-workflow** | [skills/04-testing-quality/tdd-workflow/](../skills/04-testing-quality/tdd-workflow/) |
+
+### 运营与协作
+| 技能名 | 路径 |
+|---|---|
+| **github-ops** | [skills/09-ops-productivity/github-ops/](../skills/09-ops-productivity/github-ops/) |
+| **jira-integration** | [skills/09-ops-productivity/jira-integration/](../skills/09-ops-productivity/jira-integration/) |
+
+### Agent 工程
+| 技能名 | 路径 |
+|---|---|
+| **skill-installer** | [skills/01-agent-engineering/skill-installer/](../skills/01-agent-engineering/skill-installer/) |
+| **strategic-compact** | [skills/01-agent-engineering/strategic-compact/](../skills/01-agent-engineering/strategic-compact/) |
+| **plugin-creator** | [skills/01-agent-engineering/plugin-creator/](../skills/01-agent-engineering/plugin-creator/) |
+
+### 行业与业务
+| 技能名 | 路径 |
+|---|---|
+| **citation-anchor-resolver** | [skills/10-business-industry/citation-anchor-resolver/](../skills/10-business-industry/citation-anchor-resolver/) |
+| **cite-bound-content-generator** | [skills/10-business-industry/cite-bound-content-generator/](../skills/10-business-industry/cite-bound-content-generator/) |
+| **content-verification-layer** | [skills/10-business-industry/content-verification-layer/](../skills/10-business-industry/content-verification-layer/) |
+| **contract-elicitor** | [skills/10-business-industry/contract-elicitor/](../skills/10-business-industry/contract-elicitor/) |
+| **creating-financial-models** | [skills/10-business-industry/creating-financial-models/](../skills/10-business-industry/creating-financial-models/) |
+| **design-system-injector** | [skills/10-business-industry/design-system-injector/](../skills/10-business-industry/design-system-injector/) |
+| **disease-market-sizing-html-template** | [skills/10-business-industry/disease-market-sizing-html-template/](../skills/10-business-industry/disease-market-sizing-html-template/) |
+| **disease-market-sizing-orchestration** | [skills/10-business-industry/disease-market-sizing-orchestration/](../skills/10-business-industry/disease-market-sizing-orchestration/) |
+| **disease-stratifier** | [skills/10-business-industry/disease-stratifier/](../skills/10-business-industry/disease-stratifier/) |
+| **drug-citation-verifier** | [skills/10-business-industry/drug-citation-verifier/](../skills/10-business-industry/drug-citation-verifier/) |
+| **ifi-market-sizing-skill** | [skills/10-business-industry/ifi-market-sizing-skill/](../skills/10-business-industry/ifi-market-sizing-skill/) |
+| **session-resume** | [skills/10-business-industry/session-resume/](../skills/10-business-industry/session-resume/) |
+| **market-sizing-mece-foundation** | [skills/06-data-search/market-sizing-mece-foundation/](../skills/06-data-search/market-sizing-mece-foundation/) |
+| **report-bundle-builder** | [skills/06-data-search/report-bundle-builder/](../skills/06-data-search/report-bundle-builder/) |
+
+### SEO / 营销
+| 技能名 | 路径 |
+|---|---|
+| **seo** | [skills/08-writing-marketing/seo/](../skills/08-writing-marketing/seo/) |
+| **decision-tree-with-lp-embedding** | [skills/08-writing-marketing/decision-tree-with-lp-embedding/](../skills/08-writing-marketing/decision-tree-with-lp-embedding/) |
+
+<!-- AUTO-GENERATED: END新增待分类 -->

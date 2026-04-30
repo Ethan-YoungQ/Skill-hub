@@ -1,11 +1,11 @@
 {
   "version": "2.0",
-  "generated_at": "2026-04-29T20:20:00+08:00",
-  "note": "Removed lark-* skills (22), plugin-origin skills (160). Retained: 50 shared + 12 projects = 62 total",
+  "generated_at": "2026-04-30T22:30:00+08:00",
+  "note": "Added 51 new skills from local registry. Total: 101 shared + 12 projects = 113 total",
   "counts": {
-    "shared": 50,
+    "shared": 101,
     "projects": 12,
-    "total": 62
+    "total": 113
   },
   "shared": [
     {
@@ -307,6 +307,312 @@
       "domain": "10-business-industry",
       "path": "skills/10-business-industry/healthcare-phi-compliance/",
       "descriptionZh": "医疗应用 PHI/PII 合规：数据分级、访问控制、审计、加密、常见泄漏路径。"
+    },
+    {
+      "name": "aact-bulk-trials",
+      "domain": "06-data-search",
+      "path": "skills/06-data-search/aact-bulk-trials/",
+      "descriptionZh": "通过 AACT PostgreSQL 数据仓库批量挖掘历史临床试验数据。"
+    },
+    {
+      "name": "api-design",
+      "domain": "03-frameworks",
+      "path": "skills/03-frameworks/api-design/",
+      "descriptionZh": "设计生产级 REST API，含资源命名、HTTP 语义、分页、错误响应、版本控制。"
+    },
+    {
+      "name": "article-writing",
+      "domain": "07-media-content",
+      "path": "skills/07-media-content/article-writing/",
+      "descriptionZh": "撰写有独特声音的长文内容，包括博客、文章、指南、新闻通讯等。"
+    },
+    {
+      "name": "backend-patterns",
+      "domain": "03-frameworks",
+      "path": "skills/03-frameworks/backend-patterns/",
+      "descriptionZh": "后端架构模式、API 设计、数据库优化和服务器端最佳实践。"
+    },
+    {
+      "name": "bioc-fulltext-fetch",
+      "domain": "06-data-search",
+      "path": "skills/06-data-search/bioc-fulltext-fetch/",
+      "descriptionZh": "从 PubMed/PMC 获取结构化全文并按章节切分为 RAG 友好的 chunk。"
+    },
+    {
+      "name": "brand-voice",
+      "domain": "07-media-content",
+      "path": "skills/07-media-content/brand-voice/",
+      "descriptionZh": "从真实素材构建写作风格档案，跨内容工作流复用保持声音一致性。"
+    },
+    {
+      "name": "citation-anchor-resolver",
+      "domain": "10-business-industry",
+      "path": "skills/10-business-industry/citation-anchor-resolver/",
+      "descriptionZh": "Cite-or-Block 架构基石：解析报告中引用锚点。"
+    },
+    {
+      "name": "cite-bound-content-generator",
+      "domain": "10-business-industry",
+      "path": "skills/10-business-industry/cite-bound-content-generator/",
+      "descriptionZh": "生成带强制引用锚点的报告 HTML。"
+    },
+    {
+      "name": "clinical-trials-v2",
+      "domain": "06-data-search",
+      "path": "skills/06-data-search/clinical-trials-v2/",
+      "descriptionZh": "实时查询 ClinicalTrials.gov 试验协议、结果和招募状态。"
+    },
+    {
+      "name": "cn-clinical-guidelines-fetch",
+      "domain": "06-data-search",
+      "path": "skills/06-data-search/cn-clinical-guidelines-fetch/",
+      "descriptionZh": "抓取中国权威医学指南（CSCO/NCCN 中文版/NMPA/CDE/NHC）。"
+    },
+    {
+      "name": "content-engine",
+      "domain": "07-media-content",
+      "path": "skills/07-media-content/content-engine/",
+      "descriptionZh": "为 X/LinkedIn/TikTok/YouTube 等多平台创建原生内容系统。"
+    },
+    {
+      "name": "content-verification-layer",
+      "domain": "10-business-industry",
+      "path": "skills/10-business-industry/content-verification-layer/",
+      "descriptionZh": "审核 compose 输出，确保每个引用锚点可逆解析到源文件。"
+    },
+    {
+      "name": "contract-elicitor",
+      "domain": "10-business-industry",
+      "path": "skills/10-business-industry/contract-elicitor/",
+      "descriptionZh": "疾病市场规模调研的合同引导阶段，输出启动问题。"
+    },
+    {
+      "name": "creating-financial-models",
+      "domain": "10-business-industry",
+      "path": "skills/10-business-industry/creating-financial-models/",
+      "descriptionZh": "高级财务建模套件，含 DCF 估值、敏感性分析、蒙特卡洛模拟。"
+    },
+    {
+      "name": "crosspost",
+      "domain": "07-media-content",
+      "path": "skills/07-media-content/crosspost/",
+      "descriptionZh": "跨平台内容分发（X/LinkedIn/Threads/Bluesky），适配各平台特点。"
+    },
+    {
+      "name": "database-migrations",
+      "domain": "05-devops-infra",
+      "path": "skills/05-devops-infra/database-migrations/",
+      "descriptionZh": "数据库迁移最佳实践：schema 变更、数据迁移、回滚与零停机部署。"
+    },
+    {
+      "name": "decision-tree-with-lp-embedding",
+      "domain": "08-writing-marketing",
+      "path": "skills/08-writing-marketing/decision-tree-with-lp-embedding/",
+      "descriptionZh": "生成包含 LP 嵌入的 Mermaid 临床决策树。"
+    },
+    {
+      "name": "deep-research",
+      "domain": "01-agent-engineering",
+      "path": "skills/01-agent-engineering/deep-research/",
+      "descriptionZh": "多源深度研究，使用 firecrawl/exa 搜索并综合发现。"
+    },
+    {
+      "name": "deployment-patterns",
+      "domain": "05-devops-infra",
+      "path": "skills/05-devops-infra/deployment-patterns/",
+      "descriptionZh": "部署工作流、CI/CD、Docker 容器化、健康检查与回滚策略。"
+    },
+    {
+      "name": "design-system-injector",
+      "domain": "10-business-industry",
+      "path": "skills/10-business-industry/design-system-injector/",
+      "descriptionZh": "向报告 HTML 注入咨询公司配色（navy/gold/blue）+ 基础 CSS。"
+    },
+    {
+      "name": "disease-market-sizing-html-template",
+      "domain": "10-business-industry",
+      "path": "skills/10-business-industry/disease-market-sizing-html-template/",
+      "descriptionZh": "多页 HTML 市场研究报告模板，含主页和 N 个子页。"
+    },
+    {
+      "name": "disease-market-sizing-orchestration",
+      "domain": "10-business-industry",
+      "path": "skills/10-business-industry/disease-market-sizing-orchestration/",
+      "descriptionZh": "跨疾病市场规模入口 skill，自动运行 5 阶段管线。"
+    },
+    {
+      "name": "disease-stratifier",
+      "domain": "10-business-industry",
+      "path": "skills/10-business-industry/disease-stratifier/",
+      "descriptionZh": "发现疾病特异性分层维度，输出 staging.json。"
+    },
+    {
+      "name": "drug-citation-verifier",
+      "domain": "10-business-industry",
+      "path": "skills/10-business-industry/drug-citation-verifier/",
+      "descriptionZh": "药品名交叉验证：检查药品提及与引用源的一致性。"
+    },
+    {
+      "name": "e2e-testing",
+      "domain": "04-testing-quality",
+      "path": "skills/04-testing-quality/e2e-testing/",
+      "descriptionZh": "Playwright E2E 测试模式：Page Object、配置、CI/CD 集成、flaky 测试策略。"
+    },
+    {
+      "name": "editorial-presentation-html",
+      "domain": "07-media-content",
+      "path": "skills/07-media-content/editorial-presentation-html/",
+      "descriptionZh": "Anthropic 暖色编辑设计语言，用于演示/case sharing/战略汇报。"
+    },
+    {
+      "name": "europepmc-search",
+      "domain": "06-data-search",
+      "path": "skills/06-data-search/europepmc-search/",
+      "descriptionZh": "多源文献聚合检索：PubMed + PMC + 预印本 + NCBI Bookshelf + 专利。"
+    },
+    {
+      "name": "evidence-appendix-sync",
+      "domain": "06-data-search",
+      "path": "skills/06-data-search/evidence-appendix-sync/",
+      "descriptionZh": "最终确定市场研究报告附录 C（参考文献清单）。"
+    },
+    {
+      "name": "frontend-design",
+      "domain": "03-frameworks",
+      "path": "skills/03-frameworks/frontend-design/",
+      "descriptionZh": "创建具有高设计质量的生产级前端界面。"
+    },
+    {
+      "name": "frontend-patterns",
+      "domain": "03-frameworks",
+      "path": "skills/03-frameworks/frontend-patterns/",
+      "descriptionZh": "React/Next.js 前端开发模式、状态管理和性能优化。"
+    },
+    {
+      "name": "github-ops",
+      "domain": "09-ops-productivity",
+      "path": "skills/09-ops-productivity/github-ops/",
+      "descriptionZh": "GitHub 仓库运营：Issue 分诊、PR 管理、CI/CD、发布和安全监控。"
+    },
+    {
+      "name": "ifi-market-sizing-skill",
+      "domain": "10-business-industry",
+      "path": "skills/10-business-industry/ifi-market-sizing-skill/",
+      "descriptionZh": "用于医学/制药市场规模的临床路径重建与患者流瀑布图。"
+    },
+    {
+      "name": "imagegen",
+      "domain": "07-media-content",
+      "path": "skills/07-media-content/imagegen/",
+      "descriptionZh": "生成或编辑光栅图像（照片、插画、纹理、UI 模型等）。"
+    },
+    {
+      "name": "jira-integration",
+      "domain": "09-ops-productivity",
+      "path": "skills/09-ops-productivity/jira-integration/",
+      "descriptionZh": "检索 Jira 工单、分析需求、更新状态和添加评论。"
+    },
+    {
+      "name": "market-research-reports",
+      "domain": "06-data-search",
+      "path": "skills/06-data-search/market-research-reports/",
+      "descriptionZh": "生成 50+ 页专业市场研究报告，McKinsey/BCG/Gartner 质量。"
+    },
+    {
+      "name": "market-sizing-mece-foundation",
+      "domain": "06-data-search",
+      "path": "skills/06-data-search/market-sizing-mece-foundation/",
+      "descriptionZh": "所有医学市场规模任务的 MECE 基础。"
+    },
+    {
+      "name": "medical-evidence-grading",
+      "domain": "06-data-search",
+      "path": "skills/06-data-search/medical-evidence-grading/",
+      "descriptionZh": "医学证据分级：按证据金字塔自动分级 A/B/C/D。"
+    },
+    {
+      "name": "nmpa-drug-registry-lookup",
+      "domain": "06-data-search",
+      "path": "skills/06-data-search/nmpa-drug-registry-lookup/",
+      "descriptionZh": "中国药品权威数据库：NMPA + CDE + DrugBank + PubChem 融合查询。"
+    },
+    {
+      "name": "openai-docs",
+      "domain": "12-ai-api",
+      "path": "skills/12-ai-api/openai-docs/",
+      "descriptionZh": "查询 OpenAI 产品和 API 的最新官方文档。"
+    },
+    {
+      "name": "plugin-creator",
+      "domain": "01-agent-engineering",
+      "path": "skills/01-agent-engineering/plugin-creator/",
+      "descriptionZh": "创建 Codex 插件目录，含 plugin.json 和可选插件文件。"
+    },
+    {
+      "name": "ppt-nano",
+      "domain": "07-media-content",
+      "path": "skills/07-media-content/ppt-nano/",
+      "descriptionZh": "白板板书风格 PPT 生成，适合教学、汇报、头脑风暴。"
+    },
+    {
+      "name": "pubmed-eutils",
+      "domain": "06-data-search",
+      "path": "skills/06-data-search/pubmed-eutils/",
+      "descriptionZh": "通过 NCBI E-utilities 搜索 PubMed 并获取结构化生物医学文献。"
+    },
+    {
+      "name": "pubtator-entity-search",
+      "domain": "06-data-search",
+      "path": "skills/06-data-search/pubtator-entity-search/",
+      "descriptionZh": "NLM PubTator3 实体级关系挖掘：疾病-药物-基因-化学品关联。"
+    },
+    {
+      "name": "report-bundle-builder",
+      "domain": "06-data-search",
+      "path": "skills/06-data-search/report-bundle-builder/",
+      "descriptionZh": "将多页 HTML 报告合并为单一独立 HTML/PDF/XLSX 交付物。"
+    },
+    {
+      "name": "security-review",
+      "domain": "04-testing-quality",
+      "path": "skills/04-testing-quality/security-review/",
+      "descriptionZh": "添加认证、处理用户输入、密钥和工作敏感功能时的安全检查。"
+    },
+    {
+      "name": "seo",
+      "domain": "08-writing-marketing",
+      "path": "skills/08-writing-marketing/seo/",
+      "descriptionZh": "全面 SEO 审计：技术阻塞、页面优化、Core Web Vitals 和结构化数据。"
+    },
+    {
+      "name": "session-resume",
+      "domain": "10-business-industry",
+      "path": "skills/10-business-industry/session-resume/",
+      "descriptionZh": "disease-market-sizing 管线中断后恢复，无需从头开始。"
+    },
+    {
+      "name": "skill-installer",
+      "domain": "01-agent-engineering",
+      "path": "skills/01-agent-engineering/skill-installer/",
+      "descriptionZh": "从 openai/skills 或自定义 GitHub 仓库安装 Codex 技能。"
+    },
+    {
+      "name": "strategic-compact",
+      "domain": "01-agent-engineering",
+      "path": "skills/01-agent-engineering/strategic-compact/",
+      "descriptionZh": "在逻辑间隔处建议手动上下文压缩以保持上下文。"
+    },
+    {
+      "name": "tdd-workflow",
+      "domain": "04-testing-quality",
+      "path": "skills/04-testing-quality/tdd-workflow/",
+      "descriptionZh": "测试驱动开发工作流，强制 80%+ 覆盖率。"
+    },
+    {
+      "name": "wechat-article",
+      "domain": "07-media-content",
+      "path": "skills/07-media-content/wechat-article/",
+      "descriptionZh": "傅盛风格的公众号文章创作：对话式、故事驱动、有观点。"
     }
   ],
   "projects": [

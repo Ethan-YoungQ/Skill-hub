@@ -1,0 +1,23 @@
+{
+  "skill_name": "jira-integration",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "帮我把这个需求文档拆分成 Jira story：用户需要能够在手机上查看自己的历史订单，包括筛选和导出功能。",
+      "expected_output": "Jira stories：每个 story 含标题、描述、验收标准、story points 估算",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "Create a Jira epic for our Q3 authentication revamp: migrate from JWT to OIDC, add MFA, and update all downstream services.",
+      "expected_output": "Epic with child stories, estimated points, dependencies, and acceptance criteria",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "Update the status of all Jira tickets in sprint 42 that are assigned to me and have been in 'In Review' for more than 5 days.",
+      "expected_output": "Jira bulk update plan with filter criteria and status transition steps",
+      "files": []
+    }
+  ]
+}

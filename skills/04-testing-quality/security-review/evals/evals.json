@@ -1,0 +1,23 @@
+{
+  "skill_name": "security-review",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Review this authentication code for security vulnerabilities: [JWT stored in localStorage, no expiry check, password hashed with MD5]",
+      "expected_output": "Security review identifying all issues with severity ratings and concrete fixes",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "帮我做这段代码的安全审查，它处理用户上传的文件：[直接用原始文件名保存到服务器，没有类型检查，路径没有净化]",
+      "expected_output": "安全问题清单：文件名注入/路径遍历/类型欺骗，各附修复方案",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "I'm launching a fintech API. What security controls do I need before go-live? Give me a prioritized checklist.",
+      "expected_output": "Pre-launch security checklist: auth, input validation, rate limiting, logging, secrets management",
+      "files": []
+    }
+  ]
+}

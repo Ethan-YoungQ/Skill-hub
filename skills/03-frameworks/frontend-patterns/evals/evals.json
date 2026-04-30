@@ -1,0 +1,23 @@
+{
+  "skill_name": "frontend-patterns",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Show me how to build a data fetching hook with caching, loading states, and error handling using React Query.",
+      "expected_output": "Custom hook with TanStack Query, proper error boundaries, and loading skeleton pattern",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "帮我实现一个支持无限滚动的商品列表组件，数据来自 API，需要正确处理 loading 和 error 状态。",
+      "expected_output": "IntersectionObserver + 数据获取 + 状态管理的完整实现",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "I'm building a complex form with React Hook Form that has conditional fields and server-side validation. What's the best pattern?",
+      "expected_output": "Form pattern with conditional rendering, validation schema, and server error mapping",
+      "files": []
+    }
+  ]
+}
