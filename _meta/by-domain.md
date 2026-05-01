@@ -1,98 +1,70 @@
 # 按能力域索引
 
-共 113 个技能，按能力域 + projects（项目私有）分组。
+共 73 个技能，按能力域 + projects（项目私有）分组。
 
 ## 目录
 
-- [01 Agent 工程](#01-agent-工程)（28）
-- [02 编程语言](#02-编程语言)（4）
-- [03 框架与技术栈](#03-框架与技术栈)（6）
-- [04 测试与质量](#04-测试与质量)（5）
-- [05 DevOps 与基础设施](#05-devops-与基础设施)（2）
-- [06 数据与检索](#06-数据与检索)（16）
-- [07 媒体与内容制作](#07-媒体与内容制作)（16）
-- [08 写作与营销](#08-写作与营销)（2）
-- [09 办公自动化与协作](#09-办公自动化与协作)（3）
+- [01 Agent 工程](#01-agent-工程)（12）
+- [02 编程语言](#02-编程语言)（1）
+- [03 框架与技术栈](#03-框架与技术栈)（1）
+- [04 测试与质量](#04-测试与质量)（3）
+- [05 DevOps 与基础设施](#05-devops-与基础设施)（1）
+- [06 数据与检索](#06-数据与检索)（15）
+- [07 媒体与内容制作](#07-媒体与内容制作)（10）
+- [08 写作与营销](#08-写作与营销)（1）
+- [09 办公自动化与协作](#09-办公自动化与协作)（2）
 - [10 行业与业务](#10-行业与业务)（17）
 - [11 Web3 与区块链](#11-web3-与区块链)（0）
-- [12 AI API 与 LLM 平台](#12-ai-api-与-llm-平台)（2）
-- [Projects 项目私有](#projects-项目私有)（12）
+- [12 AI API 与 LLM 平台](#12-ai-api-与-llm-平台)（1）
+- [Projects 项目私有](#projects-项目私有)（9）
 
-## 01 Agent 工程（28）
+## 01 Agent 工程（12）
 
 | 技能名 | 路径 | 中文简介 |
 |---|---|---|
 | **agent-browser** | [skills/01-agent-engineering/agent-browser/](../skills/01-agent-engineering/agent-browser/) | AI Agent 的浏览器自动化 CLI，用于网页导航、表单填写、截图、数据抓取。 |
-| **agent-payment-x402** | [skills/01-agent-engineering/agent-payment-x402/](../skills/01-agent-engineering/agent-payment-x402/) | 为 Agent 接入 x402 支付执行能力，含任务预算、支出控制、非托管钱包。 |
-| **agentcore** | [skills/01-agent-engineering/agentcore/](../skills/01-agent-engineering/agentcore/) | 在 AWS Bedrock AgentCore 云端浏览器上运行 agent-browser。 |
-| **blueprint** | [skills/01-agent-engineering/blueprint/](../skills/01-agent-engineering/blueprint/) | 把一句话目标转为多会话多 Agent 的分步构建计划，每步自带冷启动上下文。 |
 | **browser-use** | [skills/01-agent-engineering/browser-use/](../skills/01-agent-engineering/browser-use/) | 浏览器交互自动化，用于网页测试、表单填写、截图、数据提取。 |
-| **ck** | [skills/01-agent-engineering/ck/](../skills/01-agent-engineering/ck/) | 项目级持久记忆，自动加载项目上下文、追踪 git 会话、写入原生内存。 |
-| **claude-devfleet** | [skills/01-agent-engineering/claude-devfleet/](../skills/01-agent-engineering/claude-devfleet/) | 通过 Claude DevFleet 编排多 Agent 编码任务，并行 worktree 派发与监控。 |
 | **cloud** | [skills/01-agent-engineering/cloud/](../skills/01-agent-engineering/cloud/) | Browser Use Cloud 托管 API 与 SDK 的文档参考。 |
 | **deep-research** | [skills/01-agent-engineering/deep-research/](../skills/01-agent-engineering/deep-research/) | 多源深度研究，使用 firecrawl/exa 搜索并综合发现。 |
-| **dogfood** | [skills/01-agent-engineering/dogfood/](../skills/01-agent-engineering/dogfood/) | 系统化测试 Web 应用以发现 Bug、UX 问题，输出带截图和复现步骤的报告。 |
-| **electron** | [skills/01-agent-engineering/electron/](../skills/01-agent-engineering/electron/) | 通过 CDP 用 agent-browser 自动化 Electron 桌面应用（VS Code、Slack 等）。 |
-| **find-skill** | [skills/01-agent-engineering/find-skill/](../skills/01-agent-engineering/find-skill/) | 技能发现入口（文件体为空，疑似占位）。 |
 | **find-skills** | [skills/01-agent-engineering/find-skills/](../skills/01-agent-engineering/find-skills/) | 自动发现与推荐可用 Agent 技能，回答"有没有能做 X 的技能"。 |
-| **hookify-rules** | [skills/01-agent-engineering/hookify-rules/](../skills/01-agent-engineering/hookify-rules/) | 创建 hookify 规则的语法与模式指南。 |
 | **open-source** | [skills/01-agent-engineering/open-source/](../skills/01-agent-engineering/open-source/) | browser-use 开源 Python 库的文档参考（Agent/Browser/Tools 配置）。 |
-| **openclaw-persona-forge** | [skills/01-agent-engineering/openclaw-persona-forge/](../skills/01-agent-engineering/openclaw-persona-forge/) | 为 OpenClaw AI Agent 锻造龙虾灵魂方案：身份、角色底线、头像提示词。 |
-| **plankton-code-quality** | [skills/01-agent-engineering/plankton-code-quality/](../skills/01-agent-engineering/plankton-code-quality/) | 基于 Plankton 的写入期代码质量把关——保存时自动格式化、lint、Claude 修复。 |
-| **plugin-creator** | [skills/01-agent-engineering/plugin-creator/](../skills/01-agent-engineering/plugin-creator/) | 创建 Codex 插件目录，含 plugin.json 和可选插件文件。 |
-| **proactive-agent** | [skills/01-agent-engineering/proactive-agent/](../skills/01-agent-engineering/proactive-agent/) | 把 Agent 从被动执行者转为主动伙伴，跨会话记忆、主动建议下一步。 |
-| **prompt-optimizer** | [skills/01-agent-engineering/prompt-optimizer/](../skills/01-agent-engineering/prompt-optimizer/) | 分析原始 prompt，匹配 ECC 组件并输出可粘贴的优化版，仅作顾问不执行。 |
 | **remote-browser** | [skills/01-agent-engineering/remote-browser/](../skills/01-agent-engineering/remote-browser/) | 在沙箱远端机器上控制本地浏览器，用于无 GUI 沙箱场景。 |
 | **repo-scan** | [skills/01-agent-engineering/repo-scan/](../skills/01-agent-engineering/repo-scan/) | 跨栈源码资产审计，分类文件、识别嵌入第三方库，输出四级判定 HTML 报告。 |
 | **santa-method** | [skills/01-agent-engineering/santa-method/](../skills/01-agent-engineering/santa-method/) | 多 Agent 对抗验证收敛循环，两个独立审查都通过后才出交付。 |
 | **skill-creator** | [skills/01-agent-engineering/skill-creator/](../skills/01-agent-engineering/skill-creator/) | 创建、修改和优化 skill，并可跑 eval 衡量触发准确率与性能。 |
 | **skill-installer** | [skills/01-agent-engineering/skill-installer/](../skills/01-agent-engineering/skill-installer/) | 从 openai/skills 或自定义 GitHub 仓库安装 Codex 技能。 |
-| **strategic-compact** | [skills/01-agent-engineering/strategic-compact/](../skills/01-agent-engineering/strategic-compact/) | 在逻辑间隔处建议手动上下文压缩以保持上下文。 |
-| **team-builder** | [skills/01-agent-engineering/team-builder/](../skills/01-agent-engineering/team-builder/) | 交互式 Agent 选择器，用于组合并派发并行团队。 |
 | **vercel-sandbox** | [skills/01-agent-engineering/vercel-sandbox/](../skills/01-agent-engineering/vercel-sandbox/) | 在 Vercel Sandbox 微型 VM 中运行 agent-browser + Chrome 做浏览器自动化。 |
 
-## 02 编程语言（4）
+## 02 编程语言（1）
 
 | 技能名 | 路径 | 中文简介 |
 |---|---|---|
-| **foundation-models-on-device** | [skills/02-coding-languages/swift/foundation-models-on-device/](../skills/02-coding-languages/swift/foundation-models-on-device/) | Apple FoundationModels 端侧 LLM：文本生成、@Generable、工具调用、快照流。 |
 | **liquid-glass-design** | [skills/02-coding-languages/swift/liquid-glass-design/](../skills/02-coding-languages/swift/liquid-glass-design/) | iOS 26 Liquid Glass 设计系统：SwiftUI/UIKit/WidgetKit 的玻璃材质与交互。 |
-| **swift-concurrency-6-2** | [skills/02-coding-languages/swift/swift-concurrency-6-2/](../skills/02-coding-languages/swift/swift-concurrency-6-2/) | Swift 6.2 Approachable Concurrency：默认单线程、@concurrent 显式后台。 |
-| **swiftui-patterns** | [skills/02-coding-languages/swift/swiftui-patterns/](../skills/02-coding-languages/swift/swiftui-patterns/) | SwiftUI 架构、@Observable 状态、视图组合、导航、性能优化、现代 UI 实践。 |
 
-## 03 框架与技术栈（6）
+## 03 框架与技术栈（1）
 
 | 技能名 | 路径 | 中文简介 |
 |---|---|---|
-| **api-design** | [skills/03-frameworks/api-design/](../skills/03-frameworks/api-design/) | 设计生产级 REST API，含资源命名、HTTP 语义、分页、错误响应、版本控制。 |
-| **backend-patterns** | [skills/03-frameworks/backend-patterns/](../skills/03-frameworks/backend-patterns/) | 后端架构模式、API 设计、数据库优化和服务器端最佳实践。 |
 | **frontend-design** | [skills/03-frameworks/frontend-design/](../skills/03-frameworks/frontend-design/) | 创建具有高设计质量的生产级前端界面。 |
-| **frontend-patterns** | [skills/03-frameworks/frontend-patterns/](../skills/03-frameworks/frontend-patterns/) | React/Next.js 前端开发模式、状态管理和性能优化。 |
-| **vercel-react-best-practices** | [skills/03-frameworks/nextjs/vercel-react-best-practices/](../skills/03-frameworks/nextjs/vercel-react-best-practices/) | Vercel 工程出品的 React/Next.js 性能优化指引，含组件、数据获取、打包。 |
-| **vercel-react-native-skills** | [skills/03-frameworks/react-native/vercel-react-native-skills/](../skills/03-frameworks/react-native/vercel-react-native-skills/) | React Native + Expo 构建高性能移动应用的最佳实践。 |
 
-## 04 测试与质量（5）
+## 04 测试与质量（3）
 
 | 技能名 | 路径 | 中文简介 |
 |---|---|---|
-| **click-path-audit** | [skills/04-testing-quality/click-path-audit/](../skills/04-testing-quality/click-path-audit/) | 追踪每个用户按钮的完整状态变更序列，发现功能各自正确但相互抵消的 bug。 |
 | **e2e-testing** | [skills/04-testing-quality/e2e-testing/](../skills/04-testing-quality/e2e-testing/) | Playwright E2E 测试模式：Page Object、配置、CI/CD 集成、flaky 测试策略。 |
 | **playwright** | [skills/04-testing-quality/playwright/](../skills/04-testing-quality/playwright/) | "Use when the task requires automating a real browser from the terminal (navigation, form filling, snapshots, screenshots, data extraction, UI-flow debugging) via `playwright-cli` or the bundled wrapper script." |
 | **security-review** | [skills/04-testing-quality/security-review/](../skills/04-testing-quality/security-review/) | 添加认证、处理用户输入、密钥和工作敏感功能时的安全检查。 |
-| **tdd-workflow** | [skills/04-testing-quality/tdd-workflow/](../skills/04-testing-quality/tdd-workflow/) | 测试驱动开发工作流，强制 80%+ 覆盖率。 |
 
-## 05 DevOps 与基础设施（2）
+## 05 DevOps 与基础设施（1）
 
 | 技能名 | 路径 | 中文简介 |
 |---|---|---|
 | **database-migrations** | [skills/05-devops-infra/database-migrations/](../skills/05-devops-infra/database-migrations/) | 数据库迁移最佳实践：schema 变更、数据迁移、回滚与零停机部署。 |
-| **deployment-patterns** | [skills/05-devops-infra/deployment-patterns/](../skills/05-devops-infra/deployment-patterns/) | 部署工作流、CI/CD、Docker 容器化、健康检查与回滚策略。 |
 
-## 06 数据与检索（16）
+## 06 数据与检索（15）
 
 | 技能名 | 路径 | 中文简介 |
 |---|---|---|
-| **aact-bulk-trials** | [skills/06-data-search/aact-bulk-trials/](../skills/06-data-search/aact-bulk-trials/) | 通过 AACT PostgreSQL 数据仓库批量挖掘历史临床试验数据。 |
 | **bioc-fulltext-fetch** | [skills/06-data-search/bioc-fulltext-fetch/](../skills/06-data-search/bioc-fulltext-fetch/) | 从 PubMed/PMC 获取结构化全文并按章节切分为 RAG 友好的 chunk。 |
 | **clinical-trials-v2** | [skills/06-data-search/clinical-trials-v2/](../skills/06-data-search/clinical-trials-v2/) | 实时查询 ClinicalTrials.gov 试验协议、结果和招募状态。 |
 | **cn-clinical-guidelines-fetch** | [skills/06-data-search/cn-clinical-guidelines-fetch/](../skills/06-data-search/cn-clinical-guidelines-fetch/) | 抓取中国权威医学指南（CSCO/NCCN 中文版/NMPA/CDE/NHC）。 |
@@ -109,15 +81,10 @@
 | **pubtator-entity-search** | [skills/06-data-search/pubtator-entity-search/](../skills/06-data-search/pubtator-entity-search/) | NLM PubTator3 实体级关系挖掘：疾病-药物-基因-化学品关联。 |
 | **report-bundle-builder** | [skills/06-data-search/report-bundle-builder/](../skills/06-data-search/report-bundle-builder/) | 将多页 HTML 报告合并为单一独立 HTML/PDF/XLSX 交付物。 |
 
-## 07 媒体与内容制作（16）
+## 07 媒体与内容制作（10）
 
 | 技能名 | 路径 | 中文简介 |
 |---|---|---|
-| **anything-to-notebooklm** | [skills/07-media-content/anything-to-notebooklm/](../skills/07-media-content/anything-to-notebooklm/) | 多源内容处理器：公众号、网页、YouTube、PDF、MD 上传 NotebookLM 并转播客/PPT。 |
-| **article-writing** | [skills/07-media-content/article-writing/](../skills/07-media-content/article-writing/) | 撰写有独特声音的长文内容，包括博客、文章、指南、新闻通讯等。 |
-| **brand-voice** | [skills/07-media-content/brand-voice/](../skills/07-media-content/brand-voice/) | 从真实素材构建写作风格档案，跨内容工作流复用保持声音一致性。 |
-| **content-engine** | [skills/07-media-content/content-engine/](../skills/07-media-content/content-engine/) | 为 X/LinkedIn/TikTok/YouTube 等多平台创建原生内容系统。 |
-| **crosspost** | [skills/07-media-content/crosspost/](../skills/07-media-content/crosspost/) | 跨平台内容分发（X/LinkedIn/Threads/Bluesky），适配各平台特点。 |
 | **docx** | [skills/07-media-content/docx/](../skills/07-media-content/docx/) | 全面处理 .docx：创建、编辑、修订跟踪、评论、格式保留与文本提取。 |
 | **editorial-presentation-html** | [skills/07-media-content/editorial-presentation-html/](../skills/07-media-content/editorial-presentation-html/) | Anthropic 暖色编辑设计语言，用于演示/case sharing/战略汇报。 |
 | **imagegen** | [skills/07-media-content/imagegen/](../skills/07-media-content/imagegen/) | 生成或编辑光栅图像（照片、插画、纹理、UI 模型等）。 |
@@ -126,23 +93,20 @@
 | **ppt-nano** | [skills/07-media-content/ppt-nano/](../skills/07-media-content/ppt-nano/) | 白板板书风格 PPT 生成，适合教学、汇报、头脑风暴。 |
 | **pptx** | [skills/07-media-content/pptx/](../skills/07-media-content/pptx/) | 演示文稿 .pptx 的创建、编辑、布局、评论与演讲者备注。 |
 | **remotion-video-creation** | [skills/07-media-content/remotion-video-creation/](../skills/07-media-content/remotion-video-creation/) | Remotion 在 React 中做视频创作的 29 条领域规则（3D、动画、字幕、过渡）。 |
-| **visa-doc-translate** | [skills/07-media-content/visa-doc-translate/](../skills/07-media-content/visa-doc-translate/) | 签证申请文件图片翻译并生成中英双语 PDF。 |
 | **wechat-article** | [skills/07-media-content/wechat-article/](../skills/07-media-content/wechat-article/) | 傅盛风格的公众号文章创作：对话式、故事驱动、有观点。 |
 | **xlsx** | [skills/07-media-content/xlsx/](../skills/07-media-content/xlsx/) | 电子表格 .xlsx/.csv 等创建、编辑、公式、格式、数据分析与可视化。 |
 
-## 08 写作与营销（2）
+## 08 写作与营销（1）
 
 | 技能名 | 路径 | 中文简介 |
 |---|---|---|
 | **decision-tree-with-lp-embedding** | [skills/08-writing-marketing/decision-tree-with-lp-embedding/](../skills/08-writing-marketing/decision-tree-with-lp-embedding/) | 生成包含 LP 嵌入的 Mermaid 临床决策树。 |
-| **seo** | [skills/08-writing-marketing/seo/](../skills/08-writing-marketing/seo/) | 全面 SEO 审计：技术阻塞、页面优化、Core Web Vitals 和结构化数据。 |
 
-## 09 办公自动化与协作（3）
+## 09 办公自动化与协作（2）
 
 | 技能名 | 路径 | 中文简介 |
 |---|---|---|
 | **github-ops** | [skills/09-ops-productivity/github-ops/](../skills/09-ops-productivity/github-ops/) | GitHub 仓库运营：Issue 分诊、PR 管理、CI/CD、发布和安全监控。 |
-| **jira-integration** | [skills/09-ops-productivity/jira-integration/](../skills/09-ops-productivity/jira-integration/) | 检索 Jira 工单、分析需求、更新状态和添加评论。 |
 | **slack** | [skills/09-ops-productivity/general/slack/](../skills/09-ops-productivity/general/slack/) | 通过浏览器自动化在 Slack 中检查未读、导航、发消息、搜对话、抓取信息。 |
 
 ## 10 行业与业务（17）
@@ -171,14 +135,13 @@
 
 _暂无技能。_
 
-## 12 AI API 与 LLM 平台（2）
+## 12 AI API 与 LLM 平台（1）
 
 | 技能名 | 路径 | 中文简介 |
 |---|---|---|
 | **openai-docs** | [skills/12-ai-api/openai-docs/](../skills/12-ai-api/openai-docs/) | 查询 OpenAI 产品和 API 的最新官方文档。 |
-| **token-budget-advisor** | [skills/12-ai-api/token-budget-advisor/](../skills/12-ai-api/token-budget-advisor/) | 在回答前给用户选择响应深度与 Token 预算的顾问式工作流。 |
 
-## Projects 项目私有（{projects_count}）
+## Projects 项目私有（9）
 
 ### ai-seed-project（2）
 
@@ -208,11 +171,3 @@ _暂无技能。_
 | **controlled-lockcheck-autofix** | [projects/codex-invoice/controlled-lockcheck-autofix/](../projects/codex-invoice/controlled-lockcheck-autofix/) | QQ 受控前端 lockcheck 自动化：失败分类、受限自动修复、打包门的证据留存。 |
 | **email-batch-test** | [projects/codex-invoice/email-batch-test/](../projects/codex-invoice/email-batch-test/) | 跑批测试标准与双邮箱回归门禁：P0/P1/P2 标准与保护区改动的双邮箱验证。 |
 | **qq-email-ground-truth** | [projects/codex-invoice/qq-email-ground-truth/](../projects/codex-invoice/qq-email-ground-truth/) | 构建/重建/审计/比对 QQ 邮箱发票真值集，验证跑批输出。 |
-
-### content-assets（3）
-
-| 技能名 | 路径 | 中文简介 |
-|---|---|---|
-| **ai-music-generation** | [projects/content-assets/ai-music-generation/](../projects/content-assets/ai-music-generation/) | 通过 inference.sh 生成 AI 音乐/歌曲，支持 ElevenLabs、Diffrythm、腾讯歌曲生成。 |
-| **create-promo-video** | [projects/content-assets/create-promo-video/](../projects/content-assets/create-promo-video/) | 为项目生成 TikTok 风格短宣传片，分析代码库后用 Remotion 输出竖版/横版。 |
-| **video-producer** | [projects/content-assets/video-producer/](../projects/content-assets/video-producer/) | 端到端 Remotion 视频制作：叙事、场景动画、视觉风格、渲染全链路编排。 |
