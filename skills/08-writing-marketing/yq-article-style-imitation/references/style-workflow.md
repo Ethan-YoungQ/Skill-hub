@@ -11,7 +11,11 @@ For each style run, create:
 5. `evidence-ledger.md`
 6. `imitation-draft.md`
 7. `imitation-repair-notes.md`
-8. platform drafts only after the imitation draft passes repair
+8. `reviews/01-source-audit.md`
+9. `reviews/02-style-audit.md`
+10. `reviews/03-fact-audit.md`
+11. `reviews/04-platform-audit.md` when platform drafts exist
+12. platform drafts only after the imitation draft passes repair
 
 Do not collapse these into one mixed file. A single file containing corpus, teardown, facts, and draft hides whether the chain is solid.
 
@@ -225,3 +229,34 @@ This happens when the skill tells the agent to be evidence-safe but does not tea
 A later run fixed URLs and report labels but still failed by leaking verification method into the article voice. That means the skill also needs a point-of-view continuity gate.
 
 The fix is not to remove evidence discipline. The fix is to keep evidence discipline in companion files and make the article hide its scaffolding.
+
+## Independent Review
+
+This skill uses a Nuwa-style split between mechanical validation and independent judgment.
+
+Python scripts are responsible for checks that can be made deterministic:
+
+- required package files exist;
+- corpus rows contain source access and local text fields;
+- style teardown references valid source IDs;
+- draft text does not leak URLs, risk labels, or known AI/report phrases;
+- independent review artifacts exist and contain explicit verdicts.
+
+Independent reviewer agents are responsible for judgment:
+
+- whether a source is really useful as style evidence, not just technically present;
+- whether the expression-DNA teardown is specific enough to guide imitation;
+- whether the draft sounds like the target writer throughout, not only in the opening;
+- whether factual uncertainty is handled without turning the article into a report;
+- whether platform adaptation is based on reviewed platform evidence.
+
+The drafting agent cannot mark its own run as final. At minimum, run:
+
+1. Source auditor after corpus and raw source capture.
+2. Style auditor after imitation draft and repair.
+3. Fact auditor before publication.
+4. Platform auditor when WeChat/Xiaohongshu outputs exist.
+
+Each reviewer writes one file under `reviews/` with `reviewer_role`, `verdict`, `checked_files`, `critical_findings`, `required_changes`, and `independence_note`.
+
+Run `scripts/review_style_run.py` only after those files exist. The script checks the review package; it does not replace the reviewers.

@@ -41,6 +41,40 @@ If older project plans, generated drafts, evidence registers, or risk gates cont
 11. **Imitation repair gate**: check the draft for source leakage, AI/report language, fake interviews, meta-writing leakage, style decay, and weak ending.
 12. **Platform pattern check**: before WeChat/Xiaohongshu adaptation, read `references/platform-patterns.md` and identify what evidence level supports the platform rules being used.
 13. **Platform adaptation**: only after the imitation draft passes the repair gate and platform pattern check, adapt to WeChat and/or Xiaohongshu.
+14. **Independent review swarm**: before release, spawn independent reviewer agents. The drafting agent cannot approve its own source quality, style fidelity, or publication readiness.
+15. **Final release audit**: run the review artifact validator. If any independent reviewer returns `REVISE` or `BLOCK`, stop, repair the run package, and repeat the relevant review.
+
+## Independent Review Swarm
+
+Use Nuwa's review pattern: Python scripts catch mechanical failures; independent agents catch judgment failures. Do not replace reviewer agents with the drafting agent's own checklist.
+
+Before publishing or platform adaptation, create `reviews/` inside the run directory and ask independent agents to write separate review files. Give each reviewer only the run package and the criteria below, not the drafting conversation. If subagent tooling is unavailable, run separate zero-context review passes and save their outputs in the same files.
+
+Required reviewers:
+
+| Reviewer | Output file | Review focus | Must inspect |
+|---|---|---|---|
+| Source auditor | `reviews/01-source-audit.md` | Whether accepted style sources are author-written, readable, substantial, and correctly graded | `source-fetch-log.md`, `style-reference-corpus.md`, `raw-sources/` |
+| Style auditor | `reviews/02-style-audit.md` | Whether the teardown actually supports the draft, and whether the draft decays into generic reportage, AI language, or platform copy | `style-mechanism-breakdown.md`, `imitation-draft.md`, accepted raw sources |
+| Fact auditor | `reviews/03-fact-audit.md` | Whether factual claims in the draft are supported, overclaimed, or missing uncertainty | `evidence-ledger.md`, `imitation-draft.md` |
+| Platform auditor | `reviews/04-platform-audit.md` | Required only when WeChat/Xiaohongshu drafts exist; checks platform adaptation against sourced platform patterns rather than generic memory | `references/platform-patterns.md`, platform drafts, platform notes |
+
+Each review file must include:
+
+- `reviewer_role`: one of `source-auditor`, `style-auditor`, `fact-auditor`, `platform-auditor`
+- `verdict`: `PASS`, `REVISE`, or `BLOCK`
+- `checked_files`: concrete files inspected
+- `critical_findings`: concrete issues or `none`
+- `required_changes`: exact changes required before release, or `none`
+- `independence_note`: confirm this was a separate review pass, not approval by the drafting agent
+
+Reviewer standards:
+
+- `PASS`: no blocking issue; minor notes may remain.
+- `REVISE`: article can be repaired without rebuilding the corpus.
+- `BLOCK`: source corpus, teardown, evidence base, or platform basis is invalid; drafting must stop until the upstream package is fixed.
+
+The main agent must summarize reviewer disagreements and resolve them by evidence, not by majority vote. One `BLOCK` is enough to stop release.
 
 ## Author-Source Validity Gate
 
@@ -107,6 +141,7 @@ python "$env:USERPROFILE\.agents\skills\yq-article-style-imitation\scripts\valid
 ```
 
 Fix any failures before writing the imitation draft.
+Then run the source auditor. Do not let the drafting agent certify its own corpus.
 
 ## Form And Interview Mode
 
@@ -212,6 +247,22 @@ Then manually check:
 - Does the article hide its scaffolding?
 - Does every paragraph stay inside the subject's world rather than explaining the author's writing or investigation method?
 
+After this self-check, run the style auditor and fact auditor. The self-check is only a preparation step; it is not release approval.
+
+For final release, run:
+
+```powershell
+python "$env:USERPROFILE\.agents\skills\yq-article-style-imitation\scripts\review_style_run.py" <run-directory>
+```
+
+If platform drafts are included, require platform review:
+
+```powershell
+python "$env:USERPROFILE\.agents\skills\yq-article-style-imitation\scripts\review_style_run.py" <run-directory> --require-platform-review
+```
+
+This script only validates that independent review artifacts exist and that no `REVISE` or `BLOCK` verdict remains. It cannot judge literary quality by itself; the independent reviewer agents do that work.
+
 ## Platform Adaptation
 
 Read `references/platform-patterns.md` and `references/platform-adaptation.md` only after the imitation draft passes the repair gate.
@@ -230,3 +281,4 @@ Default:
 - `references/platform-adaptation.md`: WeChat and Xiaohongshu conversion rules.
 - `scripts/validate_style_run.py`: mechanical check for separate output files, source access fields, local source text, valid primary author-written sources, source-ID traceability, and fake interview signals.
 - `scripts/lint_article_style.py`: mechanical scan for URLs and AI/report-language leakage.
+- `scripts/review_style_run.py`: mechanical check that independent source, style, fact, and optional platform reviews exist, use explicit verdicts, and contain no unresolved release blockers.
