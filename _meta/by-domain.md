@@ -1,6 +1,6 @@
 # 按能力域索引
 
-共 73 个技能，按能力域 + projects（项目私有）分组。
+共 74 个技能，按能力域 + projects（项目私有）分组。
 
 ## 目录
 
@@ -11,7 +11,7 @@
 - [05 DevOps 与基础设施](#05-devops-与基础设施)（1）
 - [06 数据与检索](#06-数据与检索)（15）
 - [07 媒体与内容制作](#07-媒体与内容制作)（10）
-- [08 写作与营销](#08-写作与营销)（1）
+- [08 写作与营销](#08-写作与营销)（2）
 - [09 办公自动化与协作](#09-办公自动化与协作)（2）
 - [10 行业与业务](#10-行业与业务)（17）
 - [11 Web3 与区块链](#11-web3-与区块链)（0）
@@ -96,10 +96,11 @@
 | **wechat-article** | [skills/07-media-content/wechat-article/](../skills/07-media-content/wechat-article/) | 傅盛风格的公众号文章创作：对话式、故事驱动、有观点。 |
 | **xlsx** | [skills/07-media-content/xlsx/](../skills/07-media-content/xlsx/) | 电子表格 .xlsx/.csv 等创建、编辑、公式、格式、数据分析与可视化。 |
 
-## 08 写作与营销（1）
+## 08 写作与营销（2）
 
 | 技能名 | 路径 | 中文简介 |
 |---|---|---|
+| **yq-article-style-imitation** | [skills/08-writing-marketing/yq-article-style-imitation/](../skills/08-writing-marketing/yq-article-style-imitation/) | 任意作家文章风格仿写：验证作者原文、拆解表达 DNA、生成并修复公众号/小红书稿。 |
 | **decision-tree-with-lp-embedding** | [skills/08-writing-marketing/decision-tree-with-lp-embedding/](../skills/08-writing-marketing/decision-tree-with-lp-embedding/) | 生成包含 LP 嵌入的 Mermaid 临床决策树。 |
 
 ## 09 办公自动化与协作（2）

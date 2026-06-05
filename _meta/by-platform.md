@@ -12,6 +12,7 @@
 - [文档处理](#文档处理)
 - [数据与研究](#数据与研究)
 - [测试与质量](#测试与质量)
+- [写作 / 内容创作](#写作--内容创作)
 - [AI API / LLM 平台](#ai-api--llm-平台)
 - [Agent 工程与自治编排](#agent-工程与自治编排)
 - [行业与业务](#行业与业务)
@@ -134,6 +135,16 @@ E2E 测试、浏览器验证、安全审查与质量门禁。
 | **playwright** | [skills/04-testing-quality/playwright/](../skills/04-testing-quality/playwright/) | "Use when the task requires automating a real browser from the terminal (navigation, form filling, snapshots, screenshots, data extraction, UI-flow debugging) via `playwright-cli` or the bundled wrapper script." |
 | **security-review** | [skills/04-testing-quality/security-review/](../skills/04-testing-quality/security-review/) | 添加认证、处理用户输入、密钥和工作敏感功能时的安全检查。 |
 | **healthcare-eval-harness** | [skills/10-business-industry/healthcare-eval-harness/](../skills/10-business-industry/healthcare-eval-harness/) | 医疗发布的病人安全评测 harness：CDSS、PHI、临床流程与集成合规，失败阻断上线。 |
+
+
+## 写作 / 内容创作
+
+文章写作、风格仿写、平台内容改写与营销文案。
+
+| 技能名 | 路径 | 中文简介 |
+|---|---|---|
+| **yq-article-style-imitation** | [skills/08-writing-marketing/yq-article-style-imitation/](../skills/08-writing-marketing/yq-article-style-imitation/) | 任意作家文章风格仿写：验证作者原文、拆解表达 DNA、生成并修复公众号/小红书稿。 |
+| **wechat-article** | [skills/07-media-content/wechat-article/](../skills/07-media-content/wechat-article/) | 傅盛风格的公众号文章创作：对话式、故事驱动、有观点。 |
 
 
 ## AI API / LLM 平台

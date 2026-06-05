@@ -6,7 +6,7 @@
 
 # Skill-hub
 
-A shared collection of skills across multiple AI coding agents (Claude Code, Antigravity, Codex, etc.), totaling **73** skills.
+A shared collection of skills across multiple AI coding agents (Claude Code, Antigravity, Codex, etc.), totaling **74** skills.
 
 ## Purpose
 
@@ -17,7 +17,7 @@ A shared collection of skills across multiple AI coding agents (Claude Code, Ant
 ## Directory Structure
 
 ```
-skills/                        # 64 shared skills across 11 domains
+skills/                        # 65 shared skills across 11 domains
 ├── 01-agent-engineering/      Agent engineering (building, debugging, autonomy loops, harness, etc.)
 ├── 02-coding-languages/       Programming languages (Swift + general)
 ├── 03-frameworks/             Framework stacks (Next.js, React, etc.)
@@ -25,7 +25,7 @@ skills/                        # 64 shared skills across 11 domains
 ├── 05-devops-infra/           DevOps and infrastructure
 ├── 06-data-search/            Data scraping, retrieval, deep research
 ├── 07-media-content/          Multimedia (PPT, video, PDF, images)
-├── 08-writing-marketing/      Writing and marketing
+├── 08-writing-marketing/      Writing, style imitation, and marketing
 ├── 09-ops-productivity/       Office automation (Slack, Jira, etc.)
 ├── 10-business-industry/      Industry-specific (healthcare, legal, finance, etc.)
 └── 12-ai-api/                 AI API, LLM pipelines, token budgeting

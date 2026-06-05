@@ -1,6 +1,6 @@
 # 按技能名 A-Z 索引
 
-共 73 个技能（64 个共享 + 9 个项目私有）。项目私有技能以 *(项目)* 标注。
+共 74 个技能（65 个共享 + 9 个项目私有）。项目私有技能以 *(项目)* 标注。
 
 | # | 技能名 | 路径 | 中文简介 |
 |---|---|---|---|
@@ -77,3 +77,4 @@
 | 71 | **vercel-sandbox** | [skills/01-agent-engineering/vercel-sandbox/](../skills/01-agent-engineering/vercel-sandbox/) | 在 Vercel Sandbox 微型 VM 中运行 agent-browser + Chrome 做浏览器自动化。 |
 | 72 | **wechat-article** | [skills/07-media-content/wechat-article/](../skills/07-media-content/wechat-article/) | 傅盛风格的公众号文章创作：对话式、故事驱动、有观点。 |
 | 73 | **xlsx** | [skills/07-media-content/xlsx/](../skills/07-media-content/xlsx/) | 电子表格 .xlsx/.csv 等创建、编辑、公式、格式、数据分析与可视化。 |
+| 74 | **yq-article-style-imitation** | [skills/08-writing-marketing/yq-article-style-imitation/](../skills/08-writing-marketing/yq-article-style-imitation/) | 任意作家文章风格仿写：验证作者原文、拆解表达 DNA、生成并修复公众号/小红书稿。 |

@@ -1,11 +1,11 @@
 {
   "version": "2.0",
   "generated_at": "2026-05-01T00:00:00+08:00",
-  "note": "Pruned low-quality/plugin-origin skills and rebuilt indexes. Total: 64 shared + 9 projects = 73 total",
+  "note": "Pruned low-quality/plugin-origin skills and rebuilt indexes. Total: 65 shared + 9 projects = 74 total",
   "counts": {
-    "shared": 64,
+    "shared": 65,
     "projects": 9,
-    "total": 73
+    "total": 74
   },
   "shared": [
     {
@@ -265,6 +265,12 @@
       "domain": "07-media-content",
       "path": "skills/07-media-content/xlsx/",
       "descriptionZh": "电子表格 .xlsx/.csv 等创建、编辑、公式、格式、数据分析与可视化。"
+    },
+    {
+      "name": "yq-article-style-imitation",
+      "domain": "08-writing-marketing",
+      "path": "skills/08-writing-marketing/yq-article-style-imitation/",
+      "descriptionZh": "任意作家文章风格仿写：验证作者原文、拆解表达 DNA、生成并修复公众号/小红书稿。"
     },
     {
       "name": "decision-tree-with-lp-embedding",

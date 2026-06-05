@@ -6,7 +6,7 @@
 
 # Skill-hub
 
-跨多个 AI 编码 Agent（Claude Code、Antigravity、Codex 等）通用的技能（Skill）集合，共 **73** 个技能。
+跨多个 AI 编码 Agent（Claude Code、Antigravity、Codex 等）通用的技能（Skill）集合，共 **74** 个技能。
 
 ## 仓库定位
 
@@ -17,7 +17,7 @@
 ## 目录结构
 
 ```
-skills/                        # 64 个共享技能，分 11 个能力域
+skills/                        # 65 个共享技能，分 11 个能力域
 ├── 01-agent-engineering/      Agent 工程（构建、调试、自治循环、harness 等）
 ├── 02-coding-languages/       编程语言（Swift + 通用）
 ├── 03-frameworks/             框架栈（Next.js、React 等）
@@ -25,7 +25,7 @@ skills/                        # 64 个共享技能，分 11 个能力域
 ├── 05-devops-infra/           DevOps 与基础设施
 ├── 06-data-search/            数据抓取、检索、深度研究
 ├── 07-media-content/          多媒体（PPT、视频、PDF、图像）
-├── 08-writing-marketing/      写作与营销
+├── 08-writing-marketing/      写作、风格仿写与营销
 ├── 09-ops-productivity/       办公自动化（Slack、Jira 等）
 ├── 10-business-industry/      行业业务（医疗、法律、金融等）
 └── 12-ai-api/                 AI API、LLM 管线、Token 预算
