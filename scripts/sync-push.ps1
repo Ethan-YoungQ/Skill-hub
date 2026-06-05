@@ -31,7 +31,7 @@ sync-push.ps1
     .\sync-push.ps1
 
 行为
-  - 仅处理 `_meta/skills-lock.json` 中的 `skills` 段（共享技能）。
+  - 仅处理 `_meta/skills-lock.json` 中的 `shared` / `skills` 段（共享技能）。
     `projects` 段是项目私有，不参与扁平化。
   - 本地 skill 在 lock 中查不到 → 收集到"未映射列表"，最后一次性报出。
     不自动归类，避免错误分类。
@@ -92,19 +92,31 @@ Say "  Lock        : $LockPath"    "Gray"
 
 $Lock = Get-Content $LockPath -Raw -Encoding UTF8 | ConvertFrom-Json
 
-if (-not $Lock.skills) {
-    Say "ERROR: skills-lock.json 缺少 `"skills`" 段。" "Red"
-    exit 1
-}
-
 # 建立 {name -> repoPath} 映射（仅 shared skills，不含 projects）
 $NameToRepoPath = @{}
-foreach ($prop in $Lock.skills.PSObject.Properties) {
-    $name = $prop.Name
-    $entry = $prop.Value
-    if ($entry.repoPath) {
-        $NameToRepoPath[$name] = $entry.repoPath
+
+if ($Lock.shared) {
+    foreach ($entry in @($Lock.shared)) {
+        $name = $entry.name
+        $path = if ($entry.path) { $entry.path } else { $entry.repoPath }
+        if ($name -and $path) {
+            $NameToRepoPath[$name] = $path
+        }
     }
+} elseif ($Lock.skills) {
+    foreach ($prop in $Lock.skills.PSObject.Properties) {
+        $name = $prop.Name
+        $entry = $prop.Value
+        $path = if ($entry.path) { $entry.path } else { $entry.repoPath }
+        if ($path) {
+            $NameToRepoPath[$name] = $path
+        }
+    }
+}
+
+if ($NameToRepoPath.Count -eq 0) {
+    Say "ERROR: skills-lock.json 缺少可用的 shared/skills 映射。" "Red"
+    exit 1
 }
 Say "  共享技能映射：$($NameToRepoPath.Count) 条" "Gray"
 

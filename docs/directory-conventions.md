@@ -69,4 +69,4 @@
 
 ## 已归档的决策
 
-完整分类档案见 [_meta/proposed-mapping.md](../_meta/proposed-mapping.md)。
+当前分类结果见 [_meta/by-domain.md](../_meta/by-domain.md)，机器可读映射见 [_meta/skills-lock.json](../_meta/skills-lock.json)。

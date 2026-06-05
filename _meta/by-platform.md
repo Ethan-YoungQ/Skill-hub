@@ -12,6 +12,7 @@
 - [文档处理](#文档处理)
 - [数据与研究](#数据与研究)
 - [测试与质量](#测试与质量)
+- [DevOps / 基础设施](#devops--基础设施)
 - [写作 / 内容创作](#写作--内容创作)
 - [AI API / LLM 平台](#ai-api--llm-平台)
 - [Agent 工程与自治编排](#agent-工程与自治编排)
@@ -147,6 +148,15 @@ E2E 测试、浏览器验证、安全审查与质量门禁。
 | **wechat-article** | [skills/07-media-content/wechat-article/](../skills/07-media-content/wechat-article/) | 傅盛风格的公众号文章创作：对话式、故事驱动、有观点。 |
 
 
+## DevOps / 基础设施
+
+数据库迁移、部署、基础设施与运维流程。
+
+| 技能名 | 路径 | 中文简介 |
+|---|---|---|
+| **database-migrations** | [skills/05-devops-infra/database-migrations/](../skills/05-devops-infra/database-migrations/) | 数据库迁移最佳实践：schema 变更、数据迁移、回滚与零停机部署。 |
+
+
 ## AI API / LLM 平台
 
 OpenAI API、LLM 文档、端侧模型与相关开发参考。
@@ -246,3 +256,4 @@ Slack、GitHub、飞书等通用办公与协作工具。
 | **controlled-lockcheck-autofix** | [projects/codex-invoice/controlled-lockcheck-autofix/](../projects/codex-invoice/controlled-lockcheck-autofix/) | QQ 受控前端 lockcheck 自动化：失败分类、受限自动修复、打包门的证据留存。 |
 | **email-batch-test** | [projects/codex-invoice/email-batch-test/](../projects/codex-invoice/email-batch-test/) | 跑批测试标准与双邮箱回归门禁：P0/P1/P2 标准与保护区改动的双邮箱验证。 |
 | **qq-email-ground-truth** | [projects/codex-invoice/qq-email-ground-truth/](../projects/codex-invoice/qq-email-ground-truth/) | 构建/重建/审计/比对 QQ 邮箱发票真值集，验证跑批输出。 |
+

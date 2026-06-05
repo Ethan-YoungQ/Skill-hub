@@ -67,12 +67,43 @@ Say "  MetaDir  : $MetaDir"  "Gray"
 
 # --- 读现有 lock（用于保留 descriptionZh）---------------------------------
 
+function Get-LockItems {
+    param(
+        [object]$Lock,
+        [string[]]$Keys
+    )
+
+    $items = @()
+    foreach ($key in $Keys) {
+        if (-not $Lock -or -not $Lock.PSObject.Properties[$key]) { continue }
+        $value = $Lock.PSObject.Properties[$key].Value
+        if ($null -eq $value) { continue }
+
+        if ($value -is [System.Array]) {
+            foreach ($entry in @($value)) {
+                if ($entry.name) { $items += $entry }
+            }
+            continue
+        }
+
+        foreach ($prop in $value.PSObject.Properties) {
+            $entry = $prop.Value
+            if (-not $entry.PSObject.Properties["name"]) {
+                $entry | Add-Member -NotePropertyName "name" -NotePropertyValue $prop.Name -Force
+            }
+            $items += $entry
+        }
+    }
+
+    return $items
+}
+
 $ExistingLock = $null
 if (Test-Path $LockPath) {
     try {
         $ExistingLock = Get-Content $LockPath -Raw -Encoding UTF8 | ConvertFrom-Json
-        $shC = if ($ExistingLock.skills)   { @($ExistingLock.skills.PSObject.Properties).Count   } else { 0 }
-        $prC = if ($ExistingLock.projects) { @($ExistingLock.projects.PSObject.Properties).Count } else { 0 }
+        $shC = @(Get-LockItems -Lock $ExistingLock -Keys @("shared", "skills")).Count
+        $prC = @(Get-LockItems -Lock $ExistingLock -Keys @("projects")).Count
         Say "  现有 lock：shared=$shC, projects=$prC" "Gray"
     } catch {
         Say "  WARN: 现有 lock 解析失败，按新建处理：$($_.Exception.Message)" "Yellow"
@@ -84,14 +115,11 @@ if (Test-Path $LockPath) {
 
 # 查表：旧的描述（按 name）
 $OldZhByName = @{}
-if ($ExistingLock -and $ExistingLock.skills) {
-    foreach ($p in $ExistingLock.skills.PSObject.Properties) {
-        if ($p.Value.descriptionZh) { $OldZhByName[$p.Name] = $p.Value.descriptionZh }
-    }
-}
-if ($ExistingLock -and $ExistingLock.projects) {
-    foreach ($p in $ExistingLock.projects.PSObject.Properties) {
-        if ($p.Value.descriptionZh) { $OldZhByName[$p.Name] = $p.Value.descriptionZh }
+if ($ExistingLock) {
+    foreach ($entry in @(Get-LockItems -Lock $ExistingLock -Keys @("shared", "skills", "projects"))) {
+        if ($entry.name -and $entry.descriptionZh) {
+            $OldZhByName[$entry.name] = $entry.descriptionZh
+        }
     }
 }
 
@@ -240,39 +268,43 @@ Say ""
 
 # --- 构造新的 lock JSON -----------------------------------------------------
 
-# 使用 [ordered] 保持键序
-$skillsObj   = [ordered]@{}
-$projectsObj = [ordered]@{}
+$sharedArr   = @()
+$projectsArr = @()
 
 foreach ($s in ($Shared | Sort-Object Domain, Subdomain, Name)) {
     $entry = [ordered]@{
-        domain    = $s.Domain
-        subdomain = $s.Subdomain
-        repoPath  = $s.RepoPath
+        name   = $s.Name
+        domain = $s.Domain
+        path   = $s.RepoPath
     }
+    if ($s.Subdomain)     { $entry.subdomain     = $s.Subdomain }
     if ($s.DescriptionZh) { $entry.descriptionZh = $s.DescriptionZh }
     if ($s.Todo)          { $entry["_todo"]       = $s.Todo }
-    $skillsObj[$s.Name] = $entry
+    $sharedArr += [pscustomobject]$entry
 }
 
 foreach ($p in ($Projects | Sort-Object Project, Name)) {
     $entry = [ordered]@{
-        project  = $p.Project
-        repoPath = $p.RepoPath
+        name    = $p.Name
+        project = $p.Project
+        path    = $p.RepoPath
     }
     if ($p.DescriptionZh) { $entry.descriptionZh = $p.DescriptionZh }
     if ($p.Todo)          { $entry["_todo"]       = $p.Todo }
-    $projectsObj[$p.Name] = $entry
+    $projectsArr += [pscustomobject]$entry
 }
 
 $NewLock = [ordered]@{
-    version        = 2
-    generatedAt    = (Get-Date -Format "yyyy-MM-dd")
-    totalSkills    = ($Shared.Count + $Projects.Count)
-    totalShared    = $Shared.Count
-    totalProjects  = $Projects.Count
-    skills         = $skillsObj
-    projects       = $projectsObj
+    version      = "2.0"
+    generated_at = (Get-Date -Format "yyyy-MM-ddTHH:mm:sszzz")
+    note         = "Rebuilt indexes from repository SKILL.md files. Total: $($Shared.Count) shared + $($Projects.Count) projects = $($Shared.Count + $Projects.Count) total"
+    counts       = [ordered]@{
+        shared   = $Shared.Count
+        projects = $Projects.Count
+        total    = ($Shared.Count + $Projects.Count)
+    }
+    shared       = $sharedArr
+    projects     = $projectsArr
 }
 
 $NewLockJson = $NewLock | ConvertTo-Json -Depth 10

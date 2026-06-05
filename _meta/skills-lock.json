@@ -1,7 +1,7 @@
 {
   "version": "2.0",
-  "generated_at": "2026-05-01T00:00:00+08:00",
-  "note": "Pruned low-quality/plugin-origin skills and rebuilt indexes. Total: 65 shared + 9 projects = 74 total",
+  "generated_at": "2026-06-05T18:47:22+08:00",
+  "note": "Rebuilt indexes from repository SKILL.md files. Total: 65 shared + 9 projects = 74 total",
   "counts": {
     "shared": 65,
     "projects": 9,
@@ -84,6 +84,7 @@
       "name": "liquid-glass-design",
       "domain": "02-coding-languages",
       "path": "skills/02-coding-languages/swift/liquid-glass-design/",
+      "subdomain": "swift",
       "descriptionZh": "iOS 26 Liquid Glass 设计系统：SwiftUI/UIKit/WidgetKit 的玻璃材质与交互。"
     },
     {
@@ -267,28 +268,29 @@
       "descriptionZh": "电子表格 .xlsx/.csv 等创建、编辑、公式、格式、数据分析与可视化。"
     },
     {
-      "name": "yq-article-style-imitation",
-      "domain": "08-writing-marketing",
-      "path": "skills/08-writing-marketing/yq-article-style-imitation/",
-      "descriptionZh": "任意作家文章风格仿写：验证作者原文、拆解表达 DNA、生成并修复公众号/小红书稿。"
-    },
-    {
       "name": "decision-tree-with-lp-embedding",
       "domain": "08-writing-marketing",
       "path": "skills/08-writing-marketing/decision-tree-with-lp-embedding/",
       "descriptionZh": "生成包含 LP 嵌入的 Mermaid 临床决策树。"
     },
     {
-      "name": "slack",
-      "domain": "09-ops-productivity",
-      "path": "skills/09-ops-productivity/general/slack/",
-      "descriptionZh": "通过浏览器自动化在 Slack 中检查未读、导航、发消息、搜对话、抓取信息。"
+      "name": "yq-article-style-imitation",
+      "domain": "08-writing-marketing",
+      "path": "skills/08-writing-marketing/yq-article-style-imitation/",
+      "descriptionZh": "任意作家文章风格仿写：验证作者原文、拆解表达 DNA、生成并修复公众号/小红书稿。"
     },
     {
       "name": "github-ops",
       "domain": "09-ops-productivity",
       "path": "skills/09-ops-productivity/github-ops/",
       "descriptionZh": "GitHub 仓库运营：Issue 分诊、PR 管理、CI/CD、发布和安全监控。"
+    },
+    {
+      "name": "slack",
+      "domain": "09-ops-productivity",
+      "path": "skills/09-ops-productivity/general/slack/",
+      "subdomain": "general",
+      "descriptionZh": "通过浏览器自动化在 Slack 中检查未读、导航、发消息、搜对话、抓取信息。"
     },
     {
       "name": "citation-anchor-resolver",
