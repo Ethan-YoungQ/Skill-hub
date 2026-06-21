@@ -315,15 +315,10 @@ $DomainLabels = [ordered]@{
     "01-agent-engineering" = "01 Agent 工程"
     "02-coding-languages"  = "02 编程语言"
     "03-frameworks"        = "03 框架与技术栈"
-    "04-testing-quality"   = "04 测试与质量"
-    "05-devops-infra"      = "05 DevOps 与基础设施"
     "06-data-search"       = "06 数据与检索"
     "07-media-content"     = "07 媒体与内容制作"
     "08-writing-marketing" = "08 写作与营销"
-    "09-ops-productivity"  = "09 办公自动化与协作"
     "10-business-industry" = "10 行业与业务"
-    "11-web3"              = "11 Web3 与区块链"
-    "12-ai-api"            = "12 AI API 与 LLM 平台"
 }
 
 # 锚点对照（与既有索引保持一致的 GitHub Anchor 规则）
@@ -331,15 +326,10 @@ $DomainAnchors = @{
     "01-agent-engineering" = "01-agent-工程"
     "02-coding-languages"  = "02-编程语言"
     "03-frameworks"        = "03-框架与技术栈"
-    "04-testing-quality"   = "04-测试与质量"
-    "05-devops-infra"      = "05-devops-与基础设施"
     "06-data-search"       = "06-数据与检索"
     "07-media-content"     = "07-媒体与内容制作"
     "08-writing-marketing" = "08-写作与营销"
-    "09-ops-productivity"  = "09-办公自动化与协作"
     "10-business-industry" = "10-行业与业务"
-    "11-web3"              = "11-web3-与区块链"
-    "12-ai-api"            = "12-ai-api-与-llm-平台"
 }
 
 # --- 构造 by-name.md --------------------------------------------------------
@@ -391,46 +381,53 @@ function Build-ByName {
 function Build-ByDomain {
     param($Shared, $Projects, $DomainLabels, $DomainAnchors)
 
-    # 按 domain 分组
+    # 按 domain 分组（用 @() 包裹确保始终是数组，避免单元素 Count 为空）
     $byDomain = @{}
     foreach ($s in $Shared) {
         if (-not $byDomain.ContainsKey($s.Domain)) { $byDomain[$s.Domain] = @() }
-        $byDomain[$s.Domain] += $s
+        $byDomain[$s.Domain] = @($byDomain[$s.Domain]) + $s
     }
 
     # 项目按 project 分组
     $byProject = @{}
     foreach ($p in $Projects) {
         if (-not $byProject.ContainsKey($p.Project)) { $byProject[$p.Project] = @() }
-        $byProject[$p.Project] += $p
+        $byProject[$p.Project] = @($byProject[$p.Project]) + $p
+    }
+
+    # 计算非空能力域数量
+    $nonEmptyDomains = 0
+    foreach ($k in $DomainLabels.Keys) {
+        if ($byDomain.ContainsKey($k) -and @($byDomain[$k]).Count -gt 0) { $nonEmptyDomains++ }
     }
 
     $sb = [System.Text.StringBuilder]::new()
     $total = $Shared.Count + $Projects.Count
     [void]$sb.AppendLine("# 按能力域索引")
     [void]$sb.AppendLine()
-    [void]$sb.AppendLine("共 $total 个技能，按 12 个能力域 + projects（项目私有）分组。")
+    [void]$sb.AppendLine("共 $total 个技能，按 $nonEmptyDomains 个能力域 + projects（项目私有）分组。")
     [void]$sb.AppendLine()
     [void]$sb.AppendLine("## 目录")
     [void]$sb.AppendLine()
 
     foreach ($k in $DomainLabels.Keys) {
-        $count = if ($byDomain.ContainsKey($k)) { $byDomain[$k].Count } else { 0 }
+        $count = if ($byDomain.ContainsKey($k)) { @($byDomain[$k]).Count } else { 0 }
+        if ($count -eq 0) { continue }
         $anchor = $DomainAnchors[$k]
         [void]$sb.AppendLine("- [$($DomainLabels[$k])](#$anchor)（$count）")
     }
-    [void]$sb.AppendLine("- [Projects 项目私有](#projects-项目私有)（$($Projects.Count)）")
+    [void]$sb.AppendLine("- [Projects 项目私有](#projects-项目私有)（$(@($Projects).Count)）")
     [void]$sb.AppendLine()
 
     foreach ($k in $DomainLabels.Keys) {
-        $list = if ($byDomain.ContainsKey($k)) { $byDomain[$k] } else { @() }
+        if ($byDomain.ContainsKey($k)) {
+            $list = @($byDomain[$k])
+        } else {
+            $list = @()
+        }
+        if ($list.Count -eq 0) { continue }
         [void]$sb.AppendLine("## $($DomainLabels[$k])（$($list.Count)）")
         [void]$sb.AppendLine()
-        if ($list.Count -eq 0) {
-            [void]$sb.AppendLine("_暂无技能。_")
-            [void]$sb.AppendLine()
-            continue
-        }
         [void]$sb.AppendLine("| 技能名 | 路径 | 中文简介 |")
         [void]$sb.AppendLine("|---|---|---|")
         foreach ($s in ($list | Sort-Object Name)) {
@@ -441,14 +438,15 @@ function Build-ByDomain {
     }
 
     # Projects
-    [void]$sb.AppendLine("## Projects 项目私有（$($Projects.Count)）")
+    $projCount = @($Projects).Count
+    [void]$sb.AppendLine("## Projects 项目私有（$projCount）")
     [void]$sb.AppendLine()
-    if ($Projects.Count -eq 0) {
+    if ($projCount -eq 0) {
         [void]$sb.AppendLine("_暂无项目私有技能。_")
         [void]$sb.AppendLine()
     } else {
         foreach ($proj in ($byProject.Keys | Sort-Object)) {
-            $list = $byProject[$proj]
+            $list = @($byProject[$proj])
             [void]$sb.AppendLine("### $proj（$($list.Count)）")
             [void]$sb.AppendLine()
             [void]$sb.AppendLine("| 技能名 | 路径 | 中文简介 |")

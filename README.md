@@ -6,7 +6,7 @@
 
 # Skill-hub
 
-A shared collection of skills across multiple AI coding agents (Claude Code, Antigravity, Codex, etc.), totaling **74** skills.
+A shared collection of skills across multiple AI coding agents (Claude Code, Antigravity, Codex, etc.), totaling **59** skills.
 
 ## Purpose
 
@@ -17,18 +17,14 @@ A shared collection of skills across multiple AI coding agents (Claude Code, Ant
 ## Directory Structure
 
 ```
-skills/                        # 65 shared skills across 11 domains
+skills/                        # 50 shared skills across 7 domains
 ├── 01-agent-engineering/      Agent engineering (building, debugging, autonomy loops, harness, etc.)
 ├── 02-coding-languages/       Programming languages (Swift + general)
-├── 03-frameworks/             Framework stacks (Next.js, React, etc.)
-├── 04-testing-quality/        Testing, TDD, code review
-├── 05-devops-infra/           DevOps and infrastructure
+├── 03-frameworks/             Framework stacks (frontend design, etc.)
 ├── 06-data-search/            Data scraping, retrieval, deep research
 ├── 07-media-content/          Multimedia (PPT, video, PDF, images)
 ├── 08-writing-marketing/      Writing, style imitation, and marketing
-├── 09-ops-productivity/       Office automation (Slack, Jira, etc.)
-├── 10-business-industry/      Industry-specific (healthcare, legal, finance, etc.)
-└── 12-ai-api/                 AI API, LLM pipelines, token budgeting
+└── 10-business-industry/      Industry-specific (healthcare, legal, finance, etc.)
 
 projects/                      # 9 project-specific skills
 _meta/                         # Index entry points (Chinese)
@@ -42,7 +38,7 @@ Choose an entry point based on the dimension you care about:
 
 | Entry Point | Best For |
 |---|---|
-| [By Name](./_meta/by-name.md) | You already know the skill name (e.g., `agent-browser`) |
+| [By Name](./_meta/by-name.md) | You already know the skill name (e.g., `deep-research`) |
 | [By Domain](./_meta/by-domain.md) | You want to browse categories like "Agent Engineering" / "Testing" / "Industry" |
 | [By Tech Stack](./_meta/by-platform.md) | You want to find "Python-related" / "Browser Automation" skills |
 | [Machine-Readable](./_meta/skills-lock.json) | Scripts, automation, external tool integration |

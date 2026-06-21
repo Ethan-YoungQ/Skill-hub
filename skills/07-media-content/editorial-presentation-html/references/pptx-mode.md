@@ -6,8 +6,9 @@
 
 1. **用 python-pptx 程序化生成**——不要手动在 PowerPoint 里画。手动会丢一致性,程序化才能跨 deck 保持视觉统一。
 2. **共享 design-tokens.md 和 typography.md** 的 RGB 值和字号 scale——PPT 是 token 的另一种渲染目标,DNA 不变。
-3. **降级清单要事先告诉用户**——不是所有 HTML 视觉都能 100% 复刻到 PPT,提前说明保真度。
-4. **配合 anthropic-skills:pptx** — 那个 skill 已封装好 python-pptx 的常用操作,本 skill 提供"设计语言层",二者搭配。
+3. **先读 `chart-selection.md` 再选组件**——PPTX 模式同样禁止把 KPI、时间窗、机制匹配、证据链默认画成 proof bars。
+4. **降级清单要事先告诉用户**——不是所有 HTML 视觉都能 100% 复刻到 PPT,提前说明保真度。
+5. **配合 anthropic-skills:pptx** — 那个 skill 已封装好 python-pptx 的常用操作,本 skill 提供"设计语言层",二者搭配。
 
 ## 工作流
 
@@ -53,6 +54,20 @@ img.filter(ImageFilter.SMOOTH).save('assets/noise.png')
 
 完整生成器在 `assets/generate_pptx.py`。基础用法:
 
+生成前必须读取:
+
+- `references/design-tokens.md`
+- `references/typography.md`
+- `references/chart-selection.md`
+
+组件选择硬规则:
+
+- 独立 KPI → `add_hero_slide(stats=...)` 或 stat grid 思路,不画 proof bars。
+- 时间先后 / 治疗窗口 → `add_relationship_slide(timeline=...)`。
+- 机制 / 产品 / 触发条件匹配 → `add_relationship_slide(matrix=...)`。
+- 证据引用 / 证据链 → `add_relationship_slide(evidence=...)` 或 `add_evidence_slide(pyramid=...)`。
+- 同一指标横向比较、完成率、覆盖率、通过率 → 才用 `add_proof_slide(proof_bars=...)`。
+
 ```python
 from generate_pptx import EditorialDeck
 
@@ -95,6 +110,24 @@ deck.add_hero_slide(
 deck.add_evidence_slide(
     funnel=[("PubMed 触达", "数千"), ("初筛", "~500"), ("纳入", "43")],
     pyramid=[("最高级", 18, "green"), ("重要级", 17, "blue"), ("参考级", 7, "gold")]
+)
+
+deck.add_relationship_slide(
+    eyebrow="RELATIONSHIP GRAMMAR · 非条形图默认",
+    title="时间窗、机制匹配、证据链 · 分开表达",
+    timeline=[
+        {"label": "Risk signal", "window": "0-6h", "message": "先识别治疗窗口", "tone": "gold"},
+        {"label": "Decision", "window": "6-24h", "message": "明确是否升级", "tone": "accent"},
+        {"label": "Target", "window": "24-48h", "message": "按证据校准路径", "tone": "green"},
+    ],
+    matrix=[
+        {"mechanism": "耐药风险", "trigger": "高危病原线索 + 既往用药", "path": "产品路径 A", "tone": "medical"},
+        {"mechanism": "治疗时机", "trigger": "ICU / 免疫抑制 / 失败信号", "path": "产品路径 B", "tone": "accent"},
+    ],
+    evidence=[
+        {"grade": "A", "label": "指南锚点", "note": "定义临床边界", "tone": "green"},
+        {"grade": "B", "label": "研究证据", "note": "支持机制路径", "tone": "blue"},
+    ],
 )
 
 deck.add_architecture_slide(
@@ -245,6 +278,9 @@ class EditorialDeck:
     def add_evidence_slide(self, eyebrow, title, funnel, pyramid):
         """Slide 3 EVIDENCE · 漏斗 + 金字塔并排"""
 
+    def add_relationship_slide(self, eyebrow, title, timeline=None, matrix=None, evidence=None, note=None):
+        """Slide RELATIONSHIPS · 时间窗 + 机制矩阵 + 证据列表(非 bar 默认)"""
+
     def add_architecture_slide(self, phases, deliverables, iron_rule):
         """Slide 4 · phase pill 链 + delivery box"""
 
@@ -255,7 +291,7 @@ class EditorialDeck:
         """Slide 6 · hub 矩阵"""
 
     def add_proof_slide(self, proof_bars, key_message):
-        """Slide 7 · 横向校验条"""
+        """Slide 7 · 同一指标横向比较专用 proof bars"""
 
     def add_limitations_slide(self, limits, roadmap):
         """Slide 8 · 局限 + roadmap"""
@@ -270,6 +306,9 @@ class EditorialDeck:
     def _draw_double_bar_chart(self, slide, x, y, w, h, data): ...
     def _draw_evidence_pyramid(self, slide, x, y, w, h, tiers): ...
     def _draw_funnel(self, slide, x, y, w, h, stages): ...
+    def _draw_decision_timeline(self, slide, x, y, w, h, items): ...
+    def _draw_matrix(self, slide, x, y, w, h, rows): ...
+    def _draw_evidence_list(self, slide, x, y, w, h, items): ...
     def _draw_phase_pill_row(self, slide, x, y, w, h, phases): ...
     def _draw_proof_bar(self, slide, x, y, w, h, name, pct, status): ...
     def _draw_stat_block(self, slide, x, y, num, label, caption=None): ...
@@ -296,6 +335,7 @@ class EditorialDeck:
 2. **检查字体是否生效**:菜单 File > Info > Embedded Fonts 应显示 Fraunces / Inter / JetBrains Mono
 3. **配色检查**:View > Slide Master 看主题色板是否含 6 brand 色
 4. **比对源 HTML**:同时打开 `血液科市场调研_v5_desktop.html` 和生成的 .pptx,Slide 1 / Slide 2 / Slide 3 看视觉一致度
+5. **图表语法检查**:至少 3 类不同表达家族;独立 KPI 没被画成 proof bars;时间窗没被画成 bar;机制匹配没被画成 bar
 
 如果某 slide 看起来"塑料化"或"不像源版本":
 

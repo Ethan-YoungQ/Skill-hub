@@ -2,7 +2,8 @@
 Editorial Presentation · PPTX Generator
 
 把 Anthropic warm editorial 设计语言渲染到 .pptx。共享 design-tokens.md 配色 + typography.md
-字体规则,通过 python-pptx 程序化生成 slides。
+字体规则,通过 python-pptx 程序化生成 slides。图表先按数据关系选择组件,
+不要把 KPI、时间窗、机制匹配和证据链默认画成同一种 proof bar。
 
 Usage:
     from generate_pptx import EditorialDeck
@@ -232,7 +233,7 @@ class EditorialDeck:
         return slide
 
     def add_proof_slide(self, eyebrow, title, proof_bars=None, key_message=None):
-        """Slide PROOF · 横向校验条"""
+        """Slide PROOF · 同一指标横向比较专用的校验条"""
         slide = self.prs.slides.add_slide(self._blank_layout)
         self._fill_background(slide, "bg_1")
 
@@ -254,6 +255,37 @@ class EditorialDeck:
 
         if key_message:
             self._draw_data_pain_callout(slide, x=0.7, y=6.5, w=12, h=0.7, text=key_message, color="brand_green")
+
+        return slide
+
+    def add_relationship_slide(self, eyebrow, title, timeline=None, matrix=None, evidence=None, note=None):
+        """Slide RELATIONSHIPS · 时间窗 + 机制矩阵 + 证据列表(非 bar 默认)。"""
+        slide = self.prs.slides.add_slide(self._blank_layout)
+        self._fill_background(slide, "bg_0")
+        self._add_radial_glow(slide, color=self.colors["industry_vertical"], opacity=0.06)
+
+        self._add_eyebrow_tag(slide, x=0.7, y=0.6, text=eyebrow, color="industry_vertical")
+        self._add_text(
+            slide, x=0.7, y=1.2, w=12, h=0.9,
+            text=title,
+            font=self.fonts["serif"], size=42, bold=True,
+            color=self.colors["text_0"], spacing_pt=-1.2,
+        )
+
+        if note:
+            self._draw_data_pain_callout(slide, x=0.7, y=2.2, w=12, h=0.55, text=note, color="accent")
+            top_y = 3.0
+        else:
+            top_y = 2.55
+
+        if timeline:
+            self._draw_decision_timeline(slide, x=0.7, y=top_y, w=12, h=1.45, items=timeline)
+
+        lower_y = top_y + 1.75
+        if matrix:
+            self._draw_matrix(slide, x=0.7, y=lower_y, w=7.7, h=2.55, rows=matrix)
+        if evidence:
+            self._draw_evidence_list(slide, x=8.7, y=lower_y, w=4.0, h=2.55, items=evidence)
 
         return slide
 
@@ -849,6 +881,256 @@ class EditorialDeck:
         run.font.size = Pt(10)
         run.font.color.rgb = self.colors["text_1"]
 
+    def _tone_color_key(self, tone, fallback="accent"):
+        """把语义 tone 映射到 v5 色板,避免引入新主题色。"""
+        tone_map = {
+            "green": "brand_green",
+            "blue": "brand_blue",
+            "gold": "brand_gold",
+            "red": "brand_red",
+            "purple": "brand_purple",
+            "pink": "brand_pink",
+            "accent": "accent",
+            "deep": "accent_deep",
+            "medical": "industry_vertical",
+            "neutral": "text_2",
+        }
+        return tone_map.get(str(tone).lower(), fallback)
+
+    def _draw_decision_timeline(self, slide, x, y, w, h, items):
+        """时间窗 / 治疗时机 · 用 timeline 表达先后,不是 bar。"""
+        card = slide.shapes.add_shape(
+            MSO_SHAPE.ROUNDED_RECTANGLE,
+            Inches(x), Inches(y), Inches(w), Inches(h)
+        )
+        card.adjustments[0] = 0.05
+        card.fill.solid()
+        card.fill.fore_color.rgb = self.colors["bg_surface"]
+        card.line.color.rgb = self.colors["border_soft"]
+        self._add_card_shadow(card)
+
+        self._add_text(
+            slide, x=x + 0.3, y=y + 0.18, w=w - 0.6, h=0.3,
+            text="Decision window timeline",
+            font=self.fonts["mono"], size=7, bold=True,
+            color=self.colors["text_3"],
+        )
+
+        n = max(len(items), 1)
+        slot_w = (w - 0.8) / n
+        line_y = y + 0.62
+        self._add_horizontal_line(slide, x + 0.45, line_y, w - 0.9, self.colors["border"], weight=1.2)
+
+        for i, item in enumerate(items):
+            if isinstance(item, dict):
+                label = item.get("label", "")
+                window = item.get("window", item.get("time", ""))
+                message = item.get("message", item.get("note", ""))
+                tone = item.get("tone", "accent")
+            else:
+                label = item[0] if len(item) > 0 else ""
+                window = item[1] if len(item) > 1 else ""
+                message = item[2] if len(item) > 2 else ""
+                tone = item[3] if len(item) > 3 else "accent"
+
+            color_key = self._tone_color_key(tone)
+            cx = x + 0.45 + i * slot_w
+            marker = slide.shapes.add_shape(
+                MSO_SHAPE.OVAL,
+                Inches(cx + slot_w * 0.5 - 0.08), Inches(line_y - 0.08),
+                Inches(0.16), Inches(0.16)
+            )
+            marker.fill.solid()
+            marker.fill.fore_color.rgb = self.colors[color_key]
+            marker.line.color.rgb = self.colors["white"]
+            marker.line.width = Pt(1.2)
+
+            box = slide.shapes.add_shape(
+                MSO_SHAPE.ROUNDED_RECTANGLE,
+                Inches(cx + 0.03), Inches(y + 0.78),
+                Inches(slot_w - 0.08), Inches(h - 0.9)
+            )
+            box.adjustments[0] = 0.12
+            box.fill.solid()
+            box.fill.fore_color.rgb = self.colors[color_key]
+            sp = box.fill.fore_color._xFill
+            etree.SubElement(sp, qn("a:alpha"), {"val": "12000"})
+            box.line.color.rgb = self.colors[color_key]
+            box.line.width = Pt(0.75)
+
+            self._add_text(
+                slide, x=cx + 0.15, y=y + 0.86, w=slot_w - 0.3, h=0.18,
+                text=window,
+                font=self.fonts["mono"], size=7, bold=True,
+                color=self.colors[color_key],
+                align="center",
+            )
+            self._add_text(
+                slide, x=cx + 0.15, y=y + 1.05, w=slot_w - 0.3, h=0.25,
+                text=label,
+                font=self.fonts["serif"], size=10, bold=True,
+                color=self.colors["text_0"],
+                align="center",
+            )
+            if message:
+                self._add_text(
+                    slide, x=cx + 0.15, y=y + 1.29, w=slot_w - 0.3, h=0.28,
+                    text=message,
+                    font=self.fonts["sans"], size=7,
+                    color=self.colors["text_2"],
+                    align="center",
+                )
+
+    def _draw_matrix(self, slide, x, y, w, h, rows):
+        """机制 / 产品 / 触发条件匹配矩阵。"""
+        card = slide.shapes.add_shape(
+            MSO_SHAPE.ROUNDED_RECTANGLE,
+            Inches(x), Inches(y), Inches(w), Inches(h)
+        )
+        card.adjustments[0] = 0.05
+        card.fill.solid()
+        card.fill.fore_color.rgb = self.colors["bg_surface"]
+        card.line.color.rgb = self.colors["border_soft"]
+        self._add_card_shadow(card)
+
+        self._add_text(
+            slide, x=x + 0.25, y=y + 0.18, w=w - 0.5, h=0.28,
+            text="Mechanism / product map",
+            font=self.fonts["mono"], size=7, bold=True,
+            color=self.colors["text_3"],
+        )
+
+        headers = ["Mechanism", "Clinical trigger", "Product path"]
+        col_ws = [w * 0.30, w * 0.33, w * 0.37]
+        header_y = y + 0.55
+        row_start = y + 0.95
+        row_h = (h - 1.15) / max(len(rows), 1)
+        cur_x = x + 0.25
+        for ci, header in enumerate(headers):
+            self._add_text(
+                slide, x=cur_x, y=header_y, w=col_ws[ci] - 0.12, h=0.25,
+                text=header,
+                font=self.fonts["sans"], size=7, bold=True,
+                color=self.colors["accent_deep"],
+            )
+            cur_x += col_ws[ci]
+
+        for ri, row in enumerate(rows):
+            if isinstance(row, dict):
+                mechanism = row.get("mechanism", "")
+                trigger = row.get("trigger", "")
+                path = row.get("path", row.get("product", ""))
+                tone = row.get("tone", "accent")
+            else:
+                mechanism = row[0] if len(row) > 0 else ""
+                trigger = row[1] if len(row) > 1 else ""
+                path = row[2] if len(row) > 2 else ""
+                tone = row[3] if len(row) > 3 else "accent"
+
+            color_key = self._tone_color_key(tone)
+            cy = row_start + ri * row_h
+            cur_x = x + 0.25
+            values = [mechanism, trigger, path]
+            for ci, value in enumerate(values):
+                cell = slide.shapes.add_shape(
+                    MSO_SHAPE.ROUNDED_RECTANGLE,
+                    Inches(cur_x), Inches(cy),
+                    Inches(col_ws[ci] - 0.12), Inches(row_h - 0.08)
+                )
+                cell.adjustments[0] = 0.08
+                cell.fill.solid()
+                cell.fill.fore_color.rgb = self.colors["bg_1"]
+                cell.line.color.rgb = self.colors["border_soft"]
+
+                if ci == 0:
+                    band = slide.shapes.add_shape(
+                        MSO_SHAPE.RECTANGLE,
+                        Inches(cur_x), Inches(cy),
+                        Inches(0.06), Inches(row_h - 0.08)
+                    )
+                    band.fill.solid()
+                    band.fill.fore_color.rgb = self.colors[color_key]
+                    band.line.fill.background()
+
+                self._add_text(
+                    slide, x=cur_x + 0.12, y=cy + 0.08,
+                    w=col_ws[ci] - 0.36, h=row_h - 0.16,
+                    text=str(value),
+                    font=self.fonts["sans"], size=8,
+                    color=self.colors["text_1"],
+                    line_spacing=1.15,
+                )
+                cur_x += col_ws[ci]
+
+    def _draw_evidence_list(self, slide, x, y, w, h, items):
+        """证据链列表 · 用分层文本/标记表达,不是通过率条。"""
+        card = slide.shapes.add_shape(
+            MSO_SHAPE.ROUNDED_RECTANGLE,
+            Inches(x), Inches(y), Inches(w), Inches(h)
+        )
+        card.adjustments[0] = 0.05
+        card.fill.solid()
+        card.fill.fore_color.rgb = self.colors["bg_surface"]
+        card.line.color.rgb = self.colors["border_soft"]
+        self._add_card_shadow(card)
+
+        self._add_text(
+            slide, x=x + 0.25, y=y + 0.18, w=w - 0.5, h=0.28,
+            text="Evidence chain",
+            font=self.fonts["mono"], size=7, bold=True,
+            color=self.colors["text_3"],
+        )
+
+        row_h = (h - 0.75) / max(len(items), 1)
+        for i, item in enumerate(items):
+            if isinstance(item, dict):
+                label = item.get("label", "")
+                note = item.get("note", "")
+                grade = item.get("grade", item.get("level", "A"))
+                tone = item.get("tone", "green")
+            else:
+                label = item[0] if len(item) > 0 else ""
+                note = item[1] if len(item) > 1 else ""
+                grade = item[2] if len(item) > 2 else "A"
+                tone = item[3] if len(item) > 3 else "green"
+
+            color_key = self._tone_color_key(tone)
+            cy = y + 0.6 + i * row_h
+            chip = slide.shapes.add_shape(
+                MSO_SHAPE.ROUNDED_RECTANGLE,
+                Inches(x + 0.25), Inches(cy + 0.06),
+                Inches(0.42), Inches(0.28)
+            )
+            chip.adjustments[0] = 0.4
+            chip.fill.solid()
+            chip.fill.fore_color.rgb = self.colors[color_key]
+            chip.line.fill.background()
+            tf = chip.text_frame
+            tf.vertical_anchor = MSO_ANCHOR.MIDDLE
+            p = tf.paragraphs[0]
+            p.alignment = PP_ALIGN.CENTER
+            run = p.add_run()
+            run.text = str(grade)
+            run.font.name = self.fonts["mono"]
+            run.font.size = Pt(7)
+            run.font.bold = True
+            run.font.color.rgb = self.colors["white"]
+
+            self._add_text(
+                slide, x=x + 0.82, y=cy, w=w - 1.1, h=0.25,
+                text=str(label),
+                font=self.fonts["serif"], size=10, bold=True,
+                color=self.colors["text_0"],
+            )
+            if note:
+                self._add_text(
+                    slide, x=x + 0.82, y=cy + 0.25, w=w - 1.1, h=row_h - 0.24,
+                    text=str(note),
+                    font=self.fonts["sans"], size=7,
+                    color=self.colors["text_2"],
+                    line_spacing=1.15,
+                )
+
     def _draw_proof_bar(self, slide, x, y, w, h, name, domain, pct, status):
         """横向校验条"""
         # 名称(180px)
@@ -1100,7 +1382,30 @@ if __name__ == "__main__":
         ],
     )
 
-    # Slide 4: ARCHITECTURE
+    # Slide 4: RELATIONSHIPS
+    deck.add_relationship_slide(
+        eyebrow="RELATIONSHIP GRAMMAR · 非条形图默认",
+        title="时间窗、机制匹配、证据链 · 分开表达",
+        note="独立 KPI 用 stat;治疗时机用 timeline;机制/产品匹配用 matrix;同一指标比较才用 proof bars。",
+        timeline=[
+            {"label": "Risk signal", "window": "0-6h", "message": "先识别治疗窗口", "tone": "gold"},
+            {"label": "Decision", "window": "6-24h", "message": "明确是否升级", "tone": "accent"},
+            {"label": "Target", "window": "24-48h", "message": "按证据校准路径", "tone": "green"},
+            {"label": "Review", "window": "48h+", "message": "回看适应证和证据", "tone": "blue"},
+        ],
+        matrix=[
+            {"mechanism": "耐药风险", "trigger": "高危病原线索 + 既往用药", "path": "产品路径 A:早期覆盖假设", "tone": "medical"},
+            {"mechanism": "治疗时机", "trigger": "ICU / 免疫抑制 / 失败信号", "path": "产品路径 B:窗口前移", "tone": "accent"},
+            {"mechanism": "证据锚点", "trigger": "指南 / RCT / 本地真实世界", "path": "产品路径 C:可解释落地", "tone": "green"},
+        ],
+        evidence=[
+            {"grade": "A", "label": "指南锚点", "note": "用于定义必须遵守的临床边界", "tone": "green"},
+            {"grade": "B", "label": "研究证据", "note": "用于支持机制和治疗路径", "tone": "blue"},
+            {"grade": "C", "label": "市场访谈", "note": "用于解释行为阻力和落地动作", "tone": "gold"},
+        ],
+    )
+
+    # Slide 5: ARCHITECTURE
     deck.add_architecture_slide(
         eyebrow="THE ARCHITECTURE",
         title="一句话进 → 4 件交付物出",
@@ -1121,21 +1426,21 @@ if __name__ == "__main__":
         iron_rule="P0 IRON RULE · Cite-or-Block · 禁穷举 / 禁凭记忆 / 禁丢原文 · 每事实声明带锚点",
     )
 
-    # Slide 5: PROOF
+    # Slide 6: PROOF
     deck.add_proof_slide(
-        eyebrow="CROSS-DISEASE PROOF",
-        title="5 治疗领域 stress test 实跑",
+        eyebrow="PROOF · SAME METRIC ONLY",
+        title="同一指标的横向通过率比较",
         proof_bars=[
-            {"name": "ALK NSCLC v2", "domain": "肺癌靶向", "pct": "96.7%", "status": "✓ 达标"},
-            {"name": "原发性高血压", "domain": "心血管慢病", "pct": "95.0%", "status": "✓ 达标"},
-            {"name": "血友病",       "domain": "罕见血液病",   "pct": "77.3%", "status": "✓ 罕见门"},
-            {"name": "GLP-1 RA T2DM", "domain": "内分泌慢病", "pct": "67.5%", "status": "🟡 在验证"},
-            {"name": "HER2 乳腺癌",  "domain": "肿瘤抗体偶联", "pct": "21.6%", "status": "🟡 在验证"},
+            {"name": "ALK NSCLC v2", "domain": "肺癌靶向", "pct": "96.7%", "status": "PASS"},
+            {"name": "原发性高血压", "domain": "心血管慢病", "pct": "95.0%", "status": "PASS"},
+            {"name": "血友病",       "domain": "罕见血液病",   "pct": "77.3%", "status": "PASS"},
+            {"name": "GLP-1 RA T2DM", "domain": "内分泌慢病", "pct": "67.5%", "status": "VERIFY"},
+            {"name": "HER2 乳腺癌",  "domain": "肿瘤抗体偶联", "pct": "21.6%", "status": "VERIFY"},
         ],
         key_message="关键事实:5 个疾病不管通过率多少,4 件交付物全跑通 (HTML / PDF / XLSX / Manifest)",
     )
 
-    # Slide 11: CTA
+    # Slide 7: CTA
     deck.add_cta_slide(
         eyebrow="THE TEAM & CALL-TO-ACTION",
         team=["YongQi", "SimonSu", "VivienZhan", "RuiYu", "YingJi"],

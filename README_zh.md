@@ -6,7 +6,7 @@
 
 # Skill-hub
 
-跨多个 AI 编码 Agent（Claude Code、Antigravity、Codex 等）通用的技能（Skill）集合，共 **74** 个技能。
+跨多个 AI 编码 Agent（Claude Code、Antigravity、Codex 等）通用的技能（Skill）集合，共 **59** 个技能。
 
 ## 仓库定位
 
@@ -17,18 +17,14 @@
 ## 目录结构
 
 ```
-skills/                        # 65 个共享技能，分 11 个能力域
+skills/                        # 50 个共享技能，分 7 个能力域
 ├── 01-agent-engineering/      Agent 工程（构建、调试、自治循环、harness 等）
 ├── 02-coding-languages/       编程语言（Swift + 通用）
-├── 03-frameworks/             框架栈（Next.js、React 等）
-├── 04-testing-quality/        测试、TDD、代码审查
-├── 05-devops-infra/           DevOps 与基础设施
+├── 03-frameworks/             框架栈（前端设计等）
 ├── 06-data-search/            数据抓取、检索、深度研究
 ├── 07-media-content/          多媒体（PPT、视频、PDF、图像）
 ├── 08-writing-marketing/      写作、风格仿写与营销
-├── 09-ops-productivity/       办公自动化（Slack、Jira 等）
-├── 10-business-industry/      行业业务（医疗、法律、金融等）
-└── 12-ai-api/                 AI API、LLM 管线、Token 预算
+└── 10-business-industry/      行业业务（医疗、法律、金融等）
 
 projects/                      # 9 个项目私有技能
 _meta/                         # 中文索引入口
@@ -42,7 +38,7 @@ scripts/                       # 同步与 Junction 建立脚本
 
 | 入口 | 适合场景 |
 |---|---|
-| [按名字查](./_meta/by-name.md) | 已经知道技能名（如 `agent-browser`） |
+| [按名字查](./_meta/by-name.md) | 已经知道技能名（如 `deep-research`） |
 | [按能力域查](./_meta/by-domain.md) | 想找 "Agent 工程" / "测试" / "行业业务" 一类 |
 | [按技术栈查](./_meta/by-platform.md) | 想找 "Python 相关" / "浏览器自动化" 一类 |
 | [机器可读](./_meta/skills-lock.json) | 脚本、自动化、外部工具集成 |

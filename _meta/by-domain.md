@@ -1,39 +1,26 @@
 # 按能力域索引
 
-共 74 个技能，按 12 个能力域 + projects（项目私有）分组。
+共 59 个技能，按 7 个能力域 + projects（项目私有）分组。
 
 ## 目录
 
-- [01 Agent 工程](#01-agent-工程)（12）
+- [01 Agent 工程](#01-agent-工程)（4）
 - [02 编程语言](#02-编程语言)（1）
 - [03 框架与技术栈](#03-框架与技术栈)（1）
-- [04 测试与质量](#04-测试与质量)（3）
-- [05 DevOps 与基础设施](#05-devops-与基础设施)（1）
 - [06 数据与检索](#06-数据与检索)（15）
 - [07 媒体与内容制作](#07-媒体与内容制作)（10）
 - [08 写作与营销](#08-写作与营销)（2）
-- [09 办公自动化与协作](#09-办公自动化与协作)（2）
 - [10 行业与业务](#10-行业与业务)（17）
-- [11 Web3 与区块链](#11-web3-与区块链)（0）
-- [12 AI API 与 LLM 平台](#12-ai-api-与-llm-平台)（1）
 - [Projects 项目私有](#projects-项目私有)（9）
 
-## 01 Agent 工程（12）
+## 01 Agent 工程（4）
 
 | 技能名 | 路径 | 中文简介 |
 |---|---|---|
-| **agent-browser** | [skills/01-agent-engineering/agent-browser/](../skills/01-agent-engineering/agent-browser/) | AI Agent 的浏览器自动化 CLI，用于网页导航、表单填写、截图、数据抓取。 |
-| **browser-use** | [skills/01-agent-engineering/browser-use/](../skills/01-agent-engineering/browser-use/) | 浏览器交互自动化，用于网页测试、表单填写、截图、数据提取。 |
-| **cloud** | [skills/01-agent-engineering/cloud/](../skills/01-agent-engineering/cloud/) | Browser Use Cloud 托管 API 与 SDK 的文档参考。 |
 | **deep-research** | [skills/01-agent-engineering/deep-research/](../skills/01-agent-engineering/deep-research/) | 多源深度研究，使用 firecrawl/exa 搜索并综合发现。 |
 | **find-skills** | [skills/01-agent-engineering/find-skills/](../skills/01-agent-engineering/find-skills/) | 自动发现与推荐可用 Agent 技能，回答"有没有能做 X 的技能"。 |
-| **open-source** | [skills/01-agent-engineering/open-source/](../skills/01-agent-engineering/open-source/) | browser-use 开源 Python 库的文档参考（Agent/Browser/Tools 配置）。 |
-| **remote-browser** | [skills/01-agent-engineering/remote-browser/](../skills/01-agent-engineering/remote-browser/) | 在沙箱远端机器上控制本地浏览器，用于无 GUI 沙箱场景。 |
-| **repo-scan** | [skills/01-agent-engineering/repo-scan/](../skills/01-agent-engineering/repo-scan/) | 跨栈源码资产审计，分类文件、识别嵌入第三方库，输出四级判定 HTML 报告。 |
 | **santa-method** | [skills/01-agent-engineering/santa-method/](../skills/01-agent-engineering/santa-method/) | 多 Agent 对抗验证收敛循环，两个独立审查都通过后才出交付。 |
 | **skill-creator** | [skills/01-agent-engineering/skill-creator/](../skills/01-agent-engineering/skill-creator/) | 创建、修改和优化 skill，并可跑 eval 衡量触发准确率与性能。 |
-| **skill-installer** | [skills/01-agent-engineering/skill-installer/](../skills/01-agent-engineering/skill-installer/) | 从 openai/skills 或自定义 GitHub 仓库安装 Codex 技能。 |
-| **vercel-sandbox** | [skills/01-agent-engineering/vercel-sandbox/](../skills/01-agent-engineering/vercel-sandbox/) | 在 Vercel Sandbox 微型 VM 中运行 agent-browser + Chrome 做浏览器自动化。 |
 
 ## 02 编程语言（1）
 
@@ -46,20 +33,6 @@
 | 技能名 | 路径 | 中文简介 |
 |---|---|---|
 | **frontend-design** | [skills/03-frameworks/frontend-design/](../skills/03-frameworks/frontend-design/) | 创建具有高设计质量的生产级前端界面。 |
-
-## 04 测试与质量（3）
-
-| 技能名 | 路径 | 中文简介 |
-|---|---|---|
-| **e2e-testing** | [skills/04-testing-quality/e2e-testing/](../skills/04-testing-quality/e2e-testing/) | Playwright E2E 测试模式：Page Object、配置、CI/CD 集成、flaky 测试策略。 |
-| **playwright** | [skills/04-testing-quality/playwright/](../skills/04-testing-quality/playwright/) | "Use when the task requires automating a real browser from the terminal (navigation, form filling, snapshots, screenshots, data extraction, UI-flow debugging) via `playwright-cli` or the bundled wrapper script." |
-| **security-review** | [skills/04-testing-quality/security-review/](../skills/04-testing-quality/security-review/) | 添加认证、处理用户输入、密钥和工作敏感功能时的安全检查。 |
-
-## 05 DevOps 与基础设施（1）
-
-| 技能名 | 路径 | 中文简介 |
-|---|---|---|
-| **database-migrations** | [skills/05-devops-infra/database-migrations/](../skills/05-devops-infra/database-migrations/) | 数据库迁移最佳实践：schema 变更、数据迁移、回滚与零停机部署。 |
 
 ## 06 数据与检索（15）
 
@@ -103,13 +76,6 @@
 | **decision-tree-with-lp-embedding** | [skills/08-writing-marketing/decision-tree-with-lp-embedding/](../skills/08-writing-marketing/decision-tree-with-lp-embedding/) | 生成包含 LP 嵌入的 Mermaid 临床决策树。 |
 | **yq-article-style-imitation** | [skills/08-writing-marketing/yq-article-style-imitation/](../skills/08-writing-marketing/yq-article-style-imitation/) | 任意作家文章风格仿写：验证作者原文、拆解表达 DNA、生成并修复公众号/小红书稿。 |
 
-## 09 办公自动化与协作（2）
-
-| 技能名 | 路径 | 中文简介 |
-|---|---|---|
-| **github-ops** | [skills/09-ops-productivity/github-ops/](../skills/09-ops-productivity/github-ops/) | GitHub 仓库运营：Issue 分诊、PR 管理、CI/CD、发布和安全监控。 |
-| **slack** | [skills/09-ops-productivity/general/slack/](../skills/09-ops-productivity/general/slack/) | 通过浏览器自动化在 Slack 中检查未读、导航、发消息、搜对话、抓取信息。 |
-
 ## 10 行业与业务（17）
 
 | 技能名 | 路径 | 中文简介 |
@@ -131,16 +97,6 @@
 | **healthcare-phi-compliance** | [skills/10-business-industry/healthcare-phi-compliance/](../skills/10-business-industry/healthcare-phi-compliance/) | 医疗应用 PHI/PII 合规：数据分级、访问控制、审计、加密、常见泄漏路径。 |
 | **ifi-market-sizing-skill** | [skills/10-business-industry/ifi-market-sizing-skill/](../skills/10-business-industry/ifi-market-sizing-skill/) | 用于医学/制药市场规模的临床路径重建与患者流瀑布图。 |
 | **session-resume** | [skills/10-business-industry/session-resume/](../skills/10-business-industry/session-resume/) | disease-market-sizing 管线中断后恢复，无需从头开始。 |
-
-## 11 Web3 与区块链（0）
-
-_暂无技能。_
-
-## 12 AI API 与 LLM 平台（1）
-
-| 技能名 | 路径 | 中文简介 |
-|---|---|---|
-| **openai-docs** | [skills/12-ai-api/openai-docs/](../skills/12-ai-api/openai-docs/) | 查询 OpenAI 产品和 API 的最新官方文档。 |
 
 ## Projects 项目私有（9）
 

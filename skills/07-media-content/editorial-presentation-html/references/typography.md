@@ -12,46 +12,70 @@
 
 ## 大小 scale(完整 token)
 
+### Projection scale(HTML deck 默认)
+
+HTML 横向全屏 deck 的默认目标是投影演讲,字号必须接近 `guizang-ppt-skill` 的屏幕尺度,但继续使用本 skill 的 warm editorial 配色和 Fraunces / Inter / JetBrains Mono 字体。
+
+已验证参考值(1920x1080):guizang 常规页主标题约 98-106px,lead 约 33-36px,卡片标题约 28-32px。生成本 skill 的 HTML deck 时,除非明确是 evidence/table/appendix compact 页,不要低于这组尺度太多。
+
 ```css
 /* ===== HERO 层 ===== */
-.hero-title       { font-family: var(--font-serif); font-size: clamp(40px, 5.5vw, 80px); font-weight: 600; line-height: 1.0; letter-spacing: -2px; }
-.hero-sub         { font-family: var(--font-sans);  font-size: clamp(15px, 1.3vw, 19px); line-height: 1.65; }
+.hero-title       { font-family: var(--font-serif); font-size: clamp(110px, 7.6vw, 146px); font-weight: 600; line-height: 1.0; letter-spacing: -1.2px; }
+.hero-sub         { font-family: var(--font-serif); font-size: clamp(28px, 1.9vw, 40px); line-height: 1.42; }
 
 /* ===== Section 级 ===== */
-.section-title    { font-family: var(--font-serif); font-size: clamp(34px, 4.5vw, 58px); font-weight: 600; line-height: 1.08; letter-spacing: -1.5px; }
-.section-subtitle { font-family: var(--font-sans);  font-size: 17px; line-height: 1.6; max-width: 860px; }
+.section-title    { font-family: var(--font-serif); font-size: clamp(78px, 5.2vw, 106px); font-weight: 600; line-height: 1.08; letter-spacing: -1px; }
+.section-subtitle { font-family: var(--font-serif); font-size: clamp(25px, 1.75vw, 36px); line-height: 1.45; max-width: 1160px; }
 
 /* ===== 大数字(stat / count-up) ===== */
-.stat .num        { font-family: var(--font-serif); font-size: clamp(36px, 4vw, 64px); font-weight: 600; letter-spacing: -2px; line-height: 1; font-variant-numeric: tabular-nums; }
-.bar-meta .pct    { font-family: var(--font-serif); font-size: 22px; font-weight: 700; }
+.stat .num        { font-family: var(--font-serif); font-size: clamp(68px, 6vw, 124px); font-weight: 600; letter-spacing: -1px; line-height: 1; font-variant-numeric: tabular-nums; }
+.bar-meta .pct    { font-family: var(--font-serif); font-size: clamp(28px, 2.1vw, 44px); font-weight: 700; }
 
 /* ===== 卡片级标题 ===== */
-.product-card h4  { font-family: var(--font-serif); font-size: 17px; font-weight: 700; }
-.funnel-wrap h3   { font-family: var(--font-serif); font-size: 17px; font-weight: 600; }
-.wf-phase-name    { font-family: var(--font-serif); font-size: 17px; font-weight: 600; }
+.product-card h4  { font-family: var(--font-serif); font-size: clamp(24px, 1.55vw, 32px); font-weight: 700; }
+.funnel-wrap h3   { font-family: var(--font-serif); font-size: clamp(24px, 1.55vw, 32px); font-weight: 600; }
+.wf-phase-name    { font-family: var(--font-serif); font-size: clamp(24px, 1.55vw, 32px); font-weight: 600; }
 
 /* ===== 正文 / 描述 ===== */
-.product-card .insight { font-family: var(--font-sans); font-size: 12px; line-height: 1.55; }
-.limit-item p          { font-family: var(--font-sans); font-size: 13px; line-height: 1.65; }
-.section-subtitle      { font-size: 17px; line-height: 1.6; }
+.product-card .insight { font-family: var(--font-sans); font-size: clamp(17px, 1.05vw, 22px); line-height: 1.58; }
+.limit-item p          { font-family: var(--font-sans); font-size: clamp(17px, 1.05vw, 22px); line-height: 1.65; }
+.section-subtitle      { font-size: clamp(25px, 1.75vw, 36px); line-height: 1.45; }
 
 /* ===== Eyebrow / Tag(全大写小字) ===== */
-.section-tag      { font-family: var(--font-sans); font-size: 11px; letter-spacing: 2px; text-transform: uppercase; font-weight: 600; }
-.hero-eyebrow     { font-family: var(--font-sans); font-size: 12px; letter-spacing: 2px; font-weight: 600; }
-.why-eyebrow      { font-family: var(--font-sans); font-size: 11px; letter-spacing: 2.5px; text-transform: uppercase; font-weight: 700; }
+.section-tag      { font-family: var(--font-mono); font-size: clamp(11px, .78vw, 15px); letter-spacing: 2px; text-transform: uppercase; font-weight: 600; }
+.hero-eyebrow     { font-family: var(--font-mono); font-size: clamp(11px, .78vw, 15px); letter-spacing: 2px; font-weight: 600; }
+.why-eyebrow      { font-family: var(--font-mono); font-size: clamp(11px, .78vw, 15px); letter-spacing: 2px; text-transform: uppercase; font-weight: 700; }
 
 /* ===== 技术 metadata(等宽) ===== */
-.jump-btn         { font-family: var(--font-mono); font-size: 12px; font-weight: 600; }
-.product-chip     { font-family: var(--font-mono); font-size: 8px; font-weight: 700; letter-spacing: .3px; }
-.wf-phase-output  { font-family: var(--font-mono); font-size: 11px; }
-.phase-pill .ph-id { font-family: var(--font-mono); font-size: 9px; letter-spacing: 2px; font-weight: 800; }
-.tech-stack-row span { font-family: var(--font-mono); font-size: 10px; font-weight: 600; }
+.jump-btn         { font-family: var(--font-mono); font-size: clamp(12px, .78vw, 15px); font-weight: 600; }
+.product-chip     { font-family: var(--font-mono); font-size: clamp(10px, .68vw, 13px); font-weight: 700; letter-spacing: .3px; }
+.wf-phase-output  { font-family: var(--font-mono); font-size: clamp(12px, .78vw, 15px); }
+.phase-pill .ph-id { font-family: var(--font-mono); font-size: clamp(10px, .68vw, 13px); letter-spacing: 2px; font-weight: 800; }
+.tech-stack-row span { font-family: var(--font-mono); font-size: clamp(10px, .72vw, 14px); font-weight: 600; }
 
 /* ===== 极小辅助文字 ===== */
-.bar-cell .stage-pct { font-family: var(--font-mono); font-size: 9px; }
-.subpage-card .sp-tag { font-family: var(--font-mono); font-size: 9px; }
-.aux-card .ax-meta { font-family: var(--font-mono); font-size: 9px; }
+.bar-cell .stage-pct { font-family: var(--font-mono); font-size: clamp(10px, .68vw, 13px); }
+.subpage-card .sp-tag { font-family: var(--font-mono); font-size: clamp(10px, .68vw, 13px); }
+.aux-card .ax-meta { font-family: var(--font-mono); font-size: clamp(10px, .68vw, 13px); }
 ```
+
+## Compact mode(只给密集页)
+
+只有下列页面可以进入 compact mode:证据引用列表、合规声明、dense matrix、需要完整保留原 HTML 内容的迁移页。compact mode 也不能回到网页报告尺度:
+
+```css
+.compact .section-title { font-size: clamp(46px, 3.8vw, 76px); }
+.compact .section-subtitle,
+.compact .subtitle      { font-size: clamp(18px, 1.25vw, 24px); }
+.compact .card-title,
+.compact h3,
+.compact h4             { font-size: clamp(18px, 1.25vw, 24px); }
+.compact .card-body,
+.compact p,
+.compact li             { font-size: clamp(15px, .95vw, 19px); }
+```
+
+不要用全局 scale transform 把整页缩到能塞下为止。内容超高时,优先拆页、删减重复视觉装饰,或把该页标记为 compact;不要让所有页面都继承 12-15px 正文字号。
 
 ## 字重使用规则
 

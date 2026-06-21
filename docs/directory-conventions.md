@@ -14,22 +14,17 @@
 | `docs/` | 约定文档（本文件等） | 是 |
 | `scripts/` | 本地同步脚本 / Junction 建立脚本 | 是 |
 
-## 能力域编号（01–12）
+## 能力域编号
 
 | 编号 | 名称 | 包含什么 |
 |---|---|---|
 | 01 | agent-engineering | Agent 构建、调试、自治循环、harness、council、提示工程 |
 | 02 | coding-languages | 纯语言类（编码标准、patterns、testing）。按语言分子目录。 |
 | 03 | frameworks | 具体框架 / 技术栈（Django、Laravel、Spring Boot、Next.js、Flutter 等） |
-| 04 | testing-quality | E2E、TDD、代码审查、质量门禁 |
-| 05 | devops-infra | Docker、部署、基础设施、云、数据库平台 |
 | 06 | data-search | 数据抓取、检索、搜索、研究 |
 | 07 | media-content | PPT、视频、PDF、Excel、Word、图像、设计 |
 | 08 | writing-marketing | 写作、公众号、品牌、SEO、投资材料 |
-| 09 | ops-productivity | 办公自动化（飞书、Google Workspace、Slack、Terminal 等） |
 | 10 | business-industry | 行业垂直（医疗、金融、物流、供应链、采购、法律、能源） |
-| 11 | web3 | Web3、区块链、DeFi、EVM |
-| 12 | ai-api | AI API、LLM 管线、Token 预算、Foundation Models |
 
 编号保证在 GitHub 文件浏览器里按字母序展示时也保持能力域分组顺序。
 

@@ -1,6 +1,6 @@
 ---
 name: editorial-presentation-html
-description: Anthropic warm editorial 设计语言 · 用于 presentation / case sharing / 项目汇报 / 战略叙事 / 产品发布 / 给老板/director 看的演示页面。**支持双输出模式**:① HTML(完整复刻 90%+ 视觉)② PPTX(复刻 85-90% 视觉,通过 python-pptx 程序化生成)。提供完整 design tokens(米色底 + 赭石红 #CC785C + 6 品牌色 + Fraunces 衬线 + Inter + JetBrains Mono)、12+ 视觉组件(双柱图/5级金字塔/文献漏斗/phase pill/proof bar/hub 矩阵/data-pain callout/glass eyebrow 等)、版面骨架。**只要用户提到要做 presentation / slides / PPT / 幻灯片 / case sharing / 项目展示 / 战略汇报 / 给老板看的页面 / Pfizer 风格 / Anthropic 风格 / 编辑设计风格 / 类似血液科那套,就一定要用这个 skill,即使没明确说"用 editorial 风格"或没指定 HTML/PPT 格式**。源版本:`C:\Users\qiyon\Desktop\血液科市场调研_v5_desktop.html`(90KB · 11 sections · 2026-04-27 交付)。
+description: YQ warm editorial 设计语言 · 用于 presentation / case sharing / 项目汇报 / 战略叙事 / 产品发布 / 给老板/director 看的演示页面。**支持双输出模式**:① HTML(横向全屏 deck,完整复刻 90%+ 视觉)② PPTX(复刻 85-90% 视觉,通过 python-pptx 程序化生成)。提供完整 design tokens(米色底 + 赭石红 #CC785C + 6 品牌色 + Fraunces 衬线 + Inter + JetBrains Mono)、多族谱视觉组件(stat / timeline / matrix / funnel / pyramid / phase pill / market-bars / proof-bars 等)、guizang-scale 投影字号、全屏横向版面骨架。**只要用户提到要做 presentation / slides / PPT / 幻灯片 / case sharing / 项目展示 / 战略汇报 / 给老板看的页面 / Pfizer 风格 / Anthropic 风格 / 编辑设计风格 / 类似血液科那套,就一定要用这个 skill,即使没明确说"用 editorial 风格"或没指定 HTML/PPT 格式**。源版本:`C:\Vibe Coding Project\AI Square\血液科市场调研\output\血液科市场调研_v5_desktop.html`。
 ---
 
 # Editorial Presentation (HTML + PPTX 双模)
@@ -12,15 +12,17 @@ description: Anthropic warm editorial 设计语言 · 用于 presentation / case
 **核心价值**:配色 + 字体 + 视觉表现形式 = 高识别度的"Anthropic warm editorial"风格,**不需要重新调色/选字/设计组件**,直接套用即可生成视觉一致的 presentation。
 
 **双输出模式**:
-- 🌐 **HTML 模式**(默认 · 100% 复刻):用于网页演示、可滚动叙事、嵌入视频、可点击跳转的场景。源页面级保真度。
+- 🌐 **HTML 模式**(默认 · 100% 复刻):用于浏览器演示的**横向全屏 deck**。F11 下每页固定 100vw × 100vh,支持左右翻页、底部圆点、触屏/滚轮、ESC overview。视觉仍复刻血液科 v5 的 warm editorial,不是换主题。
 - 📊 **PPTX 模式**(85-90% 复刻):用于必须交 .pptx 文件的场景(高管会、客户演示、传统企业)。通过 python-pptx 程序化生成,共享同一套配色/字体/组件视觉。
 
 **两种模式共享的"设计 DNA"**:
 1. 配色:米色底 #FAF9F5 + 赭石主色 #CC785C + 6 品牌辅色按语义分配
 2. 字体:Fraunces 衬线大标题 + Inter 正文 + JetBrains Mono 数据
 3. 视觉手段:软阴影卡片 + 圆角 + 渐变文字 + 微妙噪声纹理 + 多层背景径向渐变
-4. 组件:双柱图 / 5级金字塔 / 文献漏斗 / phase pill / proof bar 等 12+ 视觉模块
-5. 版面节奏:eyebrow tag → 大标题 → subtitle → 主组件 → CTA / jump-row 的标准结构
+4. 组件:stat / timeline / matrix / funnel / pyramid / market-bars / phase pill / proof-bars 等多族谱视觉模块
+5. 版面节奏:eyebrow tag → 大标题 → subtitle → 主组件 → evidence / footer 的全屏 slide 结构
+6. 投影尺度:页面布局和字号对齐 `guizang-ppt-skill` 的 fullscreen deck 尺度,但配色仍完全使用血液科 v5 warm editorial
+7. 图表逻辑:先判断数据关系,再选组件;不要把所有数字都转成条形图
 
 ## 何时使用(**必须主动触发,不要等用户说风格名**)
 
@@ -41,11 +43,11 @@ description: Anthropic warm editorial 设计语言 · 用于 presentation / case
 
 | 用户说... | 用 |
 |----------|-----|
-| "做 HTML 页面 / 网页 / 可滚动 / 加跳转链接 / 嵌入视频" | **HTML 模式** |
+| "做 HTML 页面 / 网页 / 浏览器演示 / F11 全屏 / 加跳转链接 / 嵌入视频" | **HTML 模式** |
 | "做 PPT / .pptx / PowerPoint / 幻灯片文件 / 给传统企业用" | **PPTX 模式** |
 | "做 presentation"(没说格式)| 默认 **HTML 模式**(更高保真),并主动问"要不要也出一份 PPT 版?" |
 | "做一份给客户演示用的"(看上下文)| 客户是 IT/科技 → HTML;客户是医药/金融/政府 → PPTX |
-| "做幻灯片样式"但没说文件类型 | HTML 模式(单页里多 section 即"slides") |
+| "做幻灯片样式"但没说文件类型 | HTML 模式(横向全屏 deck) |
 
 如果不确定,**默认 HTML**(因为它复刻度最高,后续可再衍生 PPT)。
 
@@ -58,26 +60,62 @@ description: Anthropic warm editorial 设计语言 · 用于 presentation / case
 按需读:
 
 - **`references/design-tokens.md`** ⭐ 必读 — 完整 `:root` 变量(色板、字体、阴影)。**第一件事就是把这块原样塞进 `<style>`**。
-- **`references/typography.md`** ⭐ 必读 — Fraunces / Inter / JetBrains Mono 应用规则、字号 scale、letter-spacing。
-- **`references/components.md`** — 12+ 视觉组件的 HTML+CSS 切片。
-- **`references/layouts.md`** — section 节奏、grid 布局、navigation。
-- **`references/visual-patterns.md`** — 渐变 / 噪声 / 玻璃态等"小但有感"的视觉手段。
+- **`references/typography.md`** ⭐ 必读 — Fraunces / Inter / JetBrains Mono 应用规则、projection scale。HTML deck 字号要接近 guizang fullscreen 演讲尺度,不是网页报告尺度。
+- **`references/chart-selection.md`** ⭐ 必读 — 图表选择规则。先判断数据关系,再选 stat / timeline / matrix / funnel / bar 等组件。**禁止把所有数字都画成条形图**。
+- **`references/components.md`** — 视觉组件的 HTML+CSS 切片,包含每类组件的"何时用 / 不何时用"。
+- **`references/layouts.md`** — 横向全屏 deck 的 slide 节奏、grid 布局、navigation。
+- **`references/rewrite-existing-html.md`** — 改写已有 HTML deck 的专用流程。保留内容 section,只替换演示 shell / CSS / JS。
+- **`references/qa.md`** — 生成后检查。重点查主内容宽度、垂直沉底、页脚遮挡、overview 和滚动条。
 
 ### Step 2 · 用 starter template 起手
 
-`assets/starter-template.html` 是最小可运行骨架——包含 `<head>`(字体引入 + 全套 design tokens + body 噪声纹理)+ 浮动 nav 条 + 示例 section + 末尾 reveal 脚本(用户不要交互可删)。
+`assets/starter-template.html` 是最小可运行骨架——包含 `<head>`(字体引入 + 全套 v5 design tokens + body 噪声纹理)+ 横向全屏 deck shell + 底部圆点 + 左右翻页 + ESC overview + 4 种非单一条形图示例。**不要从旧的纵向滚动 starter 开始**。
+
+动手前先读 template 的 `<style>` 和 `<script>`。starter 是横向 deck shell 的唯一结构来源,不要自己从零发明 `#deck`、overview、dots、wheel/touch 逻辑。旧 HTML 改写也必须先对齐 starter 的 shell,再迁移原内容。
+
+### Step 2.5 · 如果用户给的是已有 HTML
+
+打开 `references/rewrite-existing-html.md`。这种任务的目标不是重写内容,而是把旧 deck 按本 skill 的 shell 重新渲染:
+
+- 保留原始 `<section class="slide"...>...</section>` 的内容块,除非用户明确要求改文案。
+- 替换纵向 scroll-snap / `scrollIntoView` / `IntersectionObserver` 为横向 fixed deck。
+- 把旧整页深色主题降级为局部语义色,整体仍用 v5 warm editorial。
+- 按 `references/qa.md` 跑检测,不通过就先修 skill / 模板规则,再重新生成。
 
 ### Step 3 · 按需嵌组件
 
 `assets/component-snippets.html` 是组件粘贴库:
 
-- 数据展示:double-bar-chart / evidence-pyramid / literature-funnel / proof-bars / stat-bar
-- 流程类:phase-pill / wf-phase / ttet-step / arch-overview
+- 数据展示:stat-card / stat-grid / market-bars / evidence-pyramid / literature-funnel / proof-bars
+- 时间与流程:timeline / clock-path / decision-window / phase-pill / wf-phase / ttet-step / arch-overview
+- 匹配关系:matrix / gene-drug-map / product-path-card / before-after
 - 导航跳转:jump-row / subpage-card / aux-card
 - CTA / Callout:cta-grid / data-pain / iron-rule-band / anti-pattern-callout
 - 品牌:product-card / dual-products
 
-### Step 4 · 颜色语义化分配
+### Step 4 · 图表选择(先做,不要跳过)
+
+打开 `references/chart-selection.md`,先把每页的"核心关系 → 组件"列出来:
+
+| 数据关系 | 组件 |
+|---|---|
+| 一个数字很重要 | stat-card / big-number |
+| 多个独立 KPI | stat-grid / stat-strip |
+| 时间先后 / 诊疗窗口 | timeline / decision-window |
+| 输入到输出 / 操作步骤 | pipeline / phase-pill |
+| 病原体 / 基因型 / 机制 / 产品匹配 | matrix / gene-drug-map |
+| 文献筛选数量递减 | funnel |
+| 证据强弱分层 | pyramid / evidence-ladder |
+| 同一指标跨对象比较 | proof-bars / ranked bars |
+| 患者旅程阶段覆盖 | market-bars |
+
+**硬规则**:
+- 条形图只用于同一指标的横向比较、完成率、覆盖率、通过率。
+- 多个互不相干 KPI 不得画成 proof-bars。
+- 时间路径、机制匹配、证据链、决策流程不得画成普通 bar chart。
+- 一个 deck 默认至少使用 3 类不同表达家族,除非素材本身只有一种数据关系。
+
+### Step 5 · 颜色语义化分配
 
 | 颜色 | 变量 | 用在 |
 |------|------|------|
@@ -89,34 +127,43 @@ description: Anthropic warm editorial 设计语言 · 用于 presentation / case
 | 金(警示) | `--brand-gold #B8903C` | 经验性数据 / 局限提示 |
 | 绿(通过) | `--brand-green #5C8D5C` | 通过状态 / 顶级证据 |
 
-### Step 5 · 章节节奏(默认 11 节蓝图)
+### Step 6 · 章节节奏(默认 11 页横向 deck 蓝图)
 
 ```
-1. WHY        ← 项目背景 / 一张关键图把"为什么做"说清
+1. WHY        ← 项目背景 / 一张关键图把"为什么做"说清(常用 market-bars / before-after)
 2. HERO       ← 大标题 + 一段定位 + stat-bar(4-5 个核心数字)
 3. EVIDENCE   ← 数据/证据(漏斗 + 金字塔 / 信任链)
 4. ARCHITECTURE ← 系统/方案总览
 5. WORKFLOW   ← 详细流程深挖
 6. COVERAGE   ← 交付物全貌
-7. PROOF      ← 验证/复用证明
+7. PROOF      ← 验证/复用证明(只有通过率/覆盖率才用 proof-bars)
 8. LIMITATIONS ← 坦诚局限 + roadmap
 9. BONUS      ← 衍生洞察(可选)
 10. EXTRA     ← 个人项目或附加(可选)
 11. CTA       ← 团队 + 3 个 CTA card + 联系
 ```
 
-每个 section `min-height: 100vh`,内容居中(`.wrap { max-width: 1320px }`),背景做差异化。
+每个 slide 固定 `width:100vw;height:100vh`,内容区居中但必须吃满演讲画布。常规页面优先 `.wrap,.frame { max-width:min(1690px,88vw) }`;内容密集或投影演讲页面可用 `.wrap.wide,.frame.wide { max-width:min(1760px,93vw) }`,避免主体缩在屏幕中间太小。常规页标题应接近 90-106px,lead 应接近 28-36px;长标题或 1440×900 下可降到 78px,但 1920 下 regular title median 不能只有 78-85px。`dense-slide` 不等于 `compact`:dense 页可以更宽、更紧,但非 compact dense 页不能把标题封顶到 84px。只有 evidence/table/appendix `.compact` 页可以降级。页脚留在 slide flex 流里,但 `.wrap` 不要用 `margin:auto auto 0` / `margin:auto`,否则会和 footer 的 auto margin 叠加,导致偶发内容沉到底部。不要使用页面纵向滚动来展示下一页。
 
 ### HTML 验证清单
 
 - [ ] `:root` 完整 80+ 变量
 - [ ] Fraunces + Inter + JetBrains Mono 三字族都引入
 - [ ] body 有噪声纹理叠层(`body::before`)
-- [ ] 浮动 nav 用 `backdrop-filter: blur(20px)`
+- [ ] `#deck` 横向 fixed flex,每个 `.slide` 是 100vw × 100vh
+- [ ] 无页面纵向滚动条;F11 下页脚不遮挡正文
+- [ ] 底部圆点、左右键、滚轮、触屏、ESC overview 可用
 - [ ] 至少有一个 `.gradient-text` 锚点
 - [ ] 至少 3 种 brand 色出现(不要单色到底)
 - [ ] 数字用 Fraunces + tabular-nums
-- [ ] 链接放 `.jump-row`,中文路径 URL-encode
+- [ ] 至少 3 类不同图表表达家族;不要全 deck 都是 bar / proof-bars
+- [ ] 主内容区不能过小:1920×1080 下 `.wrap/.frame` 可视宽度通常不低于 80%,常规投影页接近 88%
+- [ ] 字号不能过小:常规页主标题不低于 78px,hero 标题不低于 110px,lead/subtitle 不低于 24px;只有 `.compact` 页例外
+- [ ] 1920×1080 下 regular title median 接近 90-106px;`.dense-slide:not(.compact)` 不能用 78-85px 作为常态
+- [ ] `.wrap` 不使用 `margin:auto auto 0` / `margin:auto`;这会和 footer auto margin 叠加造成内容沉底
+- [ ] 独立 KPI 没被画成 proof-bars
+- [ ] 时间窗口没被画成普通 bar chart
+- [ ] 机制匹配没被画成条形图
 - [ ] 移动断点处理 720px / 900px
 
 ---
@@ -126,6 +173,7 @@ description: Anthropic warm editorial 设计语言 · 用于 presentation / case
 ### Step 1 · 读 references
 
 - **`references/pptx-mode.md`** ⭐ 必读 — PPT 输出模式的完整说明:design tokens 如何映射到 PPT 主题、组件如何用 shape 实现、哪些视觉特性降级、字体如何嵌入。
+- **`references/chart-selection.md`** ⭐ 必读 — PPTX 也必须先判断数据关系,不要默认 proof-bars。
 - **`references/design-tokens.md`** — 共享的色板/字号 scale(直接复用)
 - **`references/typography.md`** — 共享的字体规则(直接复用)
 
@@ -135,7 +183,7 @@ description: Anthropic warm editorial 设计语言 · 用于 presentation / case
 
 - `EditorialDeck` 类:封装好的 deck builder,自动应用色板/字体/版面
 - 11 个 slide 模板函数:`add_why_slide()`, `add_hero_slide()`, `add_evidence_slide()`, ...,对应 HTML 11 节
-- 组件函数:`draw_double_bar_chart()`, `draw_evidence_pyramid()`, `draw_phase_pill_row()`,...
+- 组件函数:`draw_stat_grid()`, `draw_decision_timeline()`, `draw_gene_drug_matrix()`, `draw_evidence_list()`, `draw_double_bar_chart()`, `draw_evidence_pyramid()`, `draw_phase_pill_row()`,...
 - 用法:
 
 ```python
@@ -195,6 +243,7 @@ deck = EditorialDeck(embed_fonts=True)  # 把 .ttf/.otf 嵌入 .pptx
 - [ ] 标题用衬线字体(Fraunces 嵌入或 Cambria 降级)
 - [ ] 数据用等宽字体(JetBrains Mono / Consolas)
 - [ ] 至少 3 张 slide 用了不同 brand 色
+- [ ] 至少 3 类不同图表表达,proof-bars 只用于同一指标比较
 - [ ] 每张 slide 都有 eyebrow tag(顶部小字)+ 大标题 + 主组件
 - [ ] CTA slide 用赭石主色实心按钮形 shape
 - [ ] 16:9 1920×1080 分辨率
@@ -206,16 +255,18 @@ deck = EditorialDeck(embed_fonts=True)  # 把 .ttf/.otf 嵌入 .pptx
 
 1. **不要全部正文用 Fraunces** — 衬线长篇阅读疲劳
 2. **不要把所有色都换成主色** — 6 个品牌色按语义分,色彩多样性是辨识度
-3. **不要用纯黑文字** — 用 `#141413` 暖墨
-4. **不要让每页/每屏背景一样** — 用 3 档底色 + 径向渐变交替
-5. **不要混用按钮风格** — 主 CTA 一种样式,辅 CTA 另一种,跳转第三种,不要乱
-6. **PPT 模式:不要在 PPT 里写 CSS** — 所有视觉走 python-pptx 的 shape API,不要嵌网页
+3. **不要把所有数字都画成条形图** — 图表先表达关系,再表达大小
+4. **不要用纯黑文字** — 用 `#141413` 暖墨
+5. **不要让每页/每屏背景一样** — 用 3 档底色 + 径向渐变交替,但保持同一套 v5 色板
+6. **不要混用按钮风格** — 主 CTA 一种样式,辅 CTA 另一种,跳转第三种,不要乱
+7. **不要把演讲 deck 做成网页报告** — 常规页必须采用 projection typography;放不下就拆页或 compact,不要全局缩字
+8. **PPT 模式:不要在 PPT 里写 CSS** — 所有视觉走 python-pptx 的 shape API,不要嵌网页
 
 ## 常见任务模板
 
 ### 任务 A · "做一份 X 主题的 case sharing presentation"
 
-→ HTML 模式 default → 读 design-tokens + components → 拷贝 starter → 11 section 蓝图 → 删多余节
+→ HTML 模式 default → 读 design-tokens + chart-selection + components → 拷贝 starter → 11 slide 蓝图 → 删多余页
 
 ### 任务 B · "做一份 X 主题的 PPT 给客户演示"
 
