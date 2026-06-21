@@ -4,9 +4,15 @@
 
 </div>
 
-# Skill-hub
+# Skill-hub - AI Agent Skill Library for Codex and Claude Code
 
-A shared collection of skills across multiple AI coding agents (Claude Code, Antigravity, Codex, etc.), totaling **59** skills.
+Skill-hub is a public collection of **59** reusable `SKILL.md` workflows for AI coding agents such as OpenAI Codex, Claude Code, and Antigravity, with shared skills and project-specific skills organized for lookup and local sync.
+
+**Search intent:** AI agent skills, AI coding agent skills, Codex skills, Claude Code skills, prompt workflow library, `SKILL.md` templates, Agent 技能库.
+
+**Start here:** [By Name](./_meta/by-name.md) · [By Domain](./_meta/by-domain.md) · [By Tech Stack](./_meta/by-platform.md) · [Machine-Readable Index](./_meta/skills-lock.json) · [Local Setup](#local-setup-user-configured)
+
+**Boundary:** This is a personal showcase and learning repository, not an official OpenAI, Anthropic, Claude Code, or Antigravity skill registry. Because the repository is public, use placeholders for credentials and do not commit real secrets.
 
 ## Purpose
 
