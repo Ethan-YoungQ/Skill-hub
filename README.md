@@ -4,17 +4,19 @@
 
 </div>
 
-# Skill-hub - AI 提示词与 Agent 技能库 / AI Agent Skill Library
+# Skill-hub - AI 提示词库与 Agent 技能库 / AI Agent Skill Library
 
-Skill-hub 是一个公开的 AI 提示词、Agent 技能和 `SKILL.md` 工作流仓库，面向需要沉淀 Codex、Claude Code、Antigravity 等 AI 编程工具用法的个人开发者；当前包含 **59** 个可复用技能，按能力域、技术栈和项目私有技能组织，便于检索、本地同步与复用。
+Skill-hub 是一个公开的中文 AI 提示词库、AI Agent 技能库和 `SKILL.md` 工作流仓库，面向需要沉淀 Codex、Claude Code、Antigravity 等 AI 编程工具用法的个人开发者；当前包含 **59** 个可复用技能，按能力域、技术栈和项目私有技能组织，便于检索、本地同步与复用。
 
-**Search intent:** for users searching for AI 提示词/提示词库, AI Agent 技能库, and Codex/Claude Code 自动化工作流.
+**Search intent:** for users searching for AI 提示词, 提示词库, AI Agent 技能库, Codex 技能, Claude Code 技能, and AI 编程工作流.
 
 English: a public AI Agent skill library with reusable `SKILL.md` workflows for Codex, Claude Code, Antigravity, agent engineering, AI coding, data search, media generation, writing, and business-domain automation.
 
 **Start here:** [By Name](./_meta/by-name.md) · [By Domain](./_meta/by-domain.md) · [By Tech Stack](./_meta/by-platform.md) · [Machine-Readable Index](./_meta/skills-lock.json) · [Local Setup](#local-setup-user-configured)
 
 **Boundary:** This is a personal showcase and learning repository, not an official OpenAI, Anthropic, Claude Code, or Antigravity skill registry. It is not a universal prompt marketplace. Because the repository is public, use placeholders for credentials and do not commit real secrets.
+
+**Typical scenarios:** find reusable Agent skills, organize Codex or Claude Code workflows, turn project experience into `SKILL.md`, and maintain AI coding prompts and automation steps in one searchable repository.
 
 ## Purpose
 
