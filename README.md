@@ -6,7 +6,7 @@
 
 # Skill-hub - AI 提示词库与 Agent 技能库
 
-Skill-hub 是一个公开的中文 AI 提示词库、AI Agent 技能库和 `SKILL.md` 工作流仓库，面向需要沉淀 Codex、Claude Code、Antigravity 等 AI 编程工具用法的个人开发者；当前包含 **59** 个可复用技能，按能力域、技术栈和项目私有技能组织，便于检索、本地同步与复用。
+Skill-hub 是一个公开的中文 AI 提示词库、AI Agent 技能库和 `SKILL.md` 工作流仓库，面向需要沉淀 Codex、Claude Code、Antigravity 等 AI 编程工具用法的个人开发者；当前包含 **60** 个可复用技能，按能力域、技术栈和项目私有技能组织，便于检索、本地同步与复用。
 
 **搜索意图：** 适合正在找 AI 提示词、提示词库、AI Agent 技能库、Codex 技能、Claude Code 技能和 AI 编程工作流的人。
 
@@ -25,7 +25,7 @@ Skill-hub 是一个公开的中文 AI 提示词库、AI Agent 技能库和 `SKIL
 ## 目录结构
 
 ```
-skills/                        # 50 个共享技能，分 7 个能力域
+skills/                        # 51 个共享技能，分 7 个能力域
 ├── 01-agent-engineering/      Agent 工程（构建、调试、自治循环、harness 等）
 ├── 02-coding-languages/       编程语言（Swift + 通用）
 ├── 03-frameworks/             框架栈（前端设计等）
@@ -110,4 +110,3 @@ description: 一句话触发条件：什么场景下 Agent 应该使用这个技
 ## 许可
 
 仅用于个人展示与学习，默认不接受外部 PR。
-

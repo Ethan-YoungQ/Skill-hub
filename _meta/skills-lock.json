@@ -1,11 +1,11 @@
 {
     "version":  "2.0",
-    "generated_at":  "2026-06-21T14:28:30+08:00",
-    "note":  "Rebuilt indexes from repository SKILL.md files. Total: 50 shared + 9 projects = 59 total",
+    "generated_at":  "2026-06-29T20:06:09+08:00",
+    "note":  "Rebuilt indexes from repository SKILL.md files. Total: 51 shared + 9 projects = 60 total",
     "counts":  {
-                   "shared":  50,
+                   "shared":  51,
                    "projects":  9,
-                   "total":  59
+                   "total":  60
                },
     "shared":  [
                    {
@@ -19,6 +19,12 @@
                        "domain":  "01-agent-engineering",
                        "path":  "skills/01-agent-engineering/find-skills/",
                        "descriptionZh":  "自动发现与推荐可用 Agent 技能，回答\"有没有能做 X 的技能\"。"
+                   },
+                   {
+                       "name":  "project-cleanup-audit",
+                       "domain":  "01-agent-engineering",
+                       "path":  "skills/01-agent-engineering/project-cleanup-audit/",
+                       "descriptionZh":  "证据优先清理本地项目仓库：审计体积、分类无用文件、备份并安全删除生成物。"
                    },
                    {
                        "name":  "santa-method",
