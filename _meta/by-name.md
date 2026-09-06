@@ -22,7 +22,7 @@
 | 16 | **general-video** | [skills/07-media-content/general-video/](../skills/07-media-content/general-video/) | 没有专用流程时，用 HyperFrames 制作或编辑多场景视频。 |
 | 17 | **github-desktop-release** | [skills/01-agent-engineering/github-desktop-release/](../skills/01-agent-engineering/github-desktop-release/) | GitHub Actions 验收 Windows 安装包，并编排跨平台安装包的提升、发布与权威回读。 |
 | 18 | **github-readme-visuals** | [skills/07-media-content/github-readme-visuals/](../skills/07-media-content/github-readme-visuals/) | 为 GitHub 仓库创建或更新产品主视觉、完整软件界面截图及中英文 README 图片区，并支持按参考图进行可验证的几何复刻。 |
-| 19 | **gpt56-sol-pro-consult** | [skills/01-agent-engineering/gpt56-sol-pro-consult/](../skills/01-agent-engineering/gpt56-sol-pro-consult/) | 仅当用户点名或明确要求使用 Sol Pro 时调用 Codex 侧边 Browser。 |
+| 19 | **gpt6-pro-consult** | [skills/01-agent-engineering/gpt6-pro-consult/](../skills/01-agent-engineering/gpt6-pro-consult/) | 用户点名或需作实质性软件设计、架构取舍时调用侧边 Browser。 |
 | 20 | **healthcare-cdss-patterns** | [skills/10-business-industry/healthcare-cdss-patterns/](../skills/10-business-industry/healthcare-cdss-patterns/) | 临床决策支持系统开发：药物互作、剂量校验、临床评分、告警分级与 EMR 集成。 |
 | 21 | **healthcare-emr-patterns** | [skills/10-business-industry/healthcare-emr-patterns/](../skills/10-business-industry/healthcare-emr-patterns/) | 医疗 EMR/EHR 开发模式：临床安全、就诊流程、处方生成、CDSS 集成、无障碍 UI。 |
 | 22 | **healthcare-eval-harness** | [skills/10-business-industry/healthcare-eval-harness/](../skills/10-business-industry/healthcare-eval-harness/) | 医疗发布的病人安全评测 harness：CDSS、PHI、临床流程与集成合规，失败阻断上线。 |

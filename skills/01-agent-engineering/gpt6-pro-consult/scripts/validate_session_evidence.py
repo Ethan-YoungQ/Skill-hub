@@ -23,6 +23,19 @@ def nested(payload: dict[str, Any], *keys: str) -> Any:
     return value
 
 
+def has_gpt_6_pro_signal(signals: Any) -> bool:
+    if not isinstance(signals, list):
+        return False
+    rendered = [str(signal) for signal in signals]
+    if any("GPT-6 Pro" in signal for signal in rendered):
+        return True
+    has_compact_label = any("6 Pro" in signal for signal in rendered)
+    has_latest_selection = any(
+        "Latest [selected]" in signal or "最新 [selected]" in signal for signal in rendered
+    )
+    return has_compact_label and has_latest_selection
+
+
 def validate(payload: dict[str, Any]) -> list[str]:
     errors: list[str] = []
 
@@ -31,7 +44,7 @@ def validate(payload: dict[str, Any]) -> list[str]:
             errors.append(message)
 
     require(payload.get("executed_by") == "main-codex-task", "executed_by must be main-codex-task")
-    require(payload.get("schema_version") == "1.2", "schema_version must be 1.2")
+    require(payload.get("schema_version") == "1.4", "schema_version must be 1.4")
     require(bool(payload.get("task_run_id")), "task_run_id is required")
     require(nested(payload, "browser", "type") == "iab", "browser.type must be iab")
 
@@ -51,10 +64,9 @@ def validate(payload: dict[str, Any]) -> list[str]:
             require(bool(section_ref.get("tab_url")), f"{section}.tab_url is required")
         require(bool(nested(payload, section, "captured_at")), f"{section}.captured_at is required")
 
-    require(nested(payload, "model_gate", "gpt_5_6_sol_checked") is True, "GPT-5.6 Sol must be checked")
-    require(nested(payload, "model_gate", "pro_tier_checked") is True, "Pro tier must be checked")
+    require(nested(payload, "model_gate", "gpt_6_pro_checked") is True, "GPT-6 Pro must be checked")
     signals = nested(payload, "model_gate", "observed_signals")
-    require(isinstance(signals, list) and len(signals) >= 2, "two model selection signals are required")
+    require(has_gpt_6_pro_signal(signals), "a complete GPT-6 Pro model signal is required")
 
     require(
         nested(payload, "late_clean_gate", "checked_after_model_menu") is True,
@@ -72,7 +84,7 @@ def validate(payload: dict[str, Any]) -> list[str]:
 
     require(bool(SHA256_RE.fullmatch(str(nested(payload, "packet", "sha256") or ""))), "packet.sha256 must be lowercase SHA-256")
     require(bool(nested(payload, "packet", "distinctive_prefix")), "packet distinctive_prefix is required")
-    require(str(nested(payload, "packet", "sentinel") or "").startswith("GPT56_SOL_PRO_RESULT_"), "packet sentinel is invalid")
+    require(str(nested(payload, "packet", "sentinel") or "").startswith("GPT6_PRO_RESULT_"), "packet sentinel is invalid")
     require(isinstance(nested(payload, "packet", "visible_attachments"), list), "visible_attachments must be a list")
 
     require(nested(payload, "dispatch", "state") == "SENT", "dispatch.state must be SENT")
@@ -87,28 +99,32 @@ def validate(payload: dict[str, Any]) -> list[str]:
         require(nested(payload, "route_exclusions", key) is False, f"route_exclusions.{key} must be false")
 
     require(bool(nested(payload, "cleanup", "captured_at")), "cleanup.captured_at is required")
-    require(nested(payload, "cleanup", "finalize_called") is True, "cleanup.finalize_called must be true")
     require(
-        nested(payload, "cleanup", "finalize_was_last_browser_action") is True,
-        "cleanup.finalize_was_last_browser_action must be true",
+        nested(payload, "cleanup", "release_method") in {"iab.tabs.finalize", "tab.close"},
+        "cleanup.release_method must be iab.tabs.finalize or tab.close",
+    )
+    require(nested(payload, "cleanup", "release_completed") is True, "cleanup.release_completed must be true")
+    require(
+        nested(payload, "cleanup", "release_was_last_browser_action") is True,
+        "cleanup.release_was_last_browser_action must be true",
     )
     require(
         nested(payload, "cleanup", "retained_tab_status") in {"none", "deliverable"},
         "completed consultations may retain only none or deliverable",
     )
     require(
-        nested(payload, "cleanup", "pre_finalize_project_context") is False,
+        nested(payload, "cleanup", "pre_release_project_context") is False,
         "cleanup must prove no Project context",
     )
     require(
-        nested(payload, "cleanup", "pre_finalize_draft_present") is False,
+        nested(payload, "cleanup", "pre_release_draft_present") is False,
         "cleanup must prove no leftover draft",
     )
     require(
-        nested(payload, "cleanup", "pre_finalize_pending_upload_count") == 0,
+        nested(payload, "cleanup", "pre_release_pending_upload_count") == 0,
         "cleanup must prove no pending uploads",
     )
-    unexpected = nested(payload, "cleanup", "pre_finalize_unexpected_attachments")
+    unexpected = nested(payload, "cleanup", "pre_release_unexpected_attachments")
     require(isinstance(unexpected, list) and not unexpected, "cleanup must prove no unexpected attachments")
 
     require(payload.get("binding_verified") is True, "binding_verified must be true")

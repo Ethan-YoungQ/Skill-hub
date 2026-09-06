@@ -20,7 +20,7 @@
 | **deep-research** | [skills/01-agent-engineering/deep-research/](../skills/01-agent-engineering/deep-research/) | 多源深度研究，使用 firecrawl/exa 搜索并综合发现。 |
 | **find-skills** | [skills/01-agent-engineering/find-skills/](../skills/01-agent-engineering/find-skills/) | 自动发现与推荐可用 Agent 技能，回答"有没有能做 X 的技能"。 |
 | **github-desktop-release** | [skills/01-agent-engineering/github-desktop-release/](../skills/01-agent-engineering/github-desktop-release/) | GitHub Actions 验收 Windows 安装包，并编排跨平台安装包的提升、发布与权威回读。 |
-| **gpt56-sol-pro-consult** | [skills/01-agent-engineering/gpt56-sol-pro-consult/](../skills/01-agent-engineering/gpt56-sol-pro-consult/) | 仅当用户点名或明确要求使用 Sol Pro 时调用 Codex 侧边 Browser。 |
+| **gpt6-pro-consult** | [skills/01-agent-engineering/gpt6-pro-consult/](../skills/01-agent-engineering/gpt6-pro-consult/) | 用户点名或需作实质性软件设计、架构取舍时调用侧边 Browser。 |
 | **santa-method** | [skills/01-agent-engineering/santa-method/](../skills/01-agent-engineering/santa-method/) | 多 Agent 对抗验证收敛循环，两个独立审查都通过后才出交付。 |
 | **skill-creator** | [skills/01-agent-engineering/skill-creator/](../skills/01-agent-engineering/skill-creator/) | 创建、修改和优化 skill，并可跑 eval 衡量触发准确率与性能。 |
 | **skill-lifecycle-manager** | [skills/01-agent-engineering/skill-lifecycle-manager/](../skills/01-agent-engineering/skill-lifecycle-manager/) | 管理本地/全局/项目级 skill 与 Skill-hub 生命周期：搜索、推荐、安装、升级、同步、合并、清理、来源校验、质量审计和发布。 |

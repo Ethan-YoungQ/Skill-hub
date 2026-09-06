@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Heuristic packet scanner for GPT 5.6 Sol Pro consultation packets.
+"""Heuristic packet scanner for GPT-6 Pro consultation packets.
 
 This script is intentionally light-touch. The skill is meant to solve hard
 problems with rich context, so ordinary user-owned project or business details
@@ -72,7 +72,7 @@ def scan(text: str) -> dict:
 
 
 def main() -> int:
-    parser = argparse.ArgumentParser(description="Scan a GPT 5.6 Sol Pro context packet for credential-like material.")
+    parser = argparse.ArgumentParser(description="Scan a GPT-6 Pro context packet for credential-like material.")
     parser.add_argument("packet", help="Path to packet markdown, or '-' for stdin")
     parser.add_argument("--max-chars", type=int, default=15000, help="Warn when packet exceeds this many characters")
     parser.add_argument("--fail-on-length", action="store_true", help="Exit non-zero when packet exceeds --max-chars")

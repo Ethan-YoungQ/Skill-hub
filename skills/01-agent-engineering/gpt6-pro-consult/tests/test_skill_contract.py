@@ -19,19 +19,23 @@ class SkillContractTests(unittest.TestCase):
         self.assertIn("当前主 Codex task 执行", skill)
         self.assertIn("不调用 Chrome 扩展、Chrome CLI、OpenCLI", skill)
         self.assertIn("不切换 Chrome 或 CLI", skill)
+        self.assertNotIn("browser:control-in-app-browser", skill)
 
-    def test_trigger_contract_is_explicit_sol_pro_only(self) -> None:
+    def test_trigger_contract_covers_explicit_and_consequential_design_decisions(self) -> None:
         skill = (SKILL_DIR / "SKILL.md").read_text(encoding="utf-8")
         description = skill.split("---", 2)[1]
         self.assertIn(
-            "description: 仅当用户点名或明确要求使用 Sol Pro 时调用侧边 Browser。",
+            "description: 用户点名或需作实质性软件设计、架构取舍时调用侧边 Browser。",
             description,
         )
-        self.assertIn("显式点名 `$gpt56-sol-pro-consult`", skill)
-        self.assertIn("普通的方案 Review、Plan 审查、本地材料审查", skill)
+        self.assertIn("显式点名 `$gpt6-pro-consult`", skill)
+        self.assertIn("实质性权衡仍未解决", skill)
+        self.assertIn("普通实现、已确定方案的落地、小型孤立修复", skill)
+        self.assertIn("自动附件或私有上下文共享，不触发本 Skill", skill)
         self.assertIn("不触发", skill)
-        self.assertIn("不因 Codex 自行判断", skill)
-        for broad_trigger in ("凡需方案", "均用 Codex", "Pro 编排循环时也触发"):
+        metadata = (SKILL_DIR / "agents" / "openai.yaml").read_text(encoding="utf-8")
+        self.assertIn("allow_implicit_invocation: true", metadata)
+        for broad_trigger in ("任何软件设计", "均用 Codex", "Pro 编排循环时也触发"):
             self.assertNotIn(broad_trigger, description)
 
     def test_reviewer_and_orchestrator_modes_are_defined(self) -> None:
@@ -56,7 +60,7 @@ class SkillContractTests(unittest.TestCase):
         for relative in (
             "references/chrome-workflow.md",
             "references/opencli-fallback.md",
-            "scripts/run_gpt56_sol_pro_consult.py",
+            "scripts/run_gpt6_pro_consult.py",
             "scripts/extract_chatgpt_reply.py",
             "tests/test_model_selection.py",
         ):
@@ -67,7 +71,7 @@ class SkillContractTests(unittest.TestCase):
         if not eval_path.exists():
             self.skipTest("runtime package intentionally excludes eval fixtures")
         payload = json.loads(eval_path.read_text(encoding="utf-8"))
-        self.assertEqual(payload["skill_name"], "gpt56-sol-pro-consult")
+        self.assertEqual(payload["skill_name"], "gpt6-pro-consult")
         self.assertGreaterEqual(len(payload["evals"]), 6)
         for case in payload["evals"]:
             joined = " ".join([case["expected_output"], *case["assertions"]])
@@ -92,7 +96,7 @@ class SkillContractTests(unittest.TestCase):
         ):
             self.assertIn(required, workflow)
 
-    def test_completed_evidence_requires_clean_finalize(self) -> None:
+    def test_completed_evidence_requires_clean_release(self) -> None:
         validator_path = SKILL_DIR / "scripts/validate_session_evidence.py"
         spec = importlib.util.spec_from_file_location("sol_pro_evidence_validator", validator_path)
         self.assertIsNotNone(spec)
@@ -102,16 +106,15 @@ class SkillContractTests(unittest.TestCase):
 
         ref = {"browser_id": "iab-1", "tab_id": "tab-1", "tab_url": "https://chatgpt.com/c/1"}
         payload = {
-            "schema_version": "1.2",
+            "schema_version": "1.4",
             "task_run_id": "run-1",
             "executed_by": "main-codex-task",
             "browser": {"type": "iab", **ref},
             "model_gate": {
                 "binding_ref": ref,
                 "captured_at": "2026-07-29T00:00:00Z",
-                "gpt_5_6_sol_checked": True,
-                "pro_tier_checked": True,
-                "observed_signals": ["sol", "pro"],
+                "gpt_6_pro_checked": True,
+                "observed_signals": ["model picker GPT-6 Pro [selected]"],
             },
             "late_clean_gate": {
                 "binding_ref": ref,
@@ -126,7 +129,7 @@ class SkillContractTests(unittest.TestCase):
             "packet": {
                 "sha256": "a" * 64,
                 "distinctive_prefix": "case-prefix",
-                "sentinel": "GPT56_SOL_PRO_RESULT_CASE",
+                "sentinel": "GPT6_PRO_RESULT_CASE",
                 "visible_attachments": [],
             },
             "dispatch": {
@@ -151,22 +154,28 @@ class SkillContractTests(unittest.TestCase):
             },
             "cleanup": {
                 "captured_at": "2026-07-29T00:03:00Z",
-                "finalize_called": True,
-                "finalize_was_last_browser_action": True,
+                "release_method": "tab.close",
+                "release_completed": True,
+                "release_was_last_browser_action": True,
                 "retained_tab_status": "none",
-                "pre_finalize_project_context": False,
-                "pre_finalize_draft_present": False,
-                "pre_finalize_pending_upload_count": 0,
-                "pre_finalize_unexpected_attachments": [],
+                "pre_release_project_context": False,
+                "pre_release_draft_present": False,
+                "pre_release_pending_upload_count": 0,
+                "pre_release_unexpected_attachments": [],
             },
             "binding_verified": True,
             "status": "completed",
         }
         self.assertEqual(module.validate(payload), [])
+        payload["model_gate"]["observed_signals"] = ["composer control 6 Pro", "model picker 最新 [selected]"]
+        self.assertEqual(module.validate(payload), [])
+        payload["model_gate"]["observed_signals"] = ["Pro"]
+        self.assertIn("a complete GPT-6 Pro model signal is required", module.validate(payload))
+        payload["model_gate"]["observed_signals"] = ["model picker GPT-6 Pro [selected]"]
         payload["late_clean_gate"]["composer_empty"] = False
         self.assertIn("late clean gate must prove empty composer", module.validate(payload))
         payload["late_clean_gate"]["composer_empty"] = True
-        payload["cleanup"]["pre_finalize_pending_upload_count"] = 1
+        payload["cleanup"]["pre_release_pending_upload_count"] = 1
         self.assertIn("cleanup must prove no pending uploads", module.validate(payload))
 
     def test_completion_requires_same_session_browser_evidence(self) -> None:
@@ -182,14 +191,14 @@ class SkillContractTests(unittest.TestCase):
         ):
             self.assertIn(required, skill)
 
-    def test_each_task_uses_a_clean_isolated_tab_and_always_finalizes(self) -> None:
+    def test_each_task_uses_a_clean_isolated_tab_and_always_releases(self) -> None:
         skill = (SKILL_DIR / "SKILL.md").read_text(encoding="utf-8")
         workflow = (SKILL_DIR / "references/in-app-browser-workflow.md").read_text(encoding="utf-8")
         for required in (
             "每个新 Codex task 都新建专用 ChatGPT tab",
             "不得复用其他 task 留下的对话、Project、composer 草稿、附件或上传状态",
-            "iab.tabs.finalize({ keep })",
-            "默认 `keep` 为空",
+            "释放本 task 自建 tab",
+            "close()",
             "不得把未完成上传或含附件草稿的 tab 标为 `handoff`",
             "延迟净空门",
             "STALE_COMPOSER_BLOCKER",
@@ -203,6 +212,7 @@ class SkillContractTests(unittest.TestCase):
             "不属于本 task",
             "强制清理与释放",
             "作为本 turn 的最后一个 Browser 动作",
+            "release 方法",
             "不得把污染 tab 保留为 handoff",
             "不要 claim、关闭或修改无法证明属于本 task 的用户 tab",
             "checked_after_model_menu",

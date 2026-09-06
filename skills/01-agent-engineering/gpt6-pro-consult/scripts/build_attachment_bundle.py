@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build a text attachment bundle for GPT 5.6 Sol Pro uploads.
+"""Build a text attachment bundle for GPT-6 Pro uploads.
 
 Use this when ChatGPT Web rejects a zip/archive, when a directory has many
 small source files, or when preserving file names matters more than preserving
@@ -162,7 +162,7 @@ def main() -> int:
         selected.append((resolved, text, len(raw), truncated))
 
     lines: list[str] = [
-        "# GPT 5.6 Sol Pro Attachment Bundle",
+        "# GPT-6 Pro Attachment Bundle",
         "",
         "The attached bundle contains local files for review. Local paths are provenance labels only.",
         "",

@@ -1,4 +1,4 @@
-# GPT 5.6 Sol Pro Context Packet Template
+# GPT-6 Pro Context Packet Template
 
 Use this template when preparing a consultation packet.
 
@@ -7,8 +7,8 @@ CONTEXT_PACKET_V1
 
 ```json
 {
-  "task_id": "gpt56-sol-pro-consult-YYYYMMDD-HHMMSS",
-  "sentinel": "GPT56_SOL_PRO_RESULT_YYYYMMDD_HHMMSS",
+  "task_id": "gpt6-pro-consult-YYYYMMDD-HHMMSS",
+  "sentinel": "GPT6_PRO_RESULT_YYYYMMDD_HHMMSS",
   "task_type": "plan_review|architecture_review|business_consult|skill_design|risk_review|orchestrator_loop|other",
   "consult_mode": "reviewer|orchestrator_loop",
   "review_round": 1,
@@ -47,7 +47,7 @@ Please act as a strict reviewer or orchestrator. Find the biggest flaw first, th
 
 ## RETURN_FORMAT
 
-First line must be: GPT56_SOL_PRO_RESULT_YYYYMMDD_HHMMSS
+First line must be: GPT6_PRO_RESULT_YYYYMMDD_HHMMSS
 
 Then use:
 1. Reasoning brief: assumptions, frame, evidence, counterargument, tradeoffs

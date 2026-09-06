@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.2",
+  "schema_version": "1.4",
   "task_run_id": "<unique-current-task-run-id>",
   "executed_by": "main-codex-task",
   "case_id": "<optional-eval-case-id>",
@@ -18,11 +18,10 @@
       "tab_url": "<same-chatgpt-conversation-url>"
     },
     "captured_at": "<iso-8601>",
-    "gpt_5_6_sol_checked": true,
-    "pro_tier_checked": true,
+    "gpt_6_pro_checked": true,
     "observed_signals": [
-      "menuitemradio GPT-5.6 Sol [checked]",
-      "menuitemradio Pro [checked]"
+      "composer control 6 Pro",
+      "model picker 最新 [selected]"
     ]
   },
   "late_clean_gate": {
@@ -42,7 +41,7 @@
   "packet": {
     "sha256": "<64-lowercase-hex>",
     "distinctive_prefix": "<unique-prefix>",
-    "sentinel": "GPT56_SOL_PRO_RESULT_<unique-suffix>",
+    "sentinel": "GPT6_PRO_RESULT_<unique-suffix>",
     "visible_attachments": []
   },
   "dispatch": {
@@ -74,14 +73,15 @@
     "external_playwright_used": false
   },
   "cleanup": {
-    "captured_at": "<iso-8601-after-finalize>",
-    "finalize_called": true,
-    "finalize_was_last_browser_action": true,
+    "captured_at": "<iso-8601-after-release>",
+    "release_method": "iab.tabs.finalize|tab.close",
+    "release_completed": true,
+    "release_was_last_browser_action": true,
     "retained_tab_status": "none",
-    "pre_finalize_project_context": false,
-    "pre_finalize_draft_present": false,
-    "pre_finalize_pending_upload_count": 0,
-    "pre_finalize_unexpected_attachments": []
+    "pre_release_project_context": false,
+    "pre_release_draft_present": false,
+    "pre_release_pending_upload_count": 0,
+    "pre_release_unexpected_attachments": []
   },
   "binding_verified": true,
   "status": "completed"

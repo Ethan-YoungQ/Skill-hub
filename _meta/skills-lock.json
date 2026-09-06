@@ -27,10 +27,10 @@
       "descriptionZh": "GitHub Actions 验收 Windows 安装包，并编排跨平台安装包的提升、发布与权威回读。"
     },
     {
-      "name": "gpt56-sol-pro-consult",
+      "name": "gpt6-pro-consult",
       "domain": "01-agent-engineering",
-      "path": "skills/01-agent-engineering/gpt56-sol-pro-consult/",
-      "descriptionZh": "仅当用户点名或明确要求使用 Sol Pro 时调用 Codex 侧边 Browser。"
+      "path": "skills/01-agent-engineering/gpt6-pro-consult/",
+      "descriptionZh": "用户点名或需作实质性软件设计、架构取舍时调用侧边 Browser。"
     },
     {
       "name": "santa-method",

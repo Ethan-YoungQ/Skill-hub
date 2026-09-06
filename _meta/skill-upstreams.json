@@ -1035,13 +1035,13 @@
       "notes": "Self-maintained shared skill; external automatic updates disabled."
     },
     {
-      "name": "gpt56-sol-pro-consult",
-      "path": "skills/01-agent-engineering/gpt56-sol-pro-consult/",
+      "name": "gpt6-pro-consult",
+      "path": "skills/01-agent-engineering/gpt6-pro-consult/",
       "classification": "self",
       "updatePolicy": "none",
-      "status": "self-maintained-codex-iab-sol-pro-consult",
+      "status": "self-maintained-codex-iab-gpt6-pro-consult",
       "evidence": [
-        "Skill was redesigned locally from an owner-directed Codex in-app Browser workflow for GPT 5.6 Sol Pro review and orchestration.",
+        "Skill was redesigned locally from an owner-directed Codex in-app Browser workflow for GPT-6 Pro review and orchestration.",
         "The predecessor Chrome/OpenCLI implementation was retained only as an evaluation baseline and is not an upstream package for automatic mirroring.",
         "Real iab forward tests, paired baseline grading, human viewer review, and isolated Terra/Xhigh trigger-routing tests were completed before local installation."
       ],

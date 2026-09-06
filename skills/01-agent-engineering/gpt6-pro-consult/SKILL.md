@@ -1,29 +1,30 @@
 ---
-name: gpt56-sol-pro-consult
-description: 仅当用户点名或明确要求使用 Sol Pro 时调用侧边 Browser。
+name: gpt6-pro-consult
+description: 用户点名或需作实质性软件设计、架构取舍时调用侧边 Browser。
 ---
 
-# GPT 5.6 Sol Pro Consult
+# GPT-6 Pro Consult
 
-把 ChatGPT Web 的 GPT 5.6 Sol Pro 作为 Codex 的外部审查者或 Orchestrator：Pro 负责挑战方案、发现盲点和提出修订；Codex 负责读取本地证据、实施、运行验证并决定是否采纳。
+把 ChatGPT Web 的 GPT-6 Pro 作为 Codex 的外部审查者或 Orchestrator。GPT-6 Pro 是 Chat 中由 GPT-6 Astra 驱动的 Pro 模型；Codex 负责读取本地证据、实施、运行验证并决定是否采纳。
 
 ## 触发边界
 
-仅在用户显式点名 `$gpt56-sol-pro-consult`，或明确要求使用 `Sol Pro` / `GPT 5.6 Sol Pro` 时执行本 Skill。
+在以下任一情况执行本 Skill：
 
-- 普通的方案 Review、Plan 审查、本地材料审查、规划或“给第二意见”请求不触发。
-- 单独出现泛称 `Pro`、“高推理模型”或“最强模型”不触发，除非当前用户请求已无歧义地指向 Sol Pro。
-- 不因 Codex 自行判断“这项任务适合 Pro”而主动升级；是否调用由用户明确决定。
+- 用户显式点名 `$gpt6-pro-consult`，或明确要求使用 `GPT-6 Pro` / `GPT-6 Astra Pro`。
+- 请求需要在可行的软件设计或架构方案之间作出会显著影响边界、可靠性、安全性、演进成本或交付风险的取舍，且实质性权衡仍未解决。
+
+自动触发时只发送最小、非敏感的文本 brief。普通实现、已确定方案的落地、小型孤立修复、泛泛规划、一般本地审查，以及自动附件或私有上下文共享，不触发本 Skill。单独出现泛称 `Pro`、“高推理模型”或“最强模型”也不触发，除非当前请求已无歧义地指向 GPT-6 Pro。
 
 ## 执行位置与原生 Browser 路由
 
-默认且唯一的执行面是 Codex 内置侧边 Browser（in-app Browser）。先完整读取并遵循 `browser:control-in-app-browser` Skill，再读取 [侧边 Browser 工作流](references/in-app-browser-workflow.md)。
+默认且唯一的执行面是 Codex 内置侧边 Browser（in-app Browser）。先读取当前 `iab` binding 返回的完整 documentation，再读取 [侧边 Browser 工作流](references/in-app-browser-workflow.md)。
 
 - 实际 Browser 操作必须由触发本 Skill 的当前主 Codex task 执行。隔离子代理可整理材料或复审结果，但不得代替主 task 打开 ChatGPT、选模型、上传、发送或抽取回复；子代理报告 `iab` 不可用不能证明主 task 的侧边 Browser 不可用。
 - 选择独立的 `iab` 绑定。每个新 Codex task 都新建专用 ChatGPT tab，并从 `https://chatgpt.com/` 开始；不得复用其他 task 留下的对话、Project、composer 草稿、附件或上传状态。只有同一 task 持有匹配 `task_run_id` 的 evidence ledger 时，才可继续原 tab。新 tab 的首次空白快照不够：打开或确认模型菜单后、写入本次内容前，必须再次读取 composer 和附件区，执行延迟净空门（late clean gate）。
 - 不调用 Chrome 扩展、Chrome CLI、OpenCLI、Playwright CLI 或外部浏览器自动化进程。
 - 不检查 cookies、local storage、密码、浏览器配置或 session 文件。
-- 如果当前会话没有 Browser Skill、无法取得 `iab` 绑定、未登录 ChatGPT，或账号没有 Pro，停止并准确说明缺少什么；不要静默换模型或换浏览器。
+- 如果无法取得 `iab` 绑定、其 documentation、当前 task 自建 tab 的释放方法，未登录 ChatGPT，或账号没有 Pro，停止并准确说明缺少什么；不要静默换模型或换浏览器。
 
 用户发起 Pro 咨询即授权把本次确认需要的上下文和附件发送到 ChatGPT Web；这不授权发送无关文件、凭据或额外消息。
 
@@ -53,12 +54,7 @@ description: 仅当用户点名或明确要求使用 Sol Pro 时调用侧边 Bro
 
 ### 模型真实性
 
-发送前从当前可见模型选择器确认：
-
-- 当前模型家族明确显示 `GPT-5.6 Sol`；
-- 选中的精确档位是 `Pro`，并具有可观察的选中状态。
-
-不要把 GPT 5.5 Pro、Pro Extended、基础 Sol、Extra High 或模型选择器之外的模糊 `Pro` 文本当成 GPT 5.6 Sol Pro。无法确认时停止。
+发送前在同一可见模型菜单中确认下列任一信号：精确 `GPT-6 Pro` 已选，或当前中文 Chat 的组合信号为 composer 控件显示 `6 Pro` 且“选择模型”子菜单显示 `最新`/`Latest` 已选。后者是 GPT-6 Pro 的本地化可观察信号，两个部分缺一不可。`GPT-6 Astra`是底层名称；单独的 `Pro`、`最新`/`Latest`、基础 Sol 或 Extra High 均不能证明模型身份。无法确认时停止。
 
 ### 材料真实性
 
@@ -81,14 +77,14 @@ python <skill-dir>/scripts/check_packet_safety.py <packet.md>
 不得用“我会使用侧边 Browser”“已选择 Pro”一类叙述性文字证明咨询完成。每次咨询开始时生成唯一 `task_run_id`，并在本次任务产物目录创建唯一的 `iab-consultation-evidence.json`。按 [evidence 模板](references/session-evidence-template.json) 在同一个主 task 的 Browser run 内追加事实，至少绑定：
 
 - 所选 Browser 的真实类型为 `iab`、Browser session ID、tab ID/URL；
-- 发送前 fresh snapshot 中 `GPT-5.6 Sol` 与 `Pro` 的独立选中信号；
+- 发送前 fresh snapshot 中已验证的 GPT-6 Pro 模型信号；
 - packet 的 distinctive prefix、sentinel、附件名与内容 hash；
 - 一次 Send 的 dispatch state、时间与提交后可观察证据；
 - 同一 tab 最新完整 assistant turn、生成完成信号与 assistant sentinel 校验。
 
 这些字段必须来自同一 Browser session 和同一对话。任何字段缺失、来源仅为代理自述、或无法与本次 dispatch 关联时，状态保持 `incomplete`；静态路由测试、模拟文本和子代理口头报告都不能替代真实 `iab` 证据。
 
-完成所有 Browser 读取并执行 cleanup/finalize 后，把 cleanup 结果追加到 ledger，再运行：
+完成所有 Browser 读取并执行 cleanup/release 后，把 cleanup 结果追加到 ledger，再运行：
 
 ```powershell
 python <skill-dir>/scripts/validate_session_evidence.py <iab-consultation-evidence.json>
@@ -108,8 +104,8 @@ python <skill-dir>/scripts/validate_session_evidence.py <iab-consultation-eviden
 8. 记录 dispatch state 和提交后证据，等待同一对话完整生成。仍在生成、只有开场白或没有 assistant sentinel 都不算完成。
 9. 抽取同一 tab 的最新完整 assistant turn，验证 sentinel，记录 response 证据，并由 Codex 对照本地证据给出 Adopt / Reject / Modify 决策；此时不要先运行最终 validator。
 10. 若为 Orchestrator loop，把实现差异和真实验证结果送回同一对话继续复审；每轮新增独立 dispatch 记录，不要开启重复咨询。
-11. 返回结果前按 Browser documentation 调用 `iab.tabs.finalize({ keep })`，并把它作为本次 turn 的最后一个 Browser 动作。默认 `keep` 为空；只有用户需要查看成品页面时保留 `deliverable`，或同一 task 明确暂停等待继续时保留一个无上传残留的 `handoff`。即使失败、超时、登录受阻、`STALE_COMPOSER_BLOCKER` 或 dispatch 为 `UNKNOWN` 也必须 finalize，不能让会话占用侧边 Browser。
-12. finalize 后只做本地工作：在 ledger 追加 cleanup 结果并运行 `validate_session_evidence.py`。validator 通过后才可把本次咨询标为 completed。
+11. 返回结果前释放本 task 自建 tab，并把释放作为最后一个 Browser 动作：若 binding 提供 `iab.tabs.finalize({ keep })`，默认 `keep` 为空；只有用户需要查看成品页面时保留 `deliverable`，或同一 task 明确暂停等待继续时保留一个无草稿、附件或上传的 `handoff`。若该方法不存在，调用该 task 自建 tab 的 `close()`；此路径不保留 tab。即使失败、超时、登录受阻、`STALE_COMPOSER_BLOCKER` 或 dispatch 为 `UNKNOWN` 也必须释放。
+12. release 后只做本地工作：在 ledger 追加 cleanup 结果并运行 `validate_session_evidence.py`。validator 通过后才可把本次咨询标为 completed。
 
 ## 上下文要求
 
@@ -129,14 +125,14 @@ python <skill-dir>/scripts/validate_session_evidence.py <iab-consultation-eviden
 
 只有以下条件全部满足，咨询才是 `completed`：
 
-- 已确认 GPT 5.6 Sol Pro。
+- 已确认 GPT-6 Pro 或其完整本地化组合信号。
 - 模型菜单交互后的延迟净空门已通过；不能只依赖新 tab 初次加载时的空白快照。
 - session-bound evidence ledger 证明 Browser 类型、session、tab、模型、dispatch 和回复属于同一 `iab` run。
 - 发送前已确认 prompt prefix、sentinel 与所需附件。
 - 发送结果明确，且没有重复提交风险。
 - Pro 已停止生成，完整 assistant turn 已抽取。
-- assistant turn 内出现预期 `GPT56_SOL_PRO_RESULT_...` sentinel。
-- 已执行本 turn 的 tab cleanup/finalize；正常完成时没有遗留草稿、附件、上传任务或 Project 上下文。
+- assistant turn 内出现预期 `GPT6_PRO_RESULT_...` sentinel。
+- 已执行本 turn 的 tab cleanup/release；正常完成时没有遗留草稿、附件、上传任务或 Project 上下文。
 
 若用户说答案已在侧边栏显示，先从现有对话重新抽取；不要重复发送。若点击 Send 后连接中断且结果不明，恢复原对话，无法唯一确认时标记 incomplete。
 
@@ -153,7 +149,7 @@ python <skill-dir>/scripts/validate_session_evidence.py <iab-consultation-eviden
 - Session-bound evidence: complete | incomplete
 - Mode: Reviewer | Orchestrator loop
 
-## What GPT 5.6 Sol Pro Said
+## What GPT-6 Pro Said
 <简洁总结>
 
 ## Local Adoption Decision
@@ -174,11 +170,11 @@ python <skill-dir>/scripts/validate_session_evidence.py <iab-consultation-eviden
 - **未登录**：请用户在 Codex 侧边 Browser 登录 ChatGPT，完成后继续同一任务。
 - **Pro 不可用或无法确认**：停止，不静默选择其他模型。
 - **附件失败**：重新获取当前 composer 与文件选择器；小文件可粘贴，多个文本文件可打成一个 Markdown bundle。没有可见附件证据就不得声称上传成功。
-- **延迟净空门发现残留草稿**：仅当 tab 可证明由当前 task 新建、且仍是非 Project 专用页时，记录草稿的非敏感前缀和内容 hash 后直接清空 composer；再触发一次模型菜单交互并复查。草稿复现，或同时发现 Project、附件或上传任务时，标记 `STALE_COMPOSER_BLOCKER`，不发送并 finalize。不要关闭、编辑或清空无法证明属于本 task 的用户 tab。
-- **Temporary Chat**：实测中全局或其他任务草稿可能继续恢复到 Temporary Chat；不得把它当作净空或隔离证明。
+- **延迟净空门发现残留草稿**：仅当 tab 可证明由当前 task 新建、且仍是非 Project 专用页时，记录草稿的非敏感前缀和内容 hash 后直接清空 composer；再触发一次模型菜单交互并复查。草稿复现，或同时发现 Project、附件或上传任务时，标记 `STALE_COMPOSER_BLOCKER`，不发送并 release。不要关闭、编辑或清空无法证明属于本 task 的用户 tab。
+- **Temporary Chat**：先退出 Temporary Chat 并在同一 task 自建 tab 中回到普通新对话，再从模型菜单重新执行净空门；Temporary Chat 本身不构成隔离证明。
 - **composer 为空**：重新获取可编辑区并验证 rendered text；未确认 prefix 和 sentinel 时不得发送。
 - **发送结果不明**：恢复现有对话并检查用户 turn 或生成状态；不要创建新对话或重复发送。
 - **仍在生成**：继续等待同一对话，不刷新、不发“继续”。
 - **没有 sentinel**：完整抽取一次最新 assistant turn；仍缺失则标记 incomplete。
 - **答案质量低**：只采纳有支持的部分；最终责任仍在 Codex。
-- **任意退出路径**：在所有必要 Browser 读取完成后执行一次 `iab.tabs.finalize({ keep })`，此后不再调用 Browser；不得把未完成上传或含附件草稿的 tab 标为 `handoff`。
+- **任意退出路径**：在所有必要 Browser 读取完成后执行一次本 task 的 release，此后不再调用 Browser；只有 `finalize` 路径可保留合格的 `handoff`，不得把未完成上传或含附件草稿的 tab 标为 `handoff`。
