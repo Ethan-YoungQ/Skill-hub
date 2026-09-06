@@ -5,7 +5,7 @@
 Review this acceptance gate for a Codex Skill whose only consultation surface is the Codex in-app Browser:
 
 1. The execution log proves the selected browser binding is `iab`.
-2. The visible ChatGPT controls show exact `GPT-6 Pro` as selected, or the localized pair `6 Pro` plus `最新`/`Latest` selected; a generic `Pro` label is insufficient.
+2. The visible ChatGPT controls show exact `GPT-6 Pro` as selected, or the localized pair `6 Pro` plus `最新`/`Latest` selected; `5.6 Pro`, a generic `Pro` label, or `最新`/`Latest` alone is insufficient.
 3. The packet is submitted exactly once in that in-app Browser conversation.
 4. The latest complete assistant turn contains the requested sentinel.
 5. No Chrome extension, Chrome CLI, OpenCLI, external Playwright, or browser automation process is used.

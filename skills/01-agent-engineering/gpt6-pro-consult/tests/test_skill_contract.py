@@ -38,6 +38,12 @@ class SkillContractTests(unittest.TestCase):
         for broad_trigger in ("任何软件设计", "均用 Codex", "Pro 编排循环时也触发"):
             self.assertNotIn(broad_trigger, description)
 
+    def test_explicit_consultation_authorizes_direct_dispatch_after_preflight(self) -> None:
+        skill = (SKILL_DIR / "SKILL.md").read_text(encoding="utf-8")
+        self.assertIn("通过所有发送前门槛后直接以一次 `Enter` 提交", skill)
+        self.assertIn("不得再询问“是否发送”", skill)
+        self.assertIn("明确要求预览、仅起草或暂停", skill)
+
     def test_reviewer_and_orchestrator_modes_are_defined(self) -> None:
         skill = (SKILL_DIR / "SKILL.md").read_text(encoding="utf-8")
         self.assertIn("### Reviewer（默认）", skill)
@@ -169,6 +175,12 @@ class SkillContractTests(unittest.TestCase):
         self.assertEqual(module.validate(payload), [])
         payload["model_gate"]["observed_signals"] = ["composer control 6 Pro", "model picker 最新 [selected]"]
         self.assertEqual(module.validate(payload), [])
+
+        payload["model_gate"]["observed_signals"] = [
+            "composer control 5.6 Pro",
+            "model picker 最新 [selected]",
+        ]
+        self.assertIn("a complete GPT-6 Pro model signal is required", module.validate(payload))
         payload["model_gate"]["observed_signals"] = ["Pro"]
         self.assertIn("a complete GPT-6 Pro model signal is required", module.validate(payload))
         payload["model_gate"]["observed_signals"] = ["model picker GPT-6 Pro [selected]"]

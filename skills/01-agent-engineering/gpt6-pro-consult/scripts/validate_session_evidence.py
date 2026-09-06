@@ -29,9 +29,12 @@ def has_gpt_6_pro_signal(signals: Any) -> bool:
     rendered = [str(signal) for signal in signals]
     if any("GPT-6 Pro" in signal for signal in rendered):
         return True
-    has_compact_label = any("6 Pro" in signal for signal in rendered)
+    has_compact_label = any(
+        re.search(r"(?<![\w.])6 Pro(?![\w.])", signal) for signal in rendered
+    )
     has_latest_selection = any(
-        "Latest [selected]" in signal or "最新 [selected]" in signal for signal in rendered
+        "Latest [selected]" in signal or "最新 [selected]" in signal
+        for signal in rendered
     )
     return has_compact_label and has_latest_selection
 

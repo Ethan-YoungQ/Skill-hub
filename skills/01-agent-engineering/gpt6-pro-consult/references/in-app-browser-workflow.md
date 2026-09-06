@@ -33,7 +33,7 @@
 
 打开当前模型选择器，根据 snapshot 中的真实可见元素构造 locator。每次点击前确认 locator 唯一，点击后重新观察目标区域。
 
-确认当前可见模型选择器中的任一完整模型信号：精确 `GPT-6 Pro` 已选，或 composer 控件显示 `6 Pro`，并且展开“选择模型”后 `最新`/`Latest` 已选。后者是当前中文 Chat 对 GPT-6 Pro 的本地化组合信号；单独的 `Pro` 或 `最新`/`Latest` 均不通过。GPT-6 Astra 是底层名称，不是可替代的选择器标签。UI 文案或属性可能更新，因此不要依赖写死的旧 test id；无法确认完整信号时停止。
+确认下列任一模型信号：精确 `GPT-6 Pro` 已选，或 composer 控件显示精确 `6 Pro` 且“选择模型”子菜单中 `最新`/`Latest` 已选。后者是当前中文 Chat 的本地化组合信号，两个部分必须来自同一可见模型菜单。`5.6 Pro`、单独的 `Pro` 或 `最新`/`Latest` 不能证明 GPT-6 Pro；尤其不得用字符串包含关系把 `5.6 Pro` 当作 `6 Pro`。UI 文案或属性可能更新，因此不要依赖写死的旧 test id；无法确认时停止。
 
 把发送前 fresh snapshot 的完整 GPT-6 Pro 模型信号、当前 Browser session、tab 和观测时间写入 ledger。
 
