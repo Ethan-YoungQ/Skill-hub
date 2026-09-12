@@ -189,6 +189,10 @@ Windows 上常用 Directory Junction 让多个 Agent 共享同一份技能目录
 
 使用本仓库技能时，请在本地填入自己的凭据；不要把填入真实凭据的文件提交回公开仓库。
 
+## 用户安装版本归档
+
+[用户 Skill 归档目录](./archives/user-installed-skills/README.md) 保存本机清理前尚未入库的完整文件版本；同名但内容不同的版本以 SHA-256 分开保存。[机器索引](./_meta/user-installed-skill-archives.json) 记录版本位置和目录校验值。归档不计入共享技能数量，也不参与默认安装或上游自动覆盖。
+
 ## <img src="assets/README/icons/overview.svg" width="20" alt=""> 许可
 
 本仓库采用 [MIT License](./LICENSE) 完全开源。第三方开源 skill 如保留原始许可证或来源说明，以其上游许可证为准。
