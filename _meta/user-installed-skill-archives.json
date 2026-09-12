@@ -1163,6 +1163,230 @@
       "treeSha256": "5c0ed7fbf5593355e02faaeb669a3bc3526b7f2addaaa5faacedbc858d2e7084",
       "fileCount": 29,
       "scope": "historical-backup"
+    },
+    {
+      "name": "adaptive-quality-gate",
+      "path": "archives/user-installed-skills/adaptive-quality-gate/b5189ce6c1bdba9b/adaptive-quality-gate",
+      "treeSha256": "b5189ce6c1bdba9bf74749dac941c17ad3abad58ced77d0708345b5c04e2a395",
+      "fileCount": 2,
+      "scope": "historical-backup"
+    },
+    {
+      "name": "github-readme-visuals",
+      "path": "archives/user-installed-skills/github-readme-visuals/eefc03e54938ca96/github-readme-visuals",
+      "treeSha256": "eefc03e54938ca966f19255a5cbabceb263786861cec967ee1efc5578ecbd739",
+      "fileCount": 3,
+      "scope": "historical-backup"
+    },
+    {
+      "name": "project-cleanup-audit",
+      "path": "archives/user-installed-skills/project-cleanup-audit/4735bd4d2756b29c/project-cleanup-audit",
+      "treeSha256": "4735bd4d2756b29c13837dc476018ebb0ca0803acf6f83ee794b4b6337e85597",
+      "fileCount": 4,
+      "scope": "historical-backup"
+    },
+    {
+      "name": "skill-lifecycle-manager",
+      "path": "archives/user-installed-skills/skill-lifecycle-manager/5dacf80b32dd2a14/skill-lifecycle-manager",
+      "treeSha256": "5dacf80b32dd2a1409b4df29551d4e6575e77078c80ff079c3e8646e273cc09f",
+      "fileCount": 10,
+      "scope": "historical-backup"
+    },
+    {
+      "name": "skill-lifecycle-manager",
+      "path": "archives/user-installed-skills/skill-lifecycle-manager/4f411187436951a8/skill-lifecycle-manager",
+      "treeSha256": "4f411187436951a8b95503a6fcd7b3ee5d610c4533daf361dcb960482be96e83",
+      "fileCount": 9,
+      "scope": "historical-backup"
+    },
+    {
+      "name": "skill-lifecycle-manager",
+      "path": "archives/user-installed-skills/skill-lifecycle-manager/62b13f99988fbe42/skill-lifecycle-manager",
+      "treeSha256": "62b13f99988fbe428a849645a841a0683f1a950fa7268ede48af1d1f90f8d80f",
+      "fileCount": 9,
+      "scope": "historical-backup"
+    },
+    {
+      "name": "aact-bulk-trials",
+      "path": "archives/user-installed-skills/aact-bulk-trials/e07736f27453c7b6/aact-bulk-trials",
+      "treeSha256": "e07736f27453c7b6a02b6023eec09b9ffa549a4d599a5951a88b05c0675c3a9a",
+      "fileCount": 4,
+      "scope": "historical-backup"
+    },
+    {
+      "name": "bioc-fulltext-fetch",
+      "path": "archives/user-installed-skills/bioc-fulltext-fetch/7e9571b254406b2d/bioc-fulltext-fetch",
+      "treeSha256": "7e9571b254406b2d42ba6fe4757328b73bd1b9ea685c18fb9e34b504459016e7",
+      "fileCount": 4,
+      "scope": "historical-backup"
+    },
+    {
+      "name": "clinical-trials-v2",
+      "path": "archives/user-installed-skills/clinical-trials-v2/28605e20fd8f2af5/clinical-trials-v2",
+      "treeSha256": "28605e20fd8f2af5f9dfe6c92ab86be45d74c8ab5150e12720f3cbd2f649cbf6",
+      "fileCount": 2,
+      "scope": "historical-backup"
+    },
+    {
+      "name": "europepmc-search",
+      "path": "archives/user-installed-skills/europepmc-search/92dc3a06bb453e44/europepmc-search",
+      "treeSha256": "92dc3a06bb453e44a6a96eccca3a1f31f0a47175be3e6cf99850c782825e22b6",
+      "fileCount": 4,
+      "scope": "historical-backup"
+    },
+    {
+      "name": "medical-evidence-grading",
+      "path": "archives/user-installed-skills/medical-evidence-grading/5c342d58013a59c8/medical-evidence-grading",
+      "treeSha256": "5c342d58013a59c8b368a2d3ec40fc600773192a17a1ff10755700c4868a67be",
+      "fileCount": 5,
+      "scope": "historical-backup"
+    },
+    {
+      "name": "pubtator-entity-search",
+      "path": "archives/user-installed-skills/pubtator-entity-search/366b9a940d152650/pubtator-entity-search",
+      "treeSha256": "366b9a940d15265045f07cda64b30f3c0007ff8383d612aaa179ee43749e4415",
+      "fileCount": 3,
+      "scope": "historical-backup"
+    },
+    {
+      "name": "aact-bulk-trials",
+      "path": "archives/user-installed-skills/aact-bulk-trials/e171d39ba5bce7c9/aact-bulk-trials",
+      "treeSha256": "e171d39ba5bce7c99ca99730fb93a5e4fd8f704cd5c5857d6bfc3f058e09de83",
+      "fileCount": 1,
+      "scope": "historical-backup"
+    },
+    {
+      "name": "bioc-fulltext-fetch",
+      "path": "archives/user-installed-skills/bioc-fulltext-fetch/c1d806facb0db73a/bioc-fulltext-fetch",
+      "treeSha256": "c1d806facb0db73a795774deeffa275f733d6d0cc57dc0cad0566f5bde9cc922",
+      "fileCount": 1,
+      "scope": "historical-backup"
+    },
+    {
+      "name": "clinical-trials-v2",
+      "path": "archives/user-installed-skills/clinical-trials-v2/73631290f45b84c6/clinical-trials-v2",
+      "treeSha256": "73631290f45b84c63125e264d1ecb2874fafe28aa90f0a9d7cffd82e87e4c2e6",
+      "fileCount": 1,
+      "scope": "historical-backup"
+    },
+    {
+      "name": "europepmc-search",
+      "path": "archives/user-installed-skills/europepmc-search/5eec9d3036d956eb/europepmc-search",
+      "treeSha256": "5eec9d3036d956ebf87228bb5ebb63a5e72d6417f1eb54ce9c038f5685c2f6ad",
+      "fileCount": 1,
+      "scope": "historical-backup"
+    },
+    {
+      "name": "medical-evidence-grading",
+      "path": "archives/user-installed-skills/medical-evidence-grading/0adee46a5906a20e/medical-evidence-grading",
+      "treeSha256": "0adee46a5906a20ece50f143843cad121c4b1b7fdd29a3189672a89482db5153",
+      "fileCount": 1,
+      "scope": "historical-backup"
+    },
+    {
+      "name": "pubtator-entity-search",
+      "path": "archives/user-installed-skills/pubtator-entity-search/36ed1a3ea059827e/pubtator-entity-search",
+      "treeSha256": "36ed1a3ea059827e9cbc4b9562e636c7d95f35aad8ea593165e26956613b5b67",
+      "fileCount": 1,
+      "scope": "historical-backup"
+    },
+    {
+      "name": "citation-anchor-resolver",
+      "path": "archives/user-installed-skills/citation-anchor-resolver/de29313b62832c40/citation-anchor-resolver",
+      "treeSha256": "de29313b62832c40b7b679af3dc31444b0333a707933549488a922447478d8cf",
+      "fileCount": 9,
+      "scope": "historical-backup"
+    },
+    {
+      "name": "cite-bound-content-generator",
+      "path": "archives/user-installed-skills/cite-bound-content-generator/af815257a24c3075/cite-bound-content-generator",
+      "treeSha256": "af815257a24c3075f0c66331f28f3c94ee3e10ab9264e0b7d97506d889a673d9",
+      "fileCount": 3,
+      "scope": "historical-backup"
+    },
+    {
+      "name": "content-verification-layer",
+      "path": "archives/user-installed-skills/content-verification-layer/767923d0aaaf33a3/content-verification-layer",
+      "treeSha256": "767923d0aaaf33a363c0f57bdda4abafaf482dda563b09f076ec7b694c9d25b8",
+      "fileCount": 3,
+      "scope": "historical-backup"
+    },
+    {
+      "name": "contract-elicitor",
+      "path": "archives/user-installed-skills/contract-elicitor/825109dd3b0ef293/contract-elicitor",
+      "treeSha256": "825109dd3b0ef293de62087757082c23bd048ceab2fd5c1a23014a7c53f0b025",
+      "fileCount": 2,
+      "scope": "historical-backup"
+    },
+    {
+      "name": "medical-research",
+      "path": "archives/user-installed-skills/medical-research/900533a4e9d19cf7/medical-research",
+      "treeSha256": "900533a4e9d19cf7cb8ac60876d8dad6694ca408ba46da45cf5f03e51b4a06ff",
+      "fileCount": 2,
+      "scope": "historical-backup"
+    },
+    {
+      "name": "pubmed-search",
+      "path": "archives/user-installed-skills/pubmed-search/ef35478d4277240c/pubmed-search",
+      "treeSha256": "ef35478d4277240cdd91097c71b319168e03ab2ef8d3d8d481c8039568feecea",
+      "fileCount": 3,
+      "scope": "historical-backup"
+    },
+    {
+      "name": "design-system-injector",
+      "path": "archives/user-installed-skills/design-system-injector/57d311e82a35c5b9/design-system-injector",
+      "treeSha256": "57d311e82a35c5b9cceebd500e18e5add291ba713d404e877eb48017cfa68e9d",
+      "fileCount": 2,
+      "scope": "historical-backup"
+    },
+    {
+      "name": "disease-market-sizing-orchestration",
+      "path": "archives/user-installed-skills/disease-market-sizing-orchestration/0379dd4196b242f6/disease-market-sizing-orchestration",
+      "treeSha256": "0379dd4196b242f6d02e791e699f524f0673a1b46d35881c87121dbecc3aafdc",
+      "fileCount": 2,
+      "scope": "historical-backup"
+    },
+    {
+      "name": "disease-stratifier",
+      "path": "archives/user-installed-skills/disease-stratifier/85c30053571fca66/disease-stratifier",
+      "treeSha256": "85c30053571fca66b1c77060eab191d938cc003bcf3d7b45c05135ce8910c499",
+      "fileCount": 2,
+      "scope": "historical-backup"
+    },
+    {
+      "name": "drug-citation-verifier",
+      "path": "archives/user-installed-skills/drug-citation-verifier/1f2150dc9f32394f/drug-citation-verifier",
+      "treeSha256": "1f2150dc9f32394f53981369f3eb878ab6543b408b731b94069aee0140019dd4",
+      "fileCount": 8,
+      "scope": "historical-backup"
+    },
+    {
+      "name": "mermaid-renderer",
+      "path": "archives/user-installed-skills/mermaid-renderer/d41320222bdbad43/mermaid-renderer",
+      "treeSha256": "d41320222bdbad43c134418039f7ce740c781742515e1909420991a00d5acfec",
+      "fileCount": 3,
+      "scope": "historical-backup"
+    },
+    {
+      "name": "report-bundle-builder",
+      "path": "archives/user-installed-skills/report-bundle-builder/6635774a64eeed6e/report-bundle-builder",
+      "treeSha256": "6635774a64eeed6e83e728b21d475dbcddaec2d88a91d44915138d0a6a9a6390",
+      "fileCount": 11,
+      "scope": "historical-backup"
+    },
+    {
+      "name": "session-resume",
+      "path": "archives/user-installed-skills/session-resume/25179664192836dd/session-resume",
+      "treeSha256": "25179664192836dd555731fb19c45ce782849a66c51afecd5188da3d0fa022a9",
+      "fileCount": 2,
+      "scope": "historical-backup"
+    },
+    {
+      "name": "miniprogram-development",
+      "path": "archives/user-installed-skills/miniprogram-development/29cb93957a26b96f/miniprogram-development",
+      "treeSha256": "29cb93957a26b96ff83a02f0948c800fc5aa08b9e80b840082ba4c808d89ecc4",
+      "fileCount": 5,
+      "scope": "historical-backup"
     }
   ]
 }
